@@ -1,3 +1,6 @@
+.navbar{
+    padding:0
+}
 .navbar-nav{
     display: flex;
     justify-content: center;
@@ -5,6 +8,7 @@
     text-align: center;
     gap:3rem;
     font-family: 'Rubik', sans-serif;
+    
 }
 .navbar-nav{
     display: flex;
@@ -12,6 +16,12 @@
     text-align: center;
     justify-content: center;
     margin:0 auto;
+  
+}
+.branding{
+    display:flex;
+    flex-direction: column;
+   
 }
 .navbar-brand{
     color:greenyellow;
@@ -22,6 +32,9 @@
     color:greenyellow;
 }
 .laliga-logo{
+    display:flex;
+    align-items: center;
+    margin:0 auto;
     width:3rem;
     height:1rem
 }

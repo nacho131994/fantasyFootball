@@ -20,14 +20,17 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg  bg-dark ">
       <div className="container-fluid">
-        <a className="navbar-brand ">
-          <strong>Football</strong>
-          <em>Fantasy.</em>
-        </a>
-        <img
-          className="laliga-logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/LaLiga_2023_Horizontal_Logo.svg/1200px-LaLiga_2023_Horizontal_Logo.svg.png"
-        />
+        <div className="branding">
+          <a className="navbar-brand ">
+            <strong>Football</strong>
+            <em>Fantasy.</em>
+          </a>
+          <img
+            className="laliga-logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/LaLiga_2023_Horizontal_Logo.svg/1200px-LaLiga_2023_Horizontal_Logo.svg.png"
+          />
+        </div>
+
         <button
           className="navbar-toggler"
           type="button"

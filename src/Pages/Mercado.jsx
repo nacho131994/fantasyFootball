@@ -17,7 +17,7 @@ const Mercado = () => {
       </div>
       <div className="mercado-body">
         <JugadoresMercado />
-        <DetalleJugadoresMercado />
+        {/* <DetalleJugadoresMercado /> */}
       </div>
     </>
   );

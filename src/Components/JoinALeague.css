@@ -57,7 +57,7 @@ font-family: 'Staatliches', sans-serif;
   }
   .league-name input::placeholder, 
   .league-password input::placeholder{
-    font-size:10px
+    font-size:13px
   }
   
   .league-name input,

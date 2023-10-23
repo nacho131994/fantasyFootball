@@ -57,6 +57,9 @@ font-family: 'Staatliches', sans-serif;
     justify-content: center;
     margin: 0 auto;
   }
+  .user input::placeholder{
+    font-size:13px
+  }
   
   .login-buttons {
     display: flex;

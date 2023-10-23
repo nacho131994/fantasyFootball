@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 //STYLES
 import "../Sections/JugadoresMercado.css";
+//SECTIONS
+import DetalleJugadoresMercado from "./DetalleJugadoresMercado";
 
 const JugadoresMercado = () => {
+  const [showDetails, setShowDetails] = useState(false);
+
+  const handleShowDetails = () => {
+    setShowDetails(true);
+  };
+  const handleCloseDetails = () => {
+    setShowDetails(false);
+  };
   return (
     <div className="mercado-body-players">
       <h1>MERCADO DE JUGADORES</h1>
@@ -13,16 +23,18 @@ const JugadoresMercado = () => {
               Buscar por...
             </option>
             <option value="opcion1">Todos los jugadores</option>
-            <option value="opcion2">Por precio</option>
-            <option value="opcion3">Por puntuacion</option>
-            <option value="opcion4">Por portero</option>
-            <option value="opcion5">Por defensa</option>
-            <option value="opcion6">Por centrocampista</option>
-            <option value="opcion7">Por delantero</option>
+            <option value="opcion2">Mayor precio </option>
+            <option value="opcion3">Menor precio </option>
+            <option value="opcion4">Mayor puntuacion </option>
+            <option value="opcion5">Menor puntuacion</option>
+            <option value="opcion6">Portero</option>
+            <option value="opcion7">Defensa</option>
+            <option value="opcion8">Centrocampista</option>
+            <option value="opcion9">Delantero</option>
           </select>
           <div className="searchbar">
             <input type="text" placeholder="Busca un jugador" />
-            <button>Buscar</button>
+            <button>BUSCAR</button>
           </div>
         </div>
         <div className="players-list-container">
@@ -35,14 +47,19 @@ const JugadoresMercado = () => {
                   <p>30000€</p>
                   <p>250pts</p>
                   <div className="players-list-data-button-section">
-                    <button>DETALLES</button>
-                    <button>FICHAR</button>
+                    <p onClick={handleShowDetails}>DETALLES</p>
+                    <p>FICHAR</p>
                   </div>
                 </div>
               </li>
             </ul>
           </div>
         </div>
+        {showDetails === true ? (
+          <DetalleJugadoresMercado handleCloseDetails={handleCloseDetails} />
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

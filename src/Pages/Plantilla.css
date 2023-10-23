@@ -6,8 +6,10 @@
     margin-top: 1rem;
     font-family: 'Staatliches', sans-serif;
     font-size:50px;
-    color:greenyellow;
-    -webkit-text-stroke: 1.5px rgb(0, 0, 0); /* Ancho y color del borde (propiedad específica de WebKit) */
+    color:rgb(0, 0, 0);
+    -webkit-text-stroke: 1px greenyellow;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+   
   
 }
 .plantilla-body{

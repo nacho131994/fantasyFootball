@@ -6,7 +6,8 @@
     align-items: center;
     margin:5px auto;
     font-family: 'Staatliches', sans-serif;
-    font-size:4rem
+    font-size:4rem;
+
 }
 
 .section-container-home h5{
@@ -80,5 +81,6 @@
     padding:0px 10px;
     border-radius:10px;
     font-family: 'Rubik', sans-serif;
+    border:1px solid greenyellow
 }
 

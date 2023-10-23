@@ -2,10 +2,9 @@ import React from "react";
 //STYLES
 import "../Sections/DetalleJugadoresMercado.css";
 
-const DetalleJugadoresMercado = () => {
+const DetalleJugadoresMercado = ({ handleCloseDetails }) => {
   return (
     <div className="mercado-body-players-details">
-      <h1>DATOS DEL JUGADOR</h1>
       <div className="player-details-card">
         <section>VINICIUS JR</section>
         <div className="player-info-section">
@@ -20,7 +19,7 @@ const DetalleJugadoresMercado = () => {
             <p>GOLES ANOTADOS</p>
             <p>ASISTENCIAS</p>
             <p>PASES ACERTADOS PP</p>
-            <p>PASES FALLADOS PP</p>
+            <p>PASES FALLADOS PP:</p>
             <p>RECUPERACIONES</p>
             <p>GOL PENALTI</p>
             <p>FALTA REALIZADA</p>
@@ -30,6 +29,8 @@ const DetalleJugadoresMercado = () => {
             <p>PARADAS PENALTI</p>
             <p>PENALTI REALIZADO</p>
             <p>GOL ENCAJADO</p>
+            <button>FICHAR</button>
+            <button onClick={handleCloseDetails}>CERRAR</button>
           </div>
         </div>
       </div>

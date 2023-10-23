@@ -79,20 +79,22 @@
  justify-content: center;
  align-items: center;
  border-radius:10px;
- background-color: rgb(184, 184, 184);
- color:rgb(255, 255, 255);
- border:none;
+ background-color: rgb(255, 255, 255);
+ color:rgb(128, 0, 255);
+ border:1px solid rgb(128, 0, 255);
  font-family: 'Rubik', sans-serif;
 
  }
  .player-button-section button:first-child:hover{
-  background-color: rgb(128, 0, 255);
+  background-color: rgb(207, 160, 255);
+  border:1px solid rgb(207, 160, 255);;
   
   color:rgb(255, 255, 255);
     }
     
 .player-button-section button:last-child:hover{
     background-color: rgb(255, 0, 0);
+    border:1px solid red;
     color:rgb(255, 255, 255);
  }
           

@@ -5,7 +5,15 @@ import "../Components/CardStat.css";
 const CardStat = ({ title }) => {
   return (
     <div className="card-stat-container">
-      <div className="card-stat-title">{title} </div>
+      <div className="card-stat-title">
+        <span className="plus">
+          <i class="fa-solid fa-up-long"></i>
+        </span>{" "}
+        {title}{" "}
+        <span className="minus">
+          <i class="fa-solid fa-down-long"></i>
+        </span>{" "}
+      </div>
       <div className="card-stat-body">
         <ul>
           <li>
