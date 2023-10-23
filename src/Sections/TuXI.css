@@ -1,0 +1,63 @@
+.tuxi-body{
+    width:60%;
+    background-color: rgb(255, 255, 255);
+    height:100vh;  font-family: 'Rubik', sans-serif;
+
+}
+.tuxi-body h1{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;;
+    margin-top:2rem; 
+    font-family: 'Staatliches', sans-serif;
+}
+.tuxi-body select{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin:0 auto;
+    font-family: 'Rubik', sans-serif;
+    color:rgb(0, 0, 0);
+    
+}
+.football-pitch-section img{
+    
+    display: flex;
+    justify-content: center;
+    transform: scale(1.2);
+margin:2rem auto;
+}
+.tuxi-button-section{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+   gap:5rem;
+    margin:0 auto;
+}
+.remaining-time p{
+    margin:0
+}
+.tuxi-button-section button{
+    padding:5px;
+    border-radius: 10px;
+    background-color: rgb(0, 0, 0);
+    color:rgb(255, 255, 255);
+    border:2px solid greenyellow;
+    display:flex;
+    align-items: centeR;
+    justify-content:center;
+    text-align: center;
+}
+.tuxi-button-section button:hover{
+  background-color: rgb(121, 167, 52);;
+  border:2px rgb(121, 167, 52);;
+  color:rgb(255, 255, 255);
+}
+.tuxi-button-section p{
+    display:flex;
+    align-items: centeR;
+    justify-content:center;
+    text-align: center;
+}

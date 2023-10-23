@@ -1,0 +1,57 @@
+.section-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin:20px auto;
+}
+.container{
+    margin-top:2rem
+}
+.search-player-stats-section{
+    display: flex;
+    flex: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin:2rem auto;
+    gap:5px
+}
+.search-player-stats-section input{
+   border-radius:5px;
+   border:none;
+    border:1px solid;
+   width:18rem;
+   height:2.5rem
+}
+.search-player-stats-section input::placeholder{
+  font-size:13px;
+  display: flex;
+  text-align: center;
+ }
+ .search-player-stats-section button{
+    color:rgb(255, 255, 255);
+    border:2px solid greenyellow;
+    border-radius:10px;
+    padding:5px;
+    background-color:rgb(0, 0, 0);
+    height:2.5rem
+ }
+
+ .search-player-stats-section button:hover{
+    background-color: rgb(124, 194, 20);
+    color:rgb(255, 255, 255);
+    border:none
+ }
+ .stats-card-section {
+    display: flex;
+    flex-wrap: wrap;
+   gap:2rem;
+  justify-content: center;
+  }
+  
+  .stats-card-section .CardStat {
+    width: calc(25% - 10px); 
+    
+  }

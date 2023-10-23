@@ -1,0 +1,107 @@
+.join-a-league-modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.726); 
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .join-a-league-container {
+    background-color: white;
+    width: 400px;
+ 
+    border: 3px solid greenyellow;
+  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  .join-a-league-header{
+    background-color:rgb(0, 0, 0);
+    color: greenyellow;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:2rem;
+   
+    font-size:2rem;
+font-family: 'Staatliches', sans-serif;
+  }
+  .join-a-league-credentials{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    gap:1rem;
+    padding:2rem 0
+  }
+  .league-name,
+  .league-password{
+    width:100%
+  }
+  .league-name p,
+  .league-password p {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin:5px
+  }
+  .league-name input::placeholder, 
+  .league-password input::placeholder{
+    font-size:10px
+  }
+  
+  .league-name input,
+  .league-password input {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    width:90%
+  }
+  
+  .join-a-league-buttons{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 10px;
+    padding-bottom:2rem
+  }
+  .accept-join-button{
+    border: 1px solid rgb(128, 0, 255);
+    background-color: rgb(255, 255, 255);
+    color: rgb(128, 0, 255);
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .accept-join-button:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(128, 0, 255);
+   }
+  .close-join-button{
+    border: 1px solid rgb(255, 0, 0);
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 0, 0);
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .close-join-button:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 0, 0);
+  }

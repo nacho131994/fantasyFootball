@@ -1,0 +1,115 @@
+.mercado-body-players{
+    background-color:rgb(255, 255, 255);
+    width:40%;
+    height:100vh
+}
+.mercado-body-players h1{
+   margin-top:2rem;
+   font-family: 'Staatliches', sans-serif;
+}
+.players-list-section{
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+.players-searcher{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    gap:2rem;
+    font-family: 'Rubik', sans-serif;
+
+}
+.searchbar{
+    display:flex;
+    flex-direction: row;
+    gap:5px;
+}
+.players-searcher button{
+ background-color: greenyellow;
+  color:black;
+ border:none;
+  border-radius: 10px;
+  padding:5px
+}
+.players-searcher button:hover{
+    background-color:rgb(91, 195, 16);
+    color:rgb(255, 255, 255);
+}
+.players-list-container{
+    background-color: rgb(169, 169, 169);;
+   width:fit-content;
+   padding:5px;
+   margin:0 auto
+}
+.players-list{
+    border:1px solid black;
+    width:fit-content;
+   
+}
+.player-list-name{
+display: flex;
+align-items: center;
+text-align: left;
+background-color: black;
+color:greenyellow;
+font-family: 'Staatliches', sans-serif;
+font-size:20px;
+padding:0px 5px;
+
+
+}
+
+.players-list ul{
+    list-style:none;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin:0;
+    padding:0;
+    background-color: white;
+    
+}
+.players-list ul li{
+    display: flex;
+    flex-direction: row;
+    gap:3rem; 
+    border:1px solid rgb(98, 132, 47) ;
+}
+
+.players-list-data{
+    display: flex;
+    gap:2rem;
+    padding:5px;  
+    
+}
+.players-list-data p{
+    margin:0;
+    display: flex;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+}
+.players-list-data-button-section{
+    display: flex;
+    gap:5px;
+}
+.players-list-data-button-section button{
+    height:2rem;
+    padding:5px;
+    display: flex;
+    flex: row;
+    justify-content: center;
+    align-items: center;
+    border-radius:10px;
+    background-color: rgb(184, 184, 184);
+    color:rgb(255, 255, 255);
+    border:none;
+    font-family: 'Rubik', sans-serif;
+}
+.players-list-data-button-section button:hover{
+    background-color: rgb(128, 0, 255);
+    
+    color:rgb(255, 255, 255);
+      }

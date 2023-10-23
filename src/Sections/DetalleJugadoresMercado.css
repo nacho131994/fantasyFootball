@@ -1,0 +1,90 @@
+.mercado-body-players-details{
+    background-color: rgb(255, 255, 255);
+    width:60%;
+    height:100vh
+}
+.mercado-body-players-details h1{
+    margin-top:2rem;
+font-family: 'Staatliches', sans-serif;
+   
+}
+.player-details-card{
+    border:1px solid;
+    width:fit-content;
+    margin:3rem auto;
+    background-color: rgb(79, 79, 79);
+    color:white;
+    border:2px solid rgb(0, 0, 0);
+    font-family: 'Rubik', sans-serif;
+    font-size:12px
+
+}
+.player-details-card section{
+    background-color: rgb(0, 0, 0);
+    color:greenyellow;
+    height:3rem;
+    align-items: centeR;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    font-size:30px;
+    font-family: 'Staatliches', sans-serif;
+}
+.player-info-section{
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}
+.player-picture{
+width:7rem;
+height:9rem;
+border:2px solid greenyellow
+}
+.player-info{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; 
+    text-align: center;
+}
+.player-info-section p{
+    margin:0px
+}
+.total-points-and-price{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    text-align: left;
+    margin: 0 auto;
+    gap:3rem;
+}
+.points-digits{
+    background-color: rgb(0, 0, 0);
+    color:rgb(106, 255, 0);
+    border-radius: 10px;
+    padding:5px;
+}
+
+.player-details-button-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    gap:1rem
+    
+    
+}
+.player-details-button-section button{
+    padding:0.5rem 1rem;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    color:black;
+    border:2px solid black
+}
+.player-details-button-section button:hover{
+   background-color: greenyellow;
+   color:black;
+}

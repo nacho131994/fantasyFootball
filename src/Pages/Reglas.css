@@ -1,0 +1,46 @@
+
+.reglas-container{
+    margin:3rem;
+}
+.paragraph{
+    font-family: 'Rubik', sans-serif;
+}
+.rule{
+    margin:3rem 0
+}
+.rule h3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom:1rem;
+    font-family: 'Staatliches', sans-serif;
+    font-size:40px
+}
+
+.how-to-score-points{
+    display: flex;
+    width:100%;
+    align-items: center;
+    text-align: center;
+    ;
+}
+.how-to-score-points p{
+    width:50%
+}
+table{
+    margin:2rem auto
+}
+.title-table{
+    padding:1rem;
+    border:1px solid black;
+    background-color: black;
+    color:greenyellow;
+}
+.add-points{
+    border-right:1px solid greenyellow
+}
+td{
+    border:1px solid;
+    padding:0px 5px 
+}

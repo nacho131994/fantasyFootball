@@ -1,0 +1,98 @@
+.your-team-body{
+    width: 70%;
+    background-color: rgb(255, 255, 255);
+    height:100vh;
+}
+.your-team-body h1{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;;
+    margin-top:2rem;
+    font-family: 'Staatliches', sans-serif;
+    color:rgb(0, 0, 0)
+}
+.money-and-value{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap:5rem;
+}
+
+.players-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin:0 auto
+}
+.players-by-position{
+    display:flex;
+    flex-direction: column;
+    border:2px solid rgb(0, 0, 0);
+    margin-top:5px;
+    width:40rem
+   
+    
+}
+.player-by-position-header{
+    background-color: black;
+    color:greenyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:2rem;
+    font-family: 'Staatliches', sans-serif;
+    font-size:2rem;
+   
+}
+.player-by-position-info{
+    display: flex;
+  justify-content: space-between; 
+  padding:5px 0
+
+}
+.player-by-position-info p {
+    width: 20%;
+    display:flex;
+    text-align: left; 
+    margin:0;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+
+  }
+ .player-button-section{
+    display: flex;
+    flex-direction: row;
+    gap:2px;
+    margin-right:5px;
+    align-items: center;
+ }
+ .player-button-section button{
+ height:2rem;
+ padding:5px;
+ display: flex;
+ flex: row;
+ justify-content: center;
+ align-items: center;
+ border-radius:10px;
+ background-color: rgb(184, 184, 184);
+ color:rgb(255, 255, 255);
+ border:none;
+ font-family: 'Rubik', sans-serif;
+
+ }
+ .player-button-section button:first-child:hover{
+  background-color: rgb(128, 0, 255);
+  
+  color:rgb(255, 255, 255);
+    }
+    
+.player-button-section button:last-child:hover{
+    background-color: rgb(255, 0, 0);
+    color:rgb(255, 255, 255);
+ }
+          
