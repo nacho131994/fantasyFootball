@@ -15,7 +15,6 @@ import Mercado from "./Pages/Mercado.jsx";
 import Error from "./Pages/Error.jsx";
 import Reglas from "./Pages/Reglas";
 import SobreNosotros from "./Pages/SobreNosotros";
-import HomeLoged from "./Pages/HomeLoged";
 
 const router = createBrowserRouter([
   {

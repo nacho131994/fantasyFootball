@@ -4,7 +4,10 @@ import "../Modals/DetalleJugadoresMercado.css";
 //MODALS
 import ConfirmModal from "../Modals/ConfirmModal";
 
-const DetalleJugadoresMercado = ({ handleCloseDetails }) => {
+const DetalleJugadoresMercado = ({
+  handleCloseDetails,
+  handleShowConfirmModal,
+}) => {
   return (
     <div className="mercado-body-players-details">
       <div className="player-details-card">
@@ -34,7 +37,7 @@ const DetalleJugadoresMercado = ({ handleCloseDetails }) => {
           </div>
         </div>
         <div className="player-info-button-section">
-          <button>FICHAR</button>
+          <button onClick={handleShowConfirmModal}>FICHAR</button>
           <button onClick={handleCloseDetails}>CERRAR</button>
         </div>
       </div>

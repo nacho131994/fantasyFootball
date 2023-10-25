@@ -60,6 +60,9 @@ font-family: 'Staatliches', sans-serif;
   .user input::placeholder{
     font-size:13px
   }
+  .password input::placeholder{
+    font-size:13px
+  }
   
   .login-buttons {
     display: flex;
@@ -132,4 +135,7 @@ margin:0;
 }
 .confirm-register-button{
   margin:1rem 0
+}
+.registration-buttons{
+  margin-top:2rem
 }

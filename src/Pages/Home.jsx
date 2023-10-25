@@ -60,8 +60,8 @@ const Home = () => {
             <h1>JORNADAS</h1>
           </div>
           <div className="matchdays-section-body">
-            <NextGames matchWeek={"JORNADA ANTERIOR"} />
-            <NextGames matchWeek={"sIGUIENTE JORNADA "} result={"1-0"} />
+            <NextGames matchWeek={"JORNADA ANTERIOR"} result={"1-0"} />
+            <NextGames matchWeek={"SIGUIENTE JORNADA"} />
           </div>
         </div>
         {showJoinALeagueModal && (

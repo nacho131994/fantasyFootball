@@ -15,12 +15,10 @@ const Login = ({ handleCloseLogin }) => {
         <div className="login-container-header">INICIA SESION</div>
         <div className="login-credentials">
           <div className="user">
-            <p>Usuario:</p>
-            <input type="text" placeholder="Escribe tu usuario" />
+            <input type="text" placeholder="Usuario" />
           </div>
           <div className="password">
-            <p>Contraseña:</p>
-            <input type="password" placeholder="Escribe tu contraseña" />
+            <input type="password" placeholder="Contraseña" />
           </div>
         </div>
 
@@ -50,9 +48,12 @@ const Login = ({ handleCloseLogin }) => {
                 <input type="text"></input>
               </div>
             </div>
-            <button className="accept-login confirm-register-button">
-              Registrar
-            </button>
+            <div className="login-buttons registration-buttons">
+              <button className="accept-login">Registrar</button>
+              <button className="close-login" onClick={handleCloseLogin}>
+                Cerrar
+              </button>
+            </div>
           </>
         )}
       </div>
