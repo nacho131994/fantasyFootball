@@ -13,16 +13,16 @@
 }
 .mercado-body-players-details h1{
     margin-top:1rem;
-font-family: 'Staatliches', sans-serif;
+    font-family: 'Staatliches', sans-serif;
    
 }
 .player-details-card{
     border:1px solid;
-    width:fit-content;
+    width:70rem;
     margin:3rem auto;
     background-color: rgb(79, 79, 79);
     color:white;
-    border:5px solid greenyellow;
+    border:2px solid greenyellow;
     font-family: 'Rubik', sans-serif;
     font-size:12px;
 
@@ -45,54 +45,58 @@ font-family: 'Staatliches', sans-serif;
     text-align: left;
 }
 .player-picture{
-width:7rem;
-height:9rem;
-border:2px solid greenyellow
+width:10rem;
+height:13rem;
+border:2px solid greenyellow;
+
 }
 .player-info{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin:2rem auto 0 auto;
     gap: 10px; 
     text-align: center;
 }
-.player-info-section p{
-    margin:0px
+.player-info p{
+  width:100%
 }
-.total-points-and-price{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: left;
-    text-align: left;
-    margin: 0 auto;
-    gap:3rem;
-}
-.points-digits{
-    background-color: rgb(0, 0, 0);
-    color:rgb(106, 255, 0);
-    border-radius: 10px;
+.player-info-button-section button:first-child{
+    height:2rem;
     padding:5px;
+   background-color: rgb(255, 255, 255);;
+    cursor:pointer;
+   border:1px solid rgb(128, 0, 255);
+   border-radius:10px;
+    color:rgb(128, 0, 255);;
+    margin:0;
+    font-family: 'Rubik', sans-serif;
+    margin:2rem 0;
+    margin-left:10px
 }
-
-.player-details-button-section{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
-    gap:1rem
-    
-    
-}
-.player-details-button-section button{
-    padding:0.5rem 1rem;
-    border-radius: 10px;
-    background-color: rgb(255, 255, 255);
-    color:black;
-    border:2px solid black
-}
-.player-details-button-section button:hover{
-   background-color: greenyellow;
-   color:black;
-}
+.player-details-card button:hover:first-child{
+    background-color: rgb(207, 160, 255);
+    border-radius: 10px ;
+    color:rgb(255, 255, 255);
+    border:1px solid rgb(207, 160, 255)
+      }
+.player-info-button-section button:last-child{
+    height:2rem;
+    padding:5px;
+    background-color: rgb(255, 255, 255);;
+    cursor:pointer;
+    border:1px solid rgb(255, 0, 0);
+    border-radius:10px;
+    color:rgb(255, 0, 0);;;
+    margin:0;
+    font-family: 'Rubik', sans-serif;
+    margin:2rem 0;
+    margin-left:10px
+    }
+.player-details-card button:hover:last-child{
+    background-color: rgb(255, 0, 0);;
+    border-radius: 10px ;
+    color:rgb(255, 255, 255);
+    border:1px solid rgb(255, 0, 0);
+          }

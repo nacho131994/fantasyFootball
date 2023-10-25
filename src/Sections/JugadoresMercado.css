@@ -1,7 +1,8 @@
 .mercado-body-players{
     background-color:rgb(255, 255, 255);
-    width:40%;
-    height:100vh
+    width:100%;
+    height:100vh;
+    background: linear-gradient(to bottom, #ececec, #ffffff);
 }
 .mercado-body-players h1{
    margin-top:1rem;
@@ -19,13 +20,11 @@
     justify-content: center;
     gap:2rem;
     font-family: 'Rubik', sans-serif;
-
 }
 .searchbar{
     display:flex;
     flex-direction: row;
-    gap:5px;
-    
+    gap:5px;  
 }
 .searchbar input{
     width:15rem;
@@ -49,29 +48,29 @@
     border:none
 }
 .players-list-container{
-    background-color: rgb(169, 169, 169);;
-   width:fit-content;
-   padding:5px;
-   margin:0 auto
+    background-color: rgb(0, 0, 0);;
+   width:90%;
+   padding:2rem 4rem 2rem 4rem;
+   margin:0 auto;
+   border-radius:10px;
+   border:2px solid greenyellow
+
 }
 .players-list{
     border:1px solid black;
-    width:fit-content;
-   
+    width:100%;
 }
-.player-list-name{
-display: flex;
-align-items: center;
-text-align: left;
-background-color: black;
-color:greenyellow;
-font-family: 'Staatliches', sans-serif;
-font-size:20px;
-padding:0px 5px;
-
-
+.players-list-name p{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+    color:greenyellow;
+    font-family: 'Staatliches', sans-serif;
+    font-size:20px;
+    padding:0px 5px;
+    margin:0 0
 }
-
 .players-list ul{
     list-style:none;
     display:flex;
@@ -80,27 +79,32 @@ padding:0px 5px;
     text-align: center;
     margin:0;
     padding:0;
-    background-color: white;
-    
+    background-color: rgb(0, 0, 0);
+    width:100%;
+    color:white
 }
 .players-list ul li{
     display: flex;
     flex-direction: row;
     gap:3rem; 
-    border:1px solid rgb(98, 132, 47) ;
+    border-bottom:1px solid rgb(255, 255, 255) ;
+    width:100%;
+    height:fit-content;
+    padding:2px;
+    justify-content: space-between;
 }
-
 .players-list-data{
     display: flex;
-    gap:2rem;
-    padding:5px;  
-    
+    align-items: center;
+    gap:6rem;
+    padding:0     
 }
 .players-list-data p{
     margin:0;
     display: flex;
     align-items: center;
     font-family: 'Rubik', sans-serif;
+ 
 }
 .players-list-data-button-section{
     display: flex;
@@ -112,17 +116,18 @@ padding:0px 5px;
     padding:5px;
     display: flex;
     flex: row;
-    
     cursor:pointer;
-   border:1px solid rgb(128, 0, 255);
+    border:1px solid greenyellow;
    border-radius:10px;
-    color:rgb(128, 0, 255);;
+    color:greenyellow;
     margin:0;
     font-family: 'Rubik', sans-serif;
+    font-size:10px;
+    align-items: center;
 }
 .players-list-data-button-section p:hover{
-    background-color: rgb(207, 160, 255);
+    background-color:rgb(111, 166, 28);
     border-radius: 10px ;
     color:rgb(255, 255, 255);
-    border:1px solid rgb(207, 160, 255)
-      }
+    border:1px solid rgb(111, 166, 28);
+}

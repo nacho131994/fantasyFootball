@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 //STYLES
 import "../Sections/DetalleJugadoresMercado.css";
+//MODALS
+import ConfirmModal from "../Modals/ConfirmModal";
 
 const DetalleJugadoresMercado = ({ handleCloseDetails }) => {
   return (
@@ -16,22 +18,24 @@ const DetalleJugadoresMercado = ({ handleCloseDetails }) => {
             />
           </div>
           <div className="player-info">
-            <p>GOLES ANOTADOS</p>
-            <p>ASISTENCIAS</p>
-            <p>PASES ACERTADOS PP</p>
+            <p>GOLES ANOTADOS:</p>
+            <p>ASISTENCIAS:</p>
+            <p>PASES ACERTADOS PP:</p>
             <p>PASES FALLADOS PP:</p>
-            <p>RECUPERACIONES</p>
-            <p>GOL PENALTI</p>
-            <p>FALTA REALIZADA</p>
-            <p>TARJETA ROJA</p>
-            <p>TARJETA AMARILLA</p>
-            <p>PARADAS</p>
-            <p>PARADAS PENALTI</p>
-            <p>PENALTI REALIZADO</p>
-            <p>GOL ENCAJADO</p>
-            <button>FICHAR</button>
-            <button onClick={handleCloseDetails}>CERRAR</button>
+            <p>RECUPERACIONES:</p>
+            <p>GOL PENALTI:</p>
+            <p>FALTA REALIZADA:</p>
+            <p>TARJETA ROJA:</p>
+            <p>TARJETA AMARILLA:</p>
+            <p>PARADAS:</p>
+            <p>PARADAS PENALTI:</p>
+            <p>PENALTI REALIZADO:</p>
+            <p>GOL ENCAJADO:</p>
           </div>
+        </div>
+        <div className="player-info-button-section">
+          <button>FICHAR</button>
+          <button onClick={handleCloseDetails}>CERRAR</button>
         </div>
       </div>
     </div>

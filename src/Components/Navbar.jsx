@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ReactDOM from "react-dom";
-//COMPONENTS
-import Login from "./Login";
+//MODALS
+import Login from "../Modals/Login.jsx";
 //STYLES
 import "../Components/Navbar.css";
 

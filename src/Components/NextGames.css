@@ -1,0 +1,72 @@
+
+.next-games-container{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    width:400px;
+    border-radius:10px;
+    margin-top:3rem;
+    
+    
+}
+.next-games-header{
+    display: flex;
+    justify-content: center;
+    color:rgb(255, 255, 255);
+    background-color: black;
+    height:4rem;
+    border-radius:10px;
+    border:2px solid greenyellow;
+    -webkit-box-shadow: 0px 0px 18px -5px rgb(93, 136, 29);
+    -moz-box-shadow: 0px 0px 18px -5px rgb(132, 192, 42);
+    box-shadow: 0px 0px 18px -5px greenyellow
+   
+   
+}
+.next-games-header-logos{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin:0 auto;
+}
+.next-games-header-logos p{
+    font-family: 'Staatliches', sans-serif;
+    font-size:2rem;
+    margin:0
+}
+.next-games-body{
+    display:flex;
+    flex-direction: row;;
+    gap:.5rem;
+    background: linear-gradient(to bottom, #858585, #dcdcdc);
+    padding-top:1rem;
+    border-radius:10px;
+    border:2px solid greenyellow;
+  
+  
+
+}
+.column{
+    width:50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.match{
+    display: flex;
+}
+.match p{
+    font-family: 'Staatliches', sans-serif;
+}
+.result-match{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    margin:0;
+    padding:0 5px;
+   
+    color:white
+}

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 //STYLES
-import "../Components/Login.css";
+import "../Modals/Login.css";
 import { Form } from "react-router-dom";
 
 const Login = ({ handleCloseLogin }) => {

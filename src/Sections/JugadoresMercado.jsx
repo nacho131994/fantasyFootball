@@ -3,15 +3,24 @@ import React, { useState } from "react";
 import "../Sections/JugadoresMercado.css";
 //SECTIONS
 import DetalleJugadoresMercado from "./DetalleJugadoresMercado";
+//COMPONENTS
+import ConfirmModal from "../Modals/ConfirmModal";
 
 const JugadoresMercado = () => {
   const [showDetails, setShowDetails] = useState(false);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
 
   const handleShowDetails = () => {
     setShowDetails(true);
   };
   const handleCloseDetails = () => {
     setShowDetails(false);
+  };
+  const handleShowConfirmModal = () => {
+    setShowConfirmModal(true);
+  };
+  const handleCloseConfirmModal = () => {
+    setShowConfirmModal(false);
   };
   return (
     <div className="mercado-body-players">
@@ -41,22 +50,38 @@ const JugadoresMercado = () => {
           <div className="players-list">
             <ul>
               <li>
-                <div className="player-list-name">VINICIUS (RMA)</div>
+                <div className="player-list-data">
+                  <div className="players-list-name">
+                    <p>VINICIUS</p>
+                  </div>
+                </div>
                 <div className="players-list-data">
                   <p>250pts</p>
                   <p>30000€</p>
                   <p>250pts</p>
-                  <div className="players-list-data-button-section">
-                    <p onClick={handleShowDetails}>DETALLES</p>
-                    <p>FICHAR</p>
-                  </div>
+                </div>
+                <div className="players-list-data-button-section">
+                  <p onClick={handleShowDetails}>DETALLES</p>
+                  <p onClick={handleShowConfirmModal}>FICHAR</p>
                 </div>
               </li>
             </ul>
           </div>
         </div>
-        {showDetails === true ? (
-          <DetalleJugadoresMercado handleCloseDetails={handleCloseDetails} />
+        {showDetails ? (
+          <DetalleJugadoresMercado
+            handleCloseDetails={handleCloseDetails}
+            handleShowConfirmModal={handleCloseConfirmModal}
+            showConfirmModal={showConfirmModal}
+          />
+        ) : (
+          ""
+        )}
+        {showConfirmModal ? (
+          <ConfirmModal
+            handleCloseConfirmModal={handleCloseConfirmModal}
+            action={"FICHAR"}
+          />
         ) : (
           ""
         )}

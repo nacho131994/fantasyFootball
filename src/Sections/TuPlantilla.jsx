@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 //STYLES
 import "../Sections/TuPlantilla.css";
+//MODALS
+import ConfirmModal from "../Modals/ConfirmModal";
 
 const TuPlantilla = () => {
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+
+  const handleShowConfirmModal = () => {
+    setShowConfirmModal(true);
+  };
+  const handleCloseConfirmModal = () => {
+    setShowConfirmModal(false);
+  };
   return (
     <div className="your-team-body">
       <h1>TU PLANTILLA</h1>
-      <div className="money-and-value">
-        <p>Dinero disponible: 100000€</p>
-        <p>Valor de tu plantilla:35000€</p>
-      </div>
+
       <div className="players-list">
         <div className="players-by-position">
           <div className="player-by-position-header">PORTEROS</div>
@@ -21,7 +28,7 @@ const TuPlantilla = () => {
             <p>300000€</p>
             <div className="player-button-section">
               <button>ALINEAR</button>
-              <button>VENDER</button>
+              <button onClick={handleShowConfirmModal}>VENDER</button>
             </div>
           </div>
         </div>
@@ -35,7 +42,7 @@ const TuPlantilla = () => {
             <p>300000€</p>
             <div className="player-button-section">
               <button>ALINEAR</button>
-              <button>VENDER</button>
+              <button onClick={handleShowConfirmModal}>VENDER</button>
             </div>
           </div>
         </div>
@@ -49,7 +56,7 @@ const TuPlantilla = () => {
             <p>300000€</p>
             <div className="player-button-section">
               <button>ALINEAR</button>
-              <button>VENDER</button>
+              <button onClick={handleShowConfirmModal}>VENDER</button>
             </div>
           </div>
         </div>
@@ -63,11 +70,19 @@ const TuPlantilla = () => {
             <p>300000€</p>
             <div className="player-button-section">
               <button>ALINEAR</button>
-              <button>VENDER</button>
+              <button onClick={handleShowConfirmModal}>VENDER</button>
             </div>
           </div>
         </div>
       </div>
+      {showConfirmModal ? (
+        <ConfirmModal
+          handleCloseConfirmModal={handleCloseConfirmModal}
+          action={"VENDER"}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 };

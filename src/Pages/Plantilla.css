@@ -1,16 +1,34 @@
-.team-name{
+.plantilla-header{
     display: flex;
+    flex-direction:column;
     justify-content: center;
     align-items: center;
     text-align: center;
     margin-top: 1rem;
     font-family: 'Staatliches', sans-serif;
     font-size:50px;
-    color:rgb(0, 0, 0);
-    -webkit-text-stroke: 1px greenyellow;
-    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    background: linear-gradient(to bottom, #353535, #a1a1a1);
+    margin:0;
+    padding:1rem 0 0 0;
+}
+.team-name{
+    color:rgb(255, 255, 255);
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    text-shadow: 3px 3px 3px rgb(0, 0, 0);
+}
+.team-data {
+ display: flex;
+gap:20rem;
+ align-items: center;
+ text-align: center;
+ 
+}
+.team-data p{
+    font-family: 'Staatliches', sans-serif;
+    font-size:20px; 
+    color:white;
+    margin:0;
    
-  
 }
 .plantilla-body{
     display: flex;
@@ -23,4 +41,6 @@
 .your-eleven-section{
     background-color: rgb(255, 255, 255);
 }
-
+.team-data-icons{
+    color:greenyellow
+}
