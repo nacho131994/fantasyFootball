@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 //STYLES
 import "../Sections/JugadoresMercado.css";
-//SECTIONS
-import DetalleJugadoresMercado from "./DetalleJugadoresMercado";
+//MODALS
+import DetalleJugadoresMercado from "../Modals/DetalleJugadoresMercado.jsx";
 //COMPONENTS
 import ConfirmModal from "../Modals/ConfirmModal";
 

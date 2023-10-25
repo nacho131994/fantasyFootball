@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 //STYLES
-import "../Sections/DetalleJugadoresMercado.css";
+import "../Modals/DetalleJugadoresMercado.css";
 //MODALS
 import ConfirmModal from "../Modals/ConfirmModal";
 
