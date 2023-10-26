@@ -51,6 +51,21 @@ const CardStat = ({ title }) => {
             <p>puntos</p>
             <button onClick={handleShowConfirmModal}>FICHAR</button>
           </li>
+          <li>
+            <p>nombre</p>
+            <p>puntos</p>
+            <button onClick={handleShowConfirmModal}>FICHAR</button>
+          </li>
+          <li>
+            <p>nombre</p>
+            <p>puntos</p>
+            <button onClick={handleShowConfirmModal}>FICHAR</button>
+          </li>
+          <li>
+            <p>nombre</p>
+            <p>puntos</p>
+            <button onClick={handleShowConfirmModal}>FICHAR</button>
+          </li>
         </ul>
       </div>
       {showConfirmModal ? (

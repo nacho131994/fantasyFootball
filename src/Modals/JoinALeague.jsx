@@ -1,6 +1,6 @@
 import React from "react";
 //STYLES
-import "../Components/JoinALeague.css";
+import "../Modals/JoinALeague.css";
 
 const JoinALeague = ({ handleCloseJoinALeagueModal }) => {
   return (
@@ -9,12 +9,10 @@ const JoinALeague = ({ handleCloseJoinALeagueModal }) => {
         <div className="join-a-league-header">ÚNETE A UNA LIGA</div>
         <div className="join-a-league-credentials">
           <div className="league-name">
-            <p>Nombre de la Liga:</p>
             <input type="text" placeholder="Escribe el nombre de la Liga" />
           </div>
           <div className="league-password">
-            <p>Código de la Liga:</p>
-            <input type="password" placeholder="Escribe el código" />
+            <input type="password" placeholder="Escribe el código de la Liga" />
           </div>
         </div>
 

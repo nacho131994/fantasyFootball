@@ -2,11 +2,41 @@
     background-color:rgb(255, 255, 255);
     width:100%;
     height:100vh;
-    background: linear-gradient(to bottom, #ececec, #ffffff);
+    background-color: #082B08;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23103716' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%23174324' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%231f5031' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%23265c3f' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%232E684D' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size:cover ;
 }
 .mercado-body-players h1{
    margin-top:1rem;
    font-family: 'Staatliches', sans-serif;
+   color:rgb(255, 255, 255);
+   -webkit-text-stroke: 1px rgb(0, 0, 0);
+   text-shadow: 3px 3px 3px rgb(126, 204, 89);
+   font-size:5rem;
+
+}
+.current-money{
+    display:flex;
+    color:white;
+    justify-content: center;;
+    margin:2rem;
+    gap:10px;
+    align-items: center;
+    text-align: center;
+}
+.current-money:first-child{
+    font-size:30px;
+    font-family: 'Staatliches', sans-serif;
+}
+.current-money-digits{
+    background-color: rgb(10, 242, 103);
+    color:white;
+    border-radius:15px;
+    padding:1rem 2rem;
+    font-family: 'Staatliches', sans-serif;
 }
 .players-list-section{
     display: flex;
@@ -48,7 +78,7 @@
     border:none
 }
 .players-list-container{
-    background-color: rgb(0, 0, 0);;
+    background-color: rgb(134, 134, 134);
    width:90%;
    padding:2rem 4rem 2rem 4rem;
    margin:0 auto;
@@ -57,14 +87,16 @@
 
 }
 .players-list{
-    border:1px solid black;
+    border:none;
     width:100%;
+    display:flex; flex-direction: row;
+    gap:2rem
 }
 .players-list-name p{
     display: flex;
     align-items: center;
     text-align: center;
-    background-color: rgb(0, 0, 0);
+  
     color:greenyellow;
     font-family: 'Staatliches', sans-serif;
     font-size:20px;
@@ -79,19 +111,23 @@
     text-align: center;
     margin:0;
     padding:0;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(134, 134, 134);
     width:100%;
     color:white
 }
 .players-list ul li{
     display: flex;
     flex-direction: row;
-    gap:3rem; 
-    border-bottom:1px solid rgb(255, 255, 255) ;
+    align-items: left;
+    
+    background-color: rgb(78, 78, 78);
+    border-radius:10px;
     width:100%;
     height:fit-content;
     padding:2px;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-top:5px;
+    padding:0 5px
 }
 .players-list-data{
     display: flex;
@@ -104,7 +140,16 @@
     display: flex;
     align-items: center;
     font-family: 'Rubik', sans-serif;
- 
+    font-size:15px
+}
+.players-list-data-item{
+    display:flex;
+    flex-direction: row;
+    gap:3px;
+    align-items: center;
+}
+.players-list-data-item i{
+  color:rgb(153, 255, 0)
 }
 .players-list-data-button-section{
     display: flex;
@@ -126,8 +171,8 @@
     align-items: center;
 }
 .players-list-data-button-section p:hover{
-    background-color:rgb(111, 166, 28);
+    background-color:rgb(153, 255, 0);
     border-radius: 10px ;
-    color:rgb(255, 255, 255);
-    border:1px solid rgb(111, 166, 28);
+    color:rgb(0, 0, 0);
+    border:1px solid rgb(153, 255, 0);
 }

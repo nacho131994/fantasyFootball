@@ -1,9 +1,12 @@
 .card-stat-container{
-    border:1px solid black;
+
     border-radius:10px;
     width:30rem;
     height:25rem;
-    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    gap:5px;
  
 }
 .card-stat-title{
@@ -17,8 +20,11 @@
     font-family: 'Staatliches', sans-serif;
     font-size:2rem;
     gap:2rem;
-    border-top-right-radius:10px;
-    border-top-left-radius:10px;
+    border-radius:10px;
+    border: 2px solid greenyellow;
+    -webkit-box-shadow: 0px 0px 18px -5px rgb(93, 136, 29);
+    -moz-box-shadow: 0px 0px 18px -5px rgb(132, 192, 42);
+    box-shadow: 0px 0px 18px -5px greenyellow
 }
 .plus{
    color:white;
@@ -41,25 +47,36 @@
     transform: scale(1.2);
  }
  .card-stat-body{
-    background-color: white;
+    background-color: rgb(42, 42, 42);
+    border-radius:10px;
+   
  }
 .card-stat-body ul{
   list-style: none;
   margin-top: 10px;
-  padding:0px  ;
+  padding:0px 2rem  ;
+
+
  
 }
 .card-stat-body ul li{
     display: flex;
     justify-content: space-between;
-    padding:10px 3px;
-    border-bottom:1px solid;
+    padding:2px 5px;
+    
 align-items: center;
 text-align: center;
+background-color: rgb(57, 57, 57);
+border-radius:10px;
+margin-top:5px;
+color:white;
+
+
 }
 .card-stat-body ul li p{
 margin:0px;
 font-family: 'Rubik', sans-serif;
+
 }
 .card-stat-body button{
 border:none;

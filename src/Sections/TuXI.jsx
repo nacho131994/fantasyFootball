@@ -1,6 +1,8 @@
 import React from "react";
 //STYLES
 import "../Sections/TuXI.css";
+//IMAGES
+import Pitch from "../images/pizarra.jpg";
 
 const TuXI = () => {
   return (
@@ -17,7 +19,7 @@ const TuXI = () => {
         <option value="opcion5">1-5-3-2</option>
       </select>
       <div className="football-pitch-section">
-        <img src="https://dbdzm869oupei.cloudfront.net/img/sticker/preview/8387.png" />
+        <img src={Pitch} />
       </div>
       <div className="tuxi-button-section">
         <div className="remaining-time">

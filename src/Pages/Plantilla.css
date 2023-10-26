@@ -1,3 +1,6 @@
+.plantilla-container{
+    height:100vh
+}
 .plantilla-header{
     display: flex;
     flex-direction:column;
@@ -7,7 +10,7 @@
     margin-top: 1rem;
     font-family: 'Staatliches', sans-serif;
     font-size:50px;
-    background: linear-gradient(to bottom, #353535, #a1a1a1);
+    background: linear-gradient(to bottom, rgb(123, 224, 152), rgb(205, 255, 181));
     margin:0;
     padding:1rem 0 0 0;
 }
@@ -21,6 +24,9 @@
 gap:20rem;
  align-items: center;
  text-align: center;
+ background-color: rgb(92, 92, 92);
+ border-radius:20px;
+ padding:0.5rem 3rem
  
 }
 .team-data p{

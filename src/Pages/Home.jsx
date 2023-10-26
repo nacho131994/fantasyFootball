@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import "../Pages/Home.css";
 //COMPONENTS
 import Navbar from "../Components/Navbar";
-import JoinALeague from "../Components/JoinALeague";
+import JoinALeague from "../Modals/JoinALeague";
 import NextGames from "../Components/NextGames";
+import LaLigaStandings from "../Components/LaLigaStandings";
 
 const Home = () => {
   const [showJoinALeagueModal, setShowJoinALeagueModal] = useState(false);
@@ -39,7 +40,7 @@ const Home = () => {
           <h3>TUS LIGAS</h3>
 
           <button onClick={handleShowJoinALeagueModal}>
-            UNIRSE A UNA LIGA
+            Unirse a una liga
           </button>
         </div>
         <div className="your-league-container">
@@ -61,7 +62,11 @@ const Home = () => {
           </div>
           <div className="matchdays-section-body">
             <NextGames matchWeek={"JORNADA ANTERIOR"} result={"1-0"} />
+
             <NextGames matchWeek={"SIGUIENTE JORNADA"} />
+          </div>
+          <div className="classification-section">
+            <LaLigaStandings />
           </div>
         </div>
         {showJoinALeagueModal && (

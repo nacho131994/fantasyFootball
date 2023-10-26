@@ -1,7 +1,8 @@
 .tuxi-body{
-    width:60%;
-    background: linear-gradient(to bottom, rgb(197, 246, 191),   rgb(143, 221, 133, 0.004) ); 
-    height:100vh;  font-family: 'Rubik', sans-serif;;
+    width:65%;
+    background-color: rgb(205, 255, 181); 
+    height:100vh;
+      font-family: 'Rubik', sans-serif;;
 }
 .tuxi-body h1{
     display: flex;
@@ -10,7 +11,9 @@
     align-items: center;;
     margin-top:2rem; 
     font-family: 'Staatliches', sans-serif;
-    color:rgb(75, 207, 26)
+    color:white;
+    -webkit-text-stroke: 1px rgb(64, 100, 9);
+   
 }
 .tuxi-body select{
     display:flex;
@@ -22,12 +25,17 @@
     color:rgb(0, 0, 0);
     
 }
+.football-pitch-section{
+    border-radius:15px
+}
 .football-pitch-section img{
-    
+    width: 35rem;height:20rem;
     display: flex;
     justify-content: center;
-    transform: scale(1.2);
-margin:2rem auto;
+    margin:1rem auto;
+    border-radius:15px;
+
+  
 }
 .tuxi-button-section{
     display: flex;

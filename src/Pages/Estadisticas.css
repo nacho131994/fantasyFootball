@@ -1,5 +1,6 @@
 .estadisticas-container{
-   background: linear-gradient(to bottom, #b6b6b6, #ffffff);
+   background: url("../images/rose-petals.svg");
+  
 }
 .section-container{
     display: flex;
@@ -25,7 +26,7 @@
 .search-player-stats-section input{
    border-radius:5px;
    border:none;
-    border:1px solid;
+    border:none;
    width:18rem;
    height:2.5rem
 }

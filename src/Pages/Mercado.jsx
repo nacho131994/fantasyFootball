@@ -10,9 +10,8 @@ const Mercado = () => {
     <>
       <Navbar />
       <div className="mercado-container">
-        <div className="current-money">
-          <p>DINERO DISPONIBLE</p>
-          <p className="money-digits">100000€</p>
+        <div className="mercado-title">
+          <h1>MERCADO DE FICHAJES</h1>
         </div>
       </div>
       <div className="mercado-body">

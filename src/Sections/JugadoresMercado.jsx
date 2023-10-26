@@ -24,7 +24,10 @@ const JugadoresMercado = () => {
   };
   return (
     <div className="mercado-body-players">
-      <h1>MERCADO DE JUGADORES</h1>
+      <div className="current-money">
+        <p>DINERO DISPONIBLE:</p>
+        <p className="current-money-digits">4342342€</p>
+      </div>
       <div className="players-list-section">
         <div className="players-searcher">
           <select placeholder="">
@@ -63,16 +66,25 @@ const JugadoresMercado = () => {
                   </div>
                 </div>
                 <div className="players-list-data">
-                  <p>250pts</p>
-                  <p>30000€</p>
-                  <p>250pts</p>
-                </div>
-                <div className="players-list-data-button-section">
-                  <p onClick={handleShowDetails}>DETALLES</p>
-                  <p onClick={handleShowConfirmModal}>FICHAR</p>
+                  <div className="players-list-data-item">
+                    <i class="fa-solid fa-star"></i>
+                    <p>250pts</p>
+                  </div>
+                  <div className="players-list-data-item">
+                    <i class="fa-solid fa-money-bill-trend-up"></i>
+                    <p>30000€</p>
+                  </div>
+                  <div className="players-list-data-item">
+                    <i class="fa-solid fa-futbol"></i>
+                    <p>GOLES</p>
+                  </div>
                 </div>
               </li>
             </ul>
+            <div className="players-list-data-button-section">
+              <p onClick={handleShowDetails}>DETALLES</p>
+              <p onClick={handleShowConfirmModal}>FICHAR</p>
+            </div>
           </div>
         </div>
         {showDetails ? (

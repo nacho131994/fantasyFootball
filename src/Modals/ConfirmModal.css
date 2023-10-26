@@ -11,14 +11,20 @@
     justify-content: center;
 }
 .confirm-modal-container{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     width: 400px;
+    border-radius:10px;
     border: 3px solid greenyellow;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     text-align: center;
+    -webkit-box-shadow: 0px 0px 15px 6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 15px 6px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 15px 6px rgba(0,0,0,0.75);
 }
 .confirm-modal-header{
     background-color:rgb(0, 0, 0);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
     color: greenyellow;
     height: 3rem;
     display: flex;
@@ -33,7 +39,8 @@ font-family: 'Staatliches', sans-serif;
     flex-direction: row;
     justify-content: center;
     gap:2rem;
-    margin:2rem auto;
+    margin:0 0 1rem 0;
+    
 }
 .confirm-modal-button-section button:first-child{
     height:2rem;
@@ -45,7 +52,7 @@ font-family: 'Staatliches', sans-serif;
     color:rgb(128, 0, 255);;
     margin:0;
     font-family: 'Rubik', sans-serif;
-    margin:2rem 0;
+   
     
 }
 .confirm-modal-button-section button:first-child:hover{
@@ -64,7 +71,7 @@ font-family: 'Staatliches', sans-serif;
     color:rgb(255, 0, 0);;
     margin:0;
     font-family: 'Rubik', sans-serif;
-    margin:2rem 0;
+    
     
 }
 .confirm-modal-button-section button:last-child:hover{

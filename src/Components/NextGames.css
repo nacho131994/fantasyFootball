@@ -3,9 +3,9 @@
     display: flex;
     flex-direction: column;
     gap:5px;
-    width:400px;
+    width:350px;
     border-radius:10px;
-    margin-top:3rem;
+    margin-top:1rem;
     
     
 }
@@ -34,19 +34,16 @@
 .next-games-header-logos p{
     font-family: 'Staatliches', sans-serif;
     font-size:2rem;
-    margin:0
+    margin:0;
 }
 .next-games-body{
     display:flex;
     flex-direction: row;;
     gap:.5rem;
-    background: linear-gradient(to bottom, #858585, #dcdcdc);
+    background-color: rgb(68, 68, 68);
     padding-top:1rem;
     border-radius:10px;
-    border:2px solid greenyellow;
-  
-  
-
+    border:2px solid greenyellow
 }
 .column{
     width:50%;
@@ -56,9 +53,17 @@
 
 .match{
     display: flex;
+    background-color: rgb(29, 29, 29);
+    border-radius:10px;
+    width:80%;
+    margin:10px auto
+   
 }
 .match p{
     font-family: 'Staatliches', sans-serif;
+    color:white
+   
+ 
 }
 .result-match{
     display: flex;
@@ -67,6 +72,5 @@
     text-align: center;
     margin:0;
     padding:0 5px;
-   
-    color:white
+    color:rgb(0, 0, 0)
 }

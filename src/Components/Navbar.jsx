@@ -85,15 +85,6 @@ const Navbar = () => {
                 REGLAS
               </Link>
             </li>
-            <li className="nav-item">
-              <Link
-                to="/sobrenosotros"
-                className="nav-link active"
-                aria-current="page"
-              >
-                SOBRE NOSOTROS
-              </Link>
-            </li>
           </ul>
 
           <form className="d-flex" role="search">

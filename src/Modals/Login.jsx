@@ -7,7 +7,7 @@ const Login = ({ handleCloseLogin }) => {
   const [showRegistration, setShowRegistration] = useState(false);
 
   const handleShowRegistration = () => {
-    setShowRegistration(true);
+    setShowRegistration(!showRegistration);
   };
   return (
     <div className="login-modal">
@@ -18,7 +18,11 @@ const Login = ({ handleCloseLogin }) => {
             <input type="text" placeholder="Usuario" />
           </div>
           <div className="password">
-            <input type="password" placeholder="Contraseña" />
+            <input
+              type="password"
+              placeholder="Contraseña"
+              autocomplete="off"
+            ></input>
           </div>
         </div>
 
@@ -36,16 +40,13 @@ const Login = ({ handleCloseLogin }) => {
           <>
             <div className="registration-body">
               <div className="user-username">
-                <p>Usuario:</p>
-                <input type="text"></input>
+                <input type="text" placeholder="Usuario"></input>
               </div>
               <div className="user-password">
-                <p>Contraseña:</p>
-                <input type="password"></input>
+                <input type="password" placeholder="Contraseña"></input>
               </div>
               <div className="club-name">
-                <p>Nombre del equipo:</p>
-                <input type="text"></input>
+                <input type="text" placeholder="Nombre del Equipo"></input>
               </div>
             </div>
             <div className="login-buttons registration-buttons">
