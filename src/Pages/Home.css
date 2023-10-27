@@ -1,13 +1,10 @@
 .section-container-home{
     background:url("../images/economia_14508604_126808_1706x960.jpg")
-    
 }
-
 .banner-img{
     width:13rem;
     height:6rem;
 }
-
 .banner-img-laliga{
     width:6rem;
     height: 5rem;
@@ -51,8 +48,8 @@
    font-family: 'Staatliches', sans-serif;
    margin:1rem auto;
    font-size:3rem;
-   color:white;
-   -webkit-text-stroke: 1px rgb(0, 0, 0);
+   color:rgb(0, 0, 0);
+  
 }
 .section-container-home p{
     display: flex;
@@ -70,10 +67,9 @@
     padding:.5rem;
     border:none;
     border-radius:10px;
-    background-color: rgb(66, 191, 104);
-    box-shadow: -3px -3px 7px #ffffff, 3px 3px 7px rgb(25, 134, 3);;
-    color:rgb(255, 255, 255);
-    font-family: 'Rubik', sans-serif;
+   background-color: rgb(21, 179, 21);
+   color:white;
+   border:2px solid green
 }
 .section-container-home button:hover{
     transform: scale(1.2);

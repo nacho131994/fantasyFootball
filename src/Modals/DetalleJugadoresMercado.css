@@ -18,36 +18,38 @@
 }
 .player-details-card{
     border:1px solid;
-    width:70rem;
+    width:fit-content;
     margin:3rem auto;
-    background-color: rgb(79, 79, 79);
+    background-color: rgb(0, 0, 0);
     color:white;
     border:2px solid greenyellow;
     font-family: 'Rubik', sans-serif;
     font-size:12px;
+    border-radius:10px
 
 }
 .player-details-card section{
     background-color: rgb(0, 0, 0);
     color:greenyellow;
     height:3rem;
-    align-items: centeR;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
     justify-content: center;
     font-size:30px;
     font-family: 'Staatliches', sans-serif;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 .player-info-section{
     display: flex;
     flex-direction: row;
     text-align: left;
+    background-color: rgb(41, 41, 41);
 }
 .player-picture{
 width:10rem;
 height:13rem;
 border:2px solid greenyellow;
+border-radius:10px;
+margin:1rem
 
 }
 .player-info{
@@ -55,12 +57,18 @@ border:2px solid greenyellow;
     grid-template-columns: repeat(4, 1fr);
     justify-content: center;
     align-items: center;
-    margin:2rem auto 0 auto;
+    padding:0px 2rem;
     gap: 10px; 
     text-align: center;
 }
 .player-info p{
-  width:100%
+  width:100%;
+  margin:0;
+  background-color: rgb(55, 55, 55);
+  border-radius: 10px;
+}
+.player-info-button-section{
+    background-color: rgb(41, 41, 41);
 }
 .player-info-button-section button:first-child{
     height:2rem;
