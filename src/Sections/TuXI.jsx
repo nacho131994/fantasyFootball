@@ -22,12 +22,14 @@ const TuXI = () => {
         <img src={Pitch} />
       </div>
       <div className="tuxi-button-section">
-        <div className="remaining-time">
-          <p>Tiempo restante:</p>
-          <p className="timer">1 dia 2 h 54 min</p>
+        <div className="tuxi-time-remaining">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <p>CONFIRMAR EN:</p>
+          <p>2d 3h 54m</p>
         </div>
-
-        <button> GUARDAR</button>
+        <div className="tuxi-button-section-button">
+          <button> GUARDAR</button>
+        </div>
       </div>
     </div>
   );

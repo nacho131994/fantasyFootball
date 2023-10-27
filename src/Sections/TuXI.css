@@ -46,26 +46,35 @@
     color:rgb(255, 255, 255);
    
 }
-.remaining-time p{
-    margin:0;
-    background-color: black;
+.tuxi-time-remaining{
+    background-color: rgb(248, 248, 248);
+    border:2px solid rgb(0, 0, 0);
+    color:black;
+    border-radius:10px;
+    padding:0rem 1rem
+}
+.fa-triangle-exclamation{
+    color:red
+}
+.tuxi-time-remaining p{
+ margin:0;
  
+font-family: 'Staatliches', sans-serif;
 }
 .tuxi-button-section button{
     padding:5px;
     border-radius: 10px;
     color: rgb(255, 255, 255);
-    background: linear-gradient(to bottom, #740dc3, #b46fe8);
-    border:2px solid #4f1d75;
+    background-color:rgb(99, 162, 70); ;
+    border:2px solid gold;
     display:flex;
     align-items: centeR;
     justify-content:center;
     text-align: center;
 }
 .tuxi-button-section button:hover{
-  background-color: rgb(121, 167, 52);;
-  border:2px rgb(121, 167, 52);;
-  color:rgb(255, 255, 255);
+ transform: scale(1.2);
+ transition: ease-in 0.3s;
 }
 .tuxi-button-section p{
     display:flex;
