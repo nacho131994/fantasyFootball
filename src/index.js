@@ -1,10 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  errorElement,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 //STYLES
 import "../src/index.css";
 //VIEWS
@@ -12,7 +8,7 @@ import Home from "./Pages/Home.jsx";
 import Plantilla from "./Pages/Pantilla";
 import Estadisticas from "./Pages/Estadisticas.jsx";
 import Mercado from "./Pages/Mercado.jsx";
-import Error from "./Pages/Error.jsx";
+
 import Reglas from "./Pages/Reglas";
 import SobreNosotros from "./Pages/SobreNosotros";
 
@@ -20,7 +16,6 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
-    errorElement: <Error />,
   },
   {
     path: "/plantilla",

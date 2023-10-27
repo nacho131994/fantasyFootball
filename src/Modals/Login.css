@@ -185,3 +185,10 @@ margin:0;
 .registration-buttons{
   margin-top:2rem
 }
+
+/*RESPONSIVE*/
+@media (max-width:480px){
+  .login-container {
+    width:95%
+  }
+}

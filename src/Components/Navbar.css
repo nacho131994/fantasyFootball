@@ -7,8 +7,7 @@
     align-items: center;
     text-align: center;
     gap:3rem;
-    font-family: 'Rubik', sans-serif;
-    
+    font-family: 'Rubik', sans-serif; 
 }
 .navbar-nav{
     display: flex;
@@ -16,7 +15,6 @@
     text-align: center;
     justify-content: center;
     margin:0 auto;
-  
 }
 .branding{
     display:flex;
@@ -68,4 +66,41 @@
     background-color:greenyellow;
     padding:5px;
     border-radius: 10px;
+}
+
+/*RESPONSIVE*/
+@media (max-width:480px){
+    .reglas-container{
+        margin:0px 1.5rem
+    }
+    .how-to-score-points{
+        display:flex;
+        flex-direction: column;
+        width:100%;
+    }
+    .rule p{
+      
+        display: flex;
+       width:100%;
+       text-align: center;
+        
+    }
+    
+}
+/*RESPONSIVE*/
+@media (max-width:480px){
+    .navbar-nav{
+        padding-top:1rem
+    }
+    .branding{
+        display:flex;
+        flex-direction: column;
+        text-align: center;
+        margin:0 ;
+    }
+    .d-flex{
+       padding:2rem;
+       display:flex;
+       justify-content: center;
+    }  
 }

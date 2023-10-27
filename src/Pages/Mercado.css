@@ -24,3 +24,13 @@
     text-align: center;;
     width:100%
 }
+
+/*RESPONSIVE*/
+@media (max-width:480px){
+    .mercado-container{
+        height: fit-content;
+    }
+    .mercado-title h1{
+        font-size: 3rem;
+    }
+}

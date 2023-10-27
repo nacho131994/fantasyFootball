@@ -11,7 +11,9 @@ const Plantilla = () => {
       <div className="plantilla-container">
         <Navbar />
         <div className="plantilla-header">
-          <div className="team-name">NOMBRE DE LA PLANTILLA</div>
+          <div className="team-name">
+            <h1>NOMBRE DE LA PLANTILLA</h1>
+          </div>
           <div className="team-data">
             <p>
               <i className="fa-solid fa-coins team-data-icons"></i> DINERO DEL

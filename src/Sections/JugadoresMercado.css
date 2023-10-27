@@ -67,109 +67,163 @@
 .players-searcher button{
     color:rgb(255, 255, 255);
     border:2px solid greenyellow;
-    border-radius:10px;
+    border-radius:50%;
     padding:5px;
     background-color:rgb(0, 0, 0);
-    height:2.5rem
+    height:2.5rem;
+    width:2.5rem
 }
 .players-searcher button:hover{
     background-color: rgb(124, 194, 20);
     color:rgb(255, 255, 255);
-    border:none
+    border:2px solid rgb(124, 194, 20)
 }
-.players-list-container{
-    background-color: rgb(37, 37, 37);
-   width:90%;
-   padding:2rem 4rem 2rem 4rem;
-   margin:0 auto;
-   border-radius:10px;
-   border:2px solid greenyellow
-
-}
-.players-list{
-    border:none;
-    width:100%;
-    display:flex; flex-direction: row;
-    gap:2rem
-}
-.players-list-name p{
-    display: flex;
-    align-items: center;
-    text-align: center;
-  
-    color:greenyellow;
-    font-family: 'Staatliches', sans-serif;
-    font-size:20px;
-    padding:0px 5px;
-    margin:0 0
-}
-.players-list ul{
-    list-style:none;
+.mercado-players-container{
+    background-color: rgb(1, 1, 1);
+    border-radius:10px;
     display:flex;
     flex-direction: column;
-    margin:0;
-    padding:0;
-    width:100%;
-    color:white
+    color:white;
+    width:90%;
+   
+   margin:3rem auto;
+   padding:1rem 2rem
 }
-.players-list ul li{
+.mercado-player-section{
+    display: flex;
+}
+.mercado-player{
     display: flex;
     flex-direction: row;
-    align-items: left;
-    
-    background-color: rgb(59, 59, 59);
+    background-color: rgb(57, 57, 57);
     border-radius:10px;
-    width:100%;
-    height:fit-content;
-    padding:2px;
-    justify-content: space-around;
-    margin-top:5px;
-    padding:0 5px
-}
-.players-list-data{
-    display: flex;
+    margin:5px;
     align-items: center;
-    gap:6rem;
-    padding:0     
+    justify-content: left;
+    margin:5px;
+   padding:0rem 0;
+   width:fit-content;
+   width:100%;
+    
 }
-.players-list-data p{
+.mercado-player-name p{
     margin:0;
-    display: flex;
-    align-items: center;
-    font-family: 'Rubik', sans-serif;
-    font-size:15px
-}
-.players-list-data-item{
-    display:flex;
-    flex-direction: row;
-    gap:3px;
-    align-items: center;
-}
-.players-list-data-item i{
-  color:rgb(153, 255, 0)
-}
-.players-list-data-button-section{
-    display: flex;
-    align-items: center;
-    gap:5px;
-}
-.players-list-data-button-section p{
-    height:2rem;
-    padding:5px;
-    display: flex;
-    flex: row;
-    cursor:pointer;
-    border:1px solid greenyellow;
-   border-radius:10px;
-    color:greenyellow;
-    margin:0;
-    font-family: 'Rubik', sans-serif;
-    font-size:10px;
-    align-items: center;
-}
-.players-list-data-button-section p:hover{
-    background-color:rgb(153, 255, 0);
-    border-radius: 10px ;
+    text-align: left;
+    
     color:rgb(0, 0, 0);
-    border:1px solid rgb(153, 255, 0);
+    background-color: greenyellow;
+    border-radius:10px;
+    text-align: center;
+    font-family: 'Staatliches', sans-serif;
+    font-size:20px
+}
+.mercado-player-name{
+    align-items: center;
+    width:20%
+    
+}
+
+.mercado-player-stats{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width:80%;
+    justify-content: space-evenly;
+   
+}
+.mercado-player-stats-item{
+    display: flex;
+    align-items: center;
+    gap:5px
+}
+.mercado-player-stats-item i{
+color:greenyellow
+} 
+.mercado-player-stats p{
+   margin:0
+}
+.mercado-players-buttons{
+  
+    display: flex;
+    gap:10px;
+    justify-content: end;
+}
+.mercado-players-buttons button{
+    color:rgb(208, 78, 255);
+    border:1px solid rgb(208, 78, 255);
+    background-color: rgb(0, 0, 0);
+    padding:3px;
+    border-radius:10px
+}
+.mercado-players-buttons button:first-child:hover{
+ 
+    border:1px solid rgb(207, 160, 255);
+    background-color: rgb(207, 160, 255);;
+    color:rgb(255, 255, 255);
+ 
+}
+.mercado-players-buttons button:last-child:hover{
+ 
+    border:1px solid rgb(207, 160, 255);
+    background-color: rgb(207, 160, 255);;
+    color:rgb(255, 255, 255);
+}
+
+/*RESPONSIVE*/
+@media (max-width:480px){
+    .mercado-body-players{
+        width:100%
+    }
+    .current-money{
+        width:100%;
+        margin: 1rem 0;
+        
+    }
+    .current-money p{
+     font-size:1.5rem
+    }
+    .current-money-digits{
+        font-size:1.5rem
+    }
+    .players-list-section{
+       
+        display: flex;
+        flex-direction: column;
+    }
+    .players-searcher{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:5px
+    }
+    .searchbar input{
+        height:2rem
+    }
+    .mercado-players-container{
+        width:100%;
+        padding:0
+    }
+    .mercado-player-name{
+        width:fit-content
+    }
+    .mercado-player-section{
+       width:100%
+    }
+    .mercado-player{
+  
+       width:80%
+    }
+    .mercado-players-buttons{
+        width:20%;
+        display: flex;
+        flex-direction: ROW;
+        MARGIN:0;
+        GAP:0;
+        align-items: center;
+    }
+    .mercado-players-buttons button{
+        width:fit-content;
+        height: fit-content;
+        font-size:10px
+    }
 }

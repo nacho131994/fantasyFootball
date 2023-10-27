@@ -45,3 +45,23 @@ td{
     border:1px solid;
     padding:0px 5px 
 }
+
+/*RESPONSIVE*/
+@media (max-width:480px){
+    .reglas-container{
+        margin:0px 1.5rem
+    }
+    .how-to-score-points{
+        display:flex;
+        flex-direction: column;
+        width:100%;
+    }
+    .rule p{
+      
+        display: flex;
+       width:100%;
+       text-align: center;
+        
+    }
+    
+}

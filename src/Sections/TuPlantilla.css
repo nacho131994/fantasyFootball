@@ -14,5 +14,11 @@
     color:rgb(0, 0, 0)
 }
 
-
+/*RESPONSIVE*/
+@media (max-width:480px){
+    .your-team-body{
+        width:100%;
+        height:fit-content
+    }
+}
 

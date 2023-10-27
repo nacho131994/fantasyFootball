@@ -30,6 +30,12 @@ const JugadoresMercado = () => {
       </div>
       <div className="players-list-section">
         <div className="players-searcher">
+          <div className="searchbar">
+            <input type="text" placeholder="Busca un jugador" />
+            <button>
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
           <select placeholder="">
             <option value="" disabled selected>
               Buscar por posición
@@ -50,60 +56,49 @@ const JugadoresMercado = () => {
             <option value="opcion4">Mayor puntuacion </option>
             <option value="opcion5">Menor puntuacion</option>
           </select>
-
-          <div className="searchbar">
-            <input type="text" placeholder="Busca un jugador" />
-            <button>BUSCAR</button>
-          </div>
         </div>
-        <div className="players-list-container">
-          <div className="players-list">
-            <ul>
-              <li>
-                <div className="player-list-data">
-                  <div className="players-list-name">
-                    <p>VINICIUS</p>
-                  </div>
-                </div>
-                <div className="players-list-data">
-                  <div className="players-list-data-item">
-                    <i class="fa-solid fa-star"></i>
-                    <p>250pts</p>
-                  </div>
-                  <div className="players-list-data-item">
-                    <i class="fa-solid fa-money-bill-trend-up"></i>
-                    <p>30000€</p>
-                  </div>
-                  <div className="players-list-data-item">
-                    <i class="fa-solid fa-futbol"></i>
-                    <p>GOLES</p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-            <div className="players-list-data-button-section">
-              <p onClick={handleShowDetails}>DETALLES</p>
-              <p onClick={handleShowConfirmModal}>FICHAR</p>
+      </div>
+      <div className="mercado-players-container">
+        <div className="mercado-player-section">
+          <div className="mercado-player">
+            <div className="mercado-player-name">
+              <p>vinicius</p>
+            </div>
+            <div className="mercado-player-stats">
+              <div className="mercado-player-stats-item">
+                <i class="fa-solid fa-star"></i> <p>4</p>
+              </div>
+              <div className="mercado-player-stats-item">
+                <i class="fa-solid fa-money-bill-trend-up"></i> <p>4</p>
+              </div>
+              <div className="mercado-player-stats-item">
+                <i class="fa-solid fa-futbol"></i> <p>4</p>
+              </div>
             </div>
           </div>
+          <div className="mercado-players-buttons">
+            <button onClick={handleShowConfirmModal}>FICHAR</button>
+            <button onClick={handleShowDetails}>DATOS</button>
+          </div>
         </div>
-        {showDetails ? (
-          <DetalleJugadoresMercado
-            handleCloseDetails={handleCloseDetails}
-            handleShowConfirmModal={handleShowConfirmModal}
-          />
-        ) : (
-          ""
-        )}
-        {showConfirmModal ? (
-          <ConfirmModal
-            handleCloseConfirmModal={handleCloseConfirmModal}
-            action={"FICHAR"}
-          />
-        ) : (
-          ""
-        )}
       </div>
+
+      {showDetails ? (
+        <DetalleJugadoresMercado
+          handleCloseDetails={handleCloseDetails}
+          handleShowConfirmModal={handleShowConfirmModal}
+        />
+      ) : (
+        ""
+      )}
+      {showConfirmModal ? (
+        <ConfirmModal
+          handleCloseConfirmModal={handleCloseConfirmModal}
+          action={"FICHAR"}
+        />
+      ) : (
+        ""
+      )}
     </div>
   );
 };

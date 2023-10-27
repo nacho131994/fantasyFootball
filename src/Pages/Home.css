@@ -1,5 +1,8 @@
+
 .section-container-home{
-    background:url("../images/economia_14508604_126808_1706x960.jpg")
+    background:url("../images/economia_14508604_126808_1706x960.jpg");
+    width: 100%
+ 
 }
 .banner-img{
     width:13rem;
@@ -49,7 +52,6 @@
    margin:1rem auto;
    font-size:3rem;
    color:rgb(0, 0, 0);
-  
 }
 .section-container-home p{
     display: flex;
@@ -102,7 +104,6 @@
     background-color: rgb(0, 0, 0);
     padding:1rem 2rem 1rem 2rem;
     border-radius:10px;
-    
     color:white
 }
 .your-league-body p{
@@ -114,9 +115,8 @@
     display:flex;
     flex-direction: column;;
     justify-content: space-evenly;
-   margin:0;
+    margin:0;
     background:url("../images/zig-zag.svg");
-  
 }
 .matchdays-section-title{
     color:white;
@@ -124,14 +124,11 @@
     text-align: center;
     align-items: center;
     margin:0;
-    
 }
 .matchdays-section-title h1{
     margin:0;
     font-family: 'Staatliches', sans-serif;
-    font-size:3rem;
-    
-    
+    font-size:3rem; 
 } 
 .matchdays-section-body{
     display: flex;
@@ -140,14 +137,54 @@
     text-align: center;
     gap:10rem;
     height:fit-content;
-    
 }
 .classification-section{
     display: flex;
     flex-direction: column;
     align-items: center;
-
     background:url("../images/zig-zag.svg");
     height:100vh;
     margin-top:2rem
+}
+
+/*RESPONSIVE*/
+@media (max-width:480px){
+    .section-container-home{
+        background: url("../images/fondo-responsive.jpg");
+        background-size: contain;
+        background-repeat: no-repeat  ;
+        background-position-y:9rem
+    }
+   .home-banner{
+    width:100%
+   }
+   .home-banner h5{
+    font-size:3rem
+   }
+   .welcome-banner{
+    display: flex;
+    flex-direction: column;
+    gap:5px
+   }
+   .welcome-banner h2{
+ font-size: 3rem;
+   }
+   .banner-img{
+   display: none;
+   }
+   .banner-img-laliga{
+    width:3rem;
+    height: 3rem;
+   }
+   .your-league-container{
+    margin:2rem auto
+   }
+   .matchdays-section-body{
+    display: flex;
+    flex-direction: column;
+    gap:1rem
+   }
+   .classification-section{
+    width:100%
+   }
 }
