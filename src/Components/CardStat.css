@@ -89,4 +89,7 @@
         width:95%;
         height:fit-content
     }
+    .card-stat-title{
+        background-color: rgb(71,71,71);
+    }
 }
