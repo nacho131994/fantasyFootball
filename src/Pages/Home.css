@@ -111,25 +111,42 @@
     border-radius:10px;
     font-size:15px
 }
+.matchdays-and-standings{
+  display: flex;
+  margin-top:3rem;
+  gap:5rem
+}
 .matchdays-section{
     display:flex;
     flex-direction: column;;
     justify-content: space-evenly;
     margin:0;
     background:url("../images/zig-zag.svg");
+ 
 }
+.carousel{
+   margin-left:5rem;
+    width:500px
+}
+.carousel-inner{
+    margin-left:76px
+}
+
 .matchdays-section-title{
     color:white;
     justify-content: center;
     text-align: center;
     align-items: center;
-    margin:0;
+    margin:1rem;
+   
 }
-.matchdays-section-title h1{
-    margin:0;
-    font-family: 'Staatliches', sans-serif;
-    font-size:3rem; 
+.matchdays-section-title img{
+   width:30rem;
+   height:6rem
 } 
+.matchdays-section-title H1{
+  font-family: 'Staatliches', sans-serif;
+ } 
 .matchdays-section-body{
     display: flex;
     justify-content: center;
@@ -144,8 +161,8 @@
     align-items: center;
     background:url("../images/zig-zag.svg");
     height:100vh;
-    margin-top:2rem
 }
+
 
 /*RESPONSIVE*/
 @media (max-width:480px){
@@ -179,6 +196,42 @@
    .your-league-container{
     margin:2rem auto
    }
+   .matchdays-and-standings{
+    display: flex;
+   flex-direction: column;
+  }
+  .matchdays-section-title img{
+    width:15rem;
+    height:3rem
+ }
+ .carousel{
+    margin:0;
+    width:fit-content
+ }
+ .carousel-inner{
+    margin-left:0;
+}
+.carousel-control-prev{
+    margin-top:-300px
+}
+.carousel-control-prev-icon{
+    background-color: rgb(61, 61, 61);
+    box-shadow: 4px 4px 8px -1px rgb(0, 0, 0),
+    -4px -4px 8px -1px rgb(150, 150, 150);
+    border-radius:50%;
+   
+}
+.carousel-control-next-icon{
+    background-color: rgb(61, 61, 61);
+    box-shadow: 4px 4px 8px -1px rgb(0, 0, 0),
+    -4px -4px 8px -1px rgb(150, 150, 150);
+    border-radius:50%
+}
+.carousel-control-next{
+    margin-top:-300px
+}
+
+
    .matchdays-section-body{
     display: flex;
     flex-direction: column;

@@ -13,7 +13,7 @@ const DetalleJugadoresMercado = ({
       <div className="player-details-card">
         <section>VINICIUS JR</section>
         <div className="player-info-section">
-          <div>
+          <div className="player-info-section-photo-container">
             <img
               src="https://www.realmadrid.com/img/vertical_380px/vinicius_380x501_20230810055554.jpg"
               alt="foto de jugador"
@@ -21,6 +21,7 @@ const DetalleJugadoresMercado = ({
             />
           </div>
           <div className="player-info">
+            <p>PARTIDOS JUGADOS:</p>
             <p>GOLES ANOTADOS:</p>
             <p>ASISTENCIAS:</p>
             <p>PASES ACERTADOS PP:</p>

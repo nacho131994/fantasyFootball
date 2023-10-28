@@ -69,10 +69,14 @@ margin:1rem
 }
 .player-info-button-section{
     background-color: rgb(41, 41, 41);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    ;
 }
 .player-info-button-section button:first-child{
-    height:2rem;
-    padding:5px;
+    height:3rem;
+    width:9rem;
+    padding:7px;
    background-color: rgb(255, 255, 255);;
     cursor:pointer;
    border:1px solid rgb(128, 0, 255);
@@ -90,8 +94,9 @@ margin:1rem
     border:1px solid rgb(207, 160, 255)
       }
 .player-info-button-section button:last-child{
-    height:2rem;
-    padding:5px;
+    height:3rem;
+    width:9rem;
+    padding:7px;
     background-color: rgb(255, 255, 255);;
     cursor:pointer;
     border:1px solid rgb(255, 0, 0);
@@ -107,4 +112,36 @@ margin:1rem
     border-radius: 10px ;
     color:rgb(255, 255, 255);
     border:1px solid rgb(255, 0, 0);
-          }
+}
+
+/*RESPONSIVE*/
+@media (max-width:480px){
+    .mercado-body-players-details{
+        width:100%;
+        
+    }
+    .player-details-card{
+       width:95%;
+    }
+    .player-info-section{
+        display: flex;
+        flex-direction: column;
+    }
+    .player-info-section-photo-container{
+        text-align: center;
+        width:100%;
+    }
+    .player-info-section-photo-container img{
+        width:7rem;
+        height:9rem;
+    }
+    .player-info{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: center;
+        align-items: center;
+        padding:0px 2rem;
+        gap: 10px; 
+        text-align: center;
+    }
+}

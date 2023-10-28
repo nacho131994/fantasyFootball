@@ -58,15 +58,57 @@ const Home = () => {
         </div>
         <div className="matchdays-section">
           <div className="matchdays-section-title">
-            <h1>JORNADAS</h1>
+            <img src="https://www.fifplay.com/img/public/laliga-logo-horizontal.png" />
+            <h1>RESULTADOS</h1>
           </div>
-          <div className="matchdays-section-body">
-            <NextGames matchWeek={"JORNADA ANTERIOR"} result={"1-0"} />
+          <div className="matchdays-and-standings">
+            <div className="matchdays-section-body">
+              <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <NextGames
+                      className="nextgame"
+                      matchWeek={"JORNADA ANTERIOR"}
+                      result={"1-0"}
+                    />
+                  </div>
+                  <div class="carousel-item">
+                    <NextGames
+                      className="nextgame"
+                      matchWeek={"SIGUIENTE JORNADA"}
+                    />
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExample"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExample"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
 
-            <NextGames matchWeek={"SIGUIENTE JORNADA"} />
-          </div>
-          <div className="classification-section">
-            <LaLigaStandings />
+            <div className="classification-section">
+              <LaLigaStandings />
+            </div>
           </div>
         </div>
         {showJoinALeagueModal && (
