@@ -5,11 +5,12 @@ import "../Pages/Plantilla.css";
 import Navbar from "../Components/Navbar";
 import TuPlantilla from "../Sections/TuPlantilla";
 import TuXI from "../Sections/TuXI";
+import Footer from "../Components/Footer";
 const Plantilla = () => {
   return (
     <>
+      <Navbar />
       <div className="plantilla-container">
-        <Navbar />
         <div className="plantilla-header">
           <div className="team-name">
             <h1>NOMBRE DE LA PLANTILLA</h1>
@@ -34,6 +35,7 @@ const Plantilla = () => {
           <TuPlantilla />
           <TuXI />
         </div>
+        <Footer />
       </div>
     </>
   );

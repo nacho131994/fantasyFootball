@@ -56,12 +56,14 @@
     background-color: rgb(29, 29, 29);
     border-radius:10px;
     width:80%;
-    margin:10px auto
+    margin:10px auto;
+  justify-content:center
    
 }
 .match p{
     font-family: 'Staatliches', sans-serif;
-    color:white
+    color:white;
+    text-align: center;
    
  
 }

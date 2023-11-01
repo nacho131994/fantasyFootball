@@ -1,41 +1,71 @@
 import React, { useState } from "react";
 //STYLES
 import "../Modals/Login.css";
-import { Form } from "react-router-dom";
 
-const Login = ({ handleCloseLogin }) => {
+const Login = ({ handleCloseLogin, handleShowLogedView, showLogedView }) => {
   const [showRegistration, setShowRegistration] = useState(false);
 
   const handleShowRegistration = () => {
     setShowRegistration(!showRegistration);
   };
+
   return (
     <div className="login-modal">
       <div className="login-container">
-        <div className="login-container-header">INICIA SESION</div>
-        <div className="login-credentials">
-          <div className="user">
-            <input type="text" placeholder="Usuario" />
-          </div>
-          <div className="password">
-            <input
-              type="password"
-              placeholder="Contraseña"
-              autocomplete="off"
-            ></input>
-          </div>
-        </div>
+        {showLogedView ? (
+          <>
+            <div className="login-container-header">CIERRA SESION</div>
+            <div className="login-buttons">
+              <button
+                className="accept-login"
+                onClick={() => {
+                  handleShowLogedView();
+                  handleCloseLogin();
+                }}
+              >
+                ACEPTAR
+              </button>
+              <button className="close-login" onClick={handleCloseLogin}>
+                CANCELAR
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="login-container-header">INICIA SESION</div>
+            <div className="login-credentials">
+              <div className="user">
+                <input type="text" placeholder="Usuario" />
+              </div>
+              <div className="password">
+                <input
+                  type="password"
+                  placeholder="Contraseña"
+                  name="password"
+                ></input>
+              </div>
+            </div>
+            <div className="login-buttons">
+              <button
+                className="accept-login"
+                onClick={() => {
+                  handleShowLogedView();
+                  handleCloseLogin();
+                }}
+              >
+                Entrar
+              </button>
+              <button className="close-login" onClick={handleCloseLogin}>
+                Cerrar
+              </button>
+            </div>
+            <div className="register-section">
+              ¿Aún no tienes cuenta?{" "}
+              <p onClick={handleShowRegistration}>REGISTRATE</p>
+            </div>
+          </>
+        )}
 
-        <div className="login-buttons">
-          <button className="accept-login">Entrar</button>
-          <button className="close-login" onClick={handleCloseLogin}>
-            Cerrar
-          </button>
-        </div>
-        <div className="register-section">
-          ¿Aún no tienes cuenta?{" "}
-          <p onClick={handleShowRegistration}>REGISTRATE</p>
-        </div>
         {showRegistration && (
           <>
             <div className="registration-body">

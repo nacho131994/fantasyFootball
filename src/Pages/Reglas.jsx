@@ -3,6 +3,7 @@ import React from "react";
 import "../Pages/Reglas.css";
 //COMPONENTS
 import Navbar from "../Components/Navbar";
+import Footer from "../Components/Footer";
 
 const Reglas = () => {
   return (
@@ -97,6 +98,7 @@ const Reglas = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

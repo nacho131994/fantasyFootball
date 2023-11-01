@@ -5,8 +5,10 @@ import ReactDOM from "react-dom";
 import Login from "../Modals/Login.jsx";
 //STYLES
 import "../Components/Navbar.css";
+//IMAGES
+import Logo from "../images/footballfantay-logo.png";
 
-const Navbar = () => {
+const Navbar = ({ handleShowLogedView, showLogedView }) => {
   const [showLogin, setShowLogin] = useState(false);
 
   const handleShowLogin = () => {
@@ -21,14 +23,19 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg  bg-dark ">
       <div className="container-fluid">
         <div className="branding">
-          <a className="navbar-brand ">
-            <strong>Football</strong>
-            <em>Fantasy.</em>
-          </a>
-          <img
-            className="laliga-logo"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/LaLiga_2023_Horizontal_Logo.svg/1200px-LaLiga_2023_Horizontal_Logo.svg.png"
-          />
+          <div className="footballfantasy-logo">
+            <img src={Logo} />
+          </div>
+          <div className="branding-name-and-ligalogo">
+            <a className="navbar-brand ">
+              <strong>Football</strong>
+              <em>Fantasy.</em>
+            </a>
+            <img
+              className="laliga-logo"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/LaLiga_2023_Horizontal_Logo.svg/1200px-LaLiga_2023_Horizontal_Logo.svg.png"
+            />
+          </div>
         </div>
 
         <button
@@ -93,7 +100,7 @@ const Navbar = () => {
               className="login-button"
               onClick={handleShowLogin}
             >
-              Inicia Sesión
+              {showLogedView ? "CERRAR SESION" : "INICIAR SESIÓN"}
             </button>
           </form>
         </div>
@@ -101,7 +108,11 @@ const Navbar = () => {
 
       {showLogin &&
         ReactDOM.createPortal(
-          <Login handleCloseLogin={handleCloseLogin} />,
+          <Login
+            handleCloseLogin={handleCloseLogin}
+            handleShowLogedView={handleShowLogedView}
+            showLogedView={showLogedView}
+          />,
           document.body
         )}
     </nav>

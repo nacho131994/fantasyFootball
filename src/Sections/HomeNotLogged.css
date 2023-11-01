@@ -1,0 +1,96 @@
+.home-not-logged-container{
+background: url("../images/zig-zag.svg");
+border-bottom:2px solid greenyellow
+    
+}
+.home-not-logged-body{
+    display: flex;
+    flex-direction: column;
+}
+.home-not-logged-description h1{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Staatliches', sans-serif;
+    color:white;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    
+}
+.home-not-logged-options-and-button{
+    display: flex;
+    gap:30%
+}
+.home-not-logged-options{
+    padding:1rem;
+    background-color: rgba(0, 0, 0, 0.46);
+    border-radius:10px
+}
+.options-item{
+    display: flex;
+   
+    align-items: center;
+
+}
+.options-item p{
+    font-size:20px;
+    font-family: 'Rubik', sans-serif;
+    margin:1px ; color:white
+}
+.options-item i{
+color: greenyellow;
+width:2rem
+}
+.home-not-logged-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-not-logged-button button{
+ padding:1rem 2rem;
+ border-radius:10px;
+ background-color: rgb(21, 179, 21);;
+ font-size:20px;
+ border:2px solid green;
+ font-family: 'Rubik', sans-serif;
+ color:white
+}
+.home-not-logged-button button:hover{
+ transform: scale(1.2);
+ transition: ease-in 0.3s;
+}
+
+/*RESPONSIVE*/
+
+@media (max-width:480px){
+    .home-not-logged-container{
+      background: url("https://us.123rf.com/450wm/efks/efks1806/efks180600035/123999955-el-estadio-el-estadio-de-f%C3%BAtbol-imaginario-se-modela-y-renderiza.jpg");
+        background-repeat: no-repeat;
+        background-size:cover ;
+        background-position-x:-70px;
+        height:auto
+    }
+    .home-not-logged-description h1{
+        padding:2rem 1rem;
+ font-size:25px;
+        
+    }
+    .home-not-logged-options-and-button{
+        display: flex;
+        flex-direction: column;
+    }
+    .options-item p{
+        font-size:15px;
+        font-family: 'Rubik', sans-serif;
+        margin:1px 
+    }
+    .home-not-logged-options{
+        padding:1rem 2rem;
+        display:flex;
+        flex-direction: column;
+        gap:2rem;
+      
+    }
+    .home-not-logged-button{
+      margin:3rem 0
+    }
+}

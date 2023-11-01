@@ -5,6 +5,7 @@ import "../Pages/Estadisticas.css";
 //COMPONENTS
 import Navbar from "../Components/Navbar";
 import CardStat from "../Components/CardStat";
+import Footer from "../Components/Footer";
 
 const Estadisticas = () => {
   return (
@@ -29,6 +30,7 @@ const Estadisticas = () => {
           <CardStat title={"TARJETAS ROJAS"} />
         </div>
       </div>
+      <Footer />
     </>
   );
 };

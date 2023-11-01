@@ -1,16 +1,19 @@
-.sobre-nosotros-container{
+.faq-container{
     height:100vh
 }
-.sobre-nosotros-container{
+.faq-container{
     height:100vh
 }
-.sobre-nosotros-title{
+.faq-title{
     justify-content: center;
     text-align: center;
     align-items: center;
     margin-top:2rem;
     font-family: 'Staatliches', sans-serif;
 }
-.sobre-nosotros-title h1{
+.faq-title h1{
   font-size: 3rem;
+}
+.accordion-body{
+    color:white
 }

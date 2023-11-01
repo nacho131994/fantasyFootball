@@ -6,9 +6,20 @@ import Navbar from "../Components/Navbar";
 import JoinALeague from "../Modals/JoinALeague";
 import NextGames from "../Components/NextGames";
 import LaLigaStandings from "../Components/LaLigaStandings";
+import Footer from "../Components/Footer";
+//SECTIONS
+import HomeLogged from "../Sections/HomeLogged";
+import HomeNotLogged from "../Sections/HomeNotLogged";
 
 const Home = () => {
   const [showJoinALeagueModal, setShowJoinALeagueModal] = useState(false);
+  const [showLogedView, setShowLogedView] = useState(false);
+
+  const handleShowLogedView = () => {
+    setShowLogedView(!showLogedView);
+    console.log("deberia mostrar loged view");
+  };
+
   const handleShowJoinALeagueModal = () => {
     setShowJoinALeagueModal(true);
   };
@@ -18,8 +29,11 @@ const Home = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="section-container-home">
+      <Navbar
+        handleShowLogedView={handleShowLogedView}
+        showLogedView={showLogedView}
+      />
+      <div className="home-container">
         <div className="home-banner">
           <div className="welcome-banner">
             <img
@@ -33,29 +47,18 @@ const Home = () => {
               className="banner-img-laliga"
             />
           </div>
-          <h5>NOMBRE DEL EQUIPO</h5>
+          <h5>{showLogedView ? "NOMBRE DEL EQUIPO" : ""}</h5>
         </div>
-
-        <div className="home-body">
-          <h3>TUS LIGAS</h3>
-
-          <button onClick={handleShowJoinALeagueModal}>
-            Unirse a una liga
-          </button>
-        </div>
-        <div className="your-league-container">
-          <div className="your-league-header">NOMBRE DE LA LIGA</div>
-          <div className="your-league-body">
-            <p>hola</p>
-            <p>hola</p>
-            <p>hola</p>
-            <p>hola</p>
-            <p>hola</p>
-            <p>hola</p>
-            <p>hola</p>
-            <p>hola</p>
+        {showLogedView ? (
+          <div className="section-container-home">
+            <HomeLogged
+              handleShowJoinALeagueModal={handleShowJoinALeagueModal}
+            />
           </div>
-        </div>
+        ) : (
+          <HomeNotLogged />
+        )}
+
         <div className="matchdays-section">
           <div className="matchdays-section-title">
             <img src="https://www.fifplay.com/img/public/laliga-logo-horizontal.png" />
@@ -117,6 +120,7 @@ const Home = () => {
           />
         )}
       </div>
+      <Footer />
     </>
   );
 };

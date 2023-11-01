@@ -1,19 +1,19 @@
 import React from "react";
 //STYLES
-import "../Pages/SobreNosotros.css";
+import "../Pages/Contacto.css";
 //COMPONENTS
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 
-const SobreNosotros = () => {
+const Contacto = () => {
   return (
     <>
       <Navbar />
-      <div className="sobre-nosotros-container">
-        <div className="sobre-nosotros-title">
-          <h1>SOBRE NOSOTROS</h1>
+      <div className="contacto-container">
+        <div className="contacto-title">
+          <h1>CONTACTO</h1>
         </div>
-        <div className="sobre-nosotros-body">
+        <div className="contacto-body">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores
           perspiciatis iste harum vitae non impedit tempora, facere quibusdam,
           quisquam officiis vero dolorum, pariatur sequi cum neque. Voluptates
@@ -34,11 +34,9 @@ const SobreNosotros = () => {
           libero provident culpa!
         </div>
       </div>
-      <div className="footer">
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 };
 
-export default SobreNosotros;
+export default Contacto;

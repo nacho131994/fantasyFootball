@@ -4,6 +4,7 @@ import "../Pages/Mercado.css";
 //COMPONENTS
 import Navbar from "../Components/Navbar";
 import JugadoresMercado from "../Sections/JugadoresMercado";
+import Footer from "../Components/Footer";
 
 const Mercado = () => {
   return (
@@ -17,6 +18,7 @@ const Mercado = () => {
       <div className="mercado-body">
         <JugadoresMercado />
       </div>
+      <Footer />
     </>
   );
 };

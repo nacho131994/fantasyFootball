@@ -8,16 +8,13 @@ const LaLigaStandings = () => {
       <div className="standings-title">CLASIFICACIÓN</div>
       <div className="standings-body">
         <div className="titles-standings">
-          <p>POS.</p>
-
+          <p></p>
           <p>CLUB</p>
           <p>PTS</p>
           <p>PJ</p>
           <p>PG</p>
           <p>PE</p>
           <p>PP</p>
-          <p>GF</p>
-          <p>GC</p>
         </div>
         <div className="results-standings">
           <div className="results-standings-by-team">
@@ -28,8 +25,6 @@ const LaLigaStandings = () => {
             <p>65</p>
             <p>2</p>
             <p>2</p>
-            <p>76</p>
-            <p>76</p>
           </div>
           <div className="results-standings-by-team">
             <p className="blue">2</p>
@@ -39,8 +34,6 @@ const LaLigaStandings = () => {
             <p>65</p>
             <p>2</p>
             <p>2</p>
-            <p>76</p>
-            <p>76</p>
           </div>
           <div className="results-standings-by-team">
             <p className="blue">3</p>
@@ -50,8 +43,6 @@ const LaLigaStandings = () => {
             <p>65</p>
             <p>2</p>
             <p>2</p>
-            <p>76</p>
-            <p>76</p>
           </div>
           <div className="results-standings-by-team">
             <p className="blue">4</p>
@@ -61,8 +52,6 @@ const LaLigaStandings = () => {
             <p>65</p>
             <p>2</p>
             <p>2</p>
-            <p>76</p>
-            <p>76</p>
           </div>
           <div className="results-standings-by-team">
             <p className="orange">5</p>
@@ -72,8 +61,6 @@ const LaLigaStandings = () => {
             <p>65</p>
             <p>2</p>
             <p>2</p>
-            <p>76</p>
-            <p>76</p>
           </div>
           <div className="results-standings-by-team">
             <p className="green">6</p>
@@ -83,8 +70,6 @@ const LaLigaStandings = () => {
             <p>65</p>
             <p>2</p>
             <p>2</p>
-            <p>76</p>
-            <p>76</p>
           </div>
           <div className="results-standings-by-team">
             <p className="grey">7</p>
@@ -94,8 +79,6 @@ const LaLigaStandings = () => {
             <p>65</p>
             <p>2</p>
             <p>2</p>
-            <p>76</p>
-            <p>76</p>
           </div>
           <div className="results-standings-by-team">
             <p className="grey">8</p>
@@ -105,8 +88,6 @@ const LaLigaStandings = () => {
             <p>65</p>
             <p>2</p>
             <p>2</p>
-            <p>76</p>
-            <p>76</p>
           </div>
           <div className="results-standings-by-team">
             <p className="grey">9</p>
@@ -116,8 +97,6 @@ const LaLigaStandings = () => {
             <p>65</p>
             <p>2</p>
             <p>2</p>
-            <p>76</p>
-            <p>76</p>
           </div>
           <div className="results-standings-by-team">
             <p className="grey">10</p>
@@ -127,8 +106,6 @@ const LaLigaStandings = () => {
             <p>65</p>
             <p>2</p>
             <p>2</p>
-            <p>76</p>
-            <p>76</p>
           </div>
           <div className="results-standings-by-team">
             <p className="red">18</p>
@@ -138,8 +115,6 @@ const LaLigaStandings = () => {
             <p>65</p>
             <p>2</p>
             <p>2</p>
-            <p>76</p>
-            <p>76</p>
           </div>
           <div className="results-standings-by-team">
             <p className="red">19</p>
@@ -149,8 +124,6 @@ const LaLigaStandings = () => {
             <p>65</p>
             <p>2</p>
             <p>2</p>
-            <p>76</p>
-            <p>76</p>
           </div>
           <div className="results-standings-by-team">
             <p className="red">20</p>
@@ -160,8 +133,6 @@ const LaLigaStandings = () => {
             <p>65</p>
             <p>2</p>
             <p>2</p>
-            <p>76</p>
-            <p>76</p>
           </div>
         </div>
       </div>

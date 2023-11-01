@@ -60,8 +60,11 @@
     color:white;
     justify-content: space-between;
     background-color: rgb(66, 66, 66);
-    border-radius:10px
+    border-radius:10px;
+    font-family: 'Rubik', sans-serif
 }
+
+
 .results-standings p{
     margin-left:5px;
     display: flex;
@@ -74,28 +77,34 @@
 .blue{
     background-color: rgb(27, 123, 249);
     border-radius:10px;
-    width:10px
+    width:10px;
+    text-align: center;
 }
 .orange{
     background-color: rgb(255, 162, 0);
     border-radius:10px;
-    width:10px
+    width:10px;
+    text-align: center;
 }
 .green{
     background-color: rgb(96, 200, 72);
     border-radius:10px;
-    width:10px
+    width:10px;
+    text-align: center;
 }
 .red{
     background-color: rgb(255, 0, 0);
     border-radius:10px;
-    width:10px
+    width:10px;
+    text-align: center;
 }
 .grey{
     background-color: rgb(130, 130, 130);
     border-radius:10px;
-    width:10px
+    width:10px;
+    padding:0px
 }
+
 /*RESPONSIVE*/
 @media (max-width:480px){
     .standings-container{
@@ -107,10 +116,43 @@
         color:white;
      justify-content: space-between;
    gap:0;
-     font-size:8px
+     font-size:8px;
+     
     }
+    
     .titles-standings p{
       margin:5px 0 0 0;
      font-size:10px
+    }
+   .results-standings-by-team{
+    padding:0 10px;
+    font-family: 'Rubik', sans-serif;
+   }
+   .results-standings-by-team p{
+ 
+    font-family: 'Rubik', sans-serif;
+   }
+    .results-standings p{
+        padding:0
+    }
+    .blue{
+        color:rgb(27, 123, 249);
+        background:none;
+    }
+    .orange{
+        color:rgb(255, 162, 0);
+        background:none;
+    }
+    .green{
+        color:rgb(96, 200, 72);
+        background:none;
+    }
+    .grey{
+        color:rgb(188, 188, 188);
+        background:none;
+    }
+    .red{
+        color:rgb(255, 0, 0);
+        background:none;
     }
 }
