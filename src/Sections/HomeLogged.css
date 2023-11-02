@@ -1,9 +1,14 @@
 .section-container-home{
-    background:url("../images/economia_14508604_126808_1706x960.jpg");
+    background:url("../images/fondo-logged.png");
     width: 100%;
-    height:100%
+    height:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -200px;
+    backdrop-filter: grey;
  
 }
+
 .banner-img{
     width:13rem;
     height:6rem;

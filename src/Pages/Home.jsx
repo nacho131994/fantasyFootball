@@ -56,7 +56,10 @@ const Home = () => {
             />
           </div>
         ) : (
-          <HomeNotLogged />
+          <HomeNotLogged
+            showLogedView={showLogedView}
+            handleShowLogedView={handleShowLogedView}
+          />
         )}
 
         <div className="matchdays-section">

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 //STYLES
 import "../Sections/HomeNotLogged.css";
-//MODALS
-
+//IMAGES
 const HomeNotLogged = () => {
   return (
     <div className="home-not-logged-container">
@@ -14,7 +13,7 @@ const HomeNotLogged = () => {
           </h1>
         </div>
 
-        <div className="home-not-logged-options-and-button">
+        <div className="home-not-logged-options-section">
           <div className="home-not-logged-options">
             <div className="options-item">
               <i class="fa-solid fa-user"></i>
@@ -32,9 +31,6 @@ const HomeNotLogged = () => {
               <i class="fa-solid fa-star"></i>
               <p>Gana puntos según su rendimiento en la vida real</p>
             </div>
-          </div>
-          <div className="home-not-logged-button">
-            <button> Iniciar Sesion</button>
           </div>
         </div>
       </div>
