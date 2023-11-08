@@ -36,6 +36,7 @@ const Footer = () => {
           <img src="https://www.fifplay.com/img/public/laliga-logo-white.png" />
         </div>
       </div>
+      <div className="with-love">Made with ❤️ by Nacho, Edu & Cris</div>
     </div>
   );
 };

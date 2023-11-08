@@ -51,7 +51,13 @@ cursor:pointer
    height:4rem;
    filter:contrast(62%)
 }
-
+.with-love{
+   background-color: rgb(33, 37, 41);
+   color:rgb(167, 167, 167);
+   justify-content: center;
+   text-align: center;
+   align-items: center;
+}
 /*RESPONSIVE*/
 @media (max-width:480px){
    /* .footer-section{

@@ -31,7 +31,7 @@ const Accordion = () => {
           </h2>
           <div
             id="panelsStayOpen-collapseOne"
-            className="accordion-collapse collapse show"
+            className="accordion-collapse collapse"
           >
             <div className="accordion-body">
               <div className="player-by-position-info">
@@ -177,12 +177,12 @@ const Accordion = () => {
               aria-expanded="true"
               aria-controls="panelsStayOpen-collapseFour"
             >
-              PORTEROS
+              DELANTEROS
             </button>
           </h2>
           <div
             id="panelsStayOpen-collapseFour"
-            className="accordion-collapse collapse show"
+            className="accordion-collapse collapse"
           >
             <div className="accordion-body">
               <div className="player-by-position-info">

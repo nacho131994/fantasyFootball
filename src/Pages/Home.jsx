@@ -15,11 +15,6 @@ const Home = () => {
   const [showJoinALeagueModal, setShowJoinALeagueModal] = useState(false);
   const [showLogedView, setShowLogedView] = useState(false);
 
-  const handleShowLogedView = () => {
-    setShowLogedView(!showLogedView);
-    console.log("deberia mostrar loged view");
-  };
-
   const handleShowJoinALeagueModal = () => {
     setShowJoinALeagueModal(true);
   };
@@ -30,7 +25,7 @@ const Home = () => {
   return (
     <>
       <Navbar
-        handleShowLogedView={handleShowLogedView}
+        setShowLogedView={setShowLogedView}
         showLogedView={showLogedView}
       />
       <div className="home-container">
@@ -47,6 +42,7 @@ const Home = () => {
               className="banner-img-laliga"
             />
           </div>
+
           <h5>{showLogedView ? "NOMBRE DEL EQUIPO" : ""}</h5>
         </div>
         {showLogedView ? (
@@ -56,10 +52,7 @@ const Home = () => {
             />
           </div>
         ) : (
-          <HomeNotLogged
-            showLogedView={showLogedView}
-            handleShowLogedView={handleShowLogedView}
-          />
+          <HomeNotLogged />
         )}
 
         <div className="matchdays-section">

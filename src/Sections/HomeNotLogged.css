@@ -1,10 +1,11 @@
 .home-not-logged-container{
-background: url("https://pbs.twimg.com/media/F54k83OWwAIQYQE.jpg:large");
+background: url("https://img.freepik.com/fotos-premium/textura-cesped-hierba-campo-futbol-verde-detallada-arriba_157125-6802.jpg");
 border-bottom:2px solid greenyellow;
-background-repeat: no-repeat;
-background-size: cover;
-height:30rem;
-background-position-y: -200px;
+
+background-size:contain;
+height:25rem;
+
+
     
 }
 .home-not-logged-body{

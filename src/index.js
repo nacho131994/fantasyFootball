@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 //STYLES
 import "../src/index.css";
+
 //VIEWS
 import Home from "./Pages/Home.jsx";
 import Plantilla from "./Pages/Pantilla";

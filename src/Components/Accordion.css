@@ -5,12 +5,16 @@
     font-family: 'Staatliches', sans-serif;
     background-color: rgb(0, 0, 0);
     color:rgb(255, 255, 255);
-    border:3px solid rgb(0, 0, 0);
+
     font-size:1.5rem;
     height:1rem
 }
 .accordion-button{
-    text-align: center 
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin:0 auto; 
 }
 .accordion-button:focus{
     border:none

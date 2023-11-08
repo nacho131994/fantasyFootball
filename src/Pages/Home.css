@@ -6,8 +6,10 @@
 }
 .matchdays-and-standings{
   display: flex;
-  margin-top:7rem;
-  gap:5rem
+  margin:2rem 0;
+  gap:5rem;
+  height: 100%;
+  align-items: center;
 }
 .matchdays-section{
     display:flex;
@@ -15,6 +17,7 @@
     justify-content: space-evenly;
     margin:0;
     background:url("../images/zig-zag.svg");
+
  
 }
 .carousel{
@@ -53,7 +56,9 @@
     flex-direction: column;
     align-items: center;
     background:url("../images/zig-zag.svg");
-    height:100vh;
+    height:fit-content;
+    text-align: center;
+    margin:0 auto;
 }
 
 

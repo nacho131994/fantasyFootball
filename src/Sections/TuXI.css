@@ -58,15 +58,17 @@
 font-family: 'Staatliches', sans-serif;
 }
 .tuxi-button-section button{
-    padding:2rem;
+    padding:1rem 2rem;
     border-radius: 10px;
     color: rgb(255, 255, 255);
-    background-color:rgb(99, 162, 70); ;
-    border:2px solid gold;
+    background-color:rgb(73, 73, 73); ;
+    border:2px solid greenyellow;
     display:flex;
     align-items: centeR;
     justify-content:center;
     text-align: center;
+    font-family: 'Staatliches', sans-serif;;
+    font-size: 30px;
     
     
 }

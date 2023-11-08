@@ -8,7 +8,7 @@ import "../Components/Navbar.css";
 //IMAGES
 import Logo from "../images/footballfantay-logo.png";
 
-const Navbar = ({ handleShowLogedView, showLogedView }) => {
+const Navbar = ({ showLogedView, setShowLogedView }) => {
   const [showLogin, setShowLogin] = useState(false);
 
   const handleShowLogin = () => {
@@ -17,6 +17,11 @@ const Navbar = ({ handleShowLogedView, showLogedView }) => {
 
   const handleCloseLogin = () => {
     setShowLogin(false);
+  };
+
+  const handleShowLogedView = () => {
+    setShowLogedView(!showLogedView);
+    console.log("deberia mostrar loged view");
   };
 
   return (
@@ -56,6 +61,7 @@ const Navbar = ({ handleShowLogedView, showLogedView }) => {
                 INICIO
               </Link>
             </li>
+
             <li className="nav-item">
               <Link
                 to="/mercado"
@@ -73,7 +79,7 @@ const Navbar = ({ handleShowLogedView, showLogedView }) => {
               >
                 PLANTILLA
               </Link>
-            </li>{" "}
+            </li>
             <li className="nav-item">
               <Link
                 to="/estadisticas"

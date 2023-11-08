@@ -1,6 +1,6 @@
 .standings-container{
-    width:fit-content;
-    height:25rem;
+    width:700px;
+    height:fit-content;
     display: flex;
     flex-direction: column;
     gap:5px;
@@ -71,7 +71,7 @@
     align-items: center;
     text-align: center;
     margin:0;
-    font-size:13px;
+    font-size:16px;
     padding: 0 1rem
 }
 .blue{
