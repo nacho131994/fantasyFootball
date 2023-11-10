@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 //STYLES
 import "../Sections/JugadoresMercado.css";
 //MODALS
@@ -9,6 +9,7 @@ import ConfirmModal from "../Modals/ConfirmModal";
 const JugadoresMercado = () => {
   const [showDetails, setShowDetails] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [player, setPlayer] = useState(null);
 
   const handleShowDetails = () => {
     setShowDetails(true);
@@ -22,6 +23,21 @@ const JugadoresMercado = () => {
   const handleCloseConfirmModal = () => {
     setShowConfirmModal(false);
   };
+
+  const url = "http://home-nessie.duckdns.org:44086/v1/player";
+
+  useEffect(() => {
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setPlayer(data.data[0]);
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error al obtener los datos de la API:", error);
+      });
+  }, []);
+
   return (
     <div className="mercado-body-players">
       <div className="current-money">
@@ -62,7 +78,7 @@ const JugadoresMercado = () => {
         <div className="mercado-player-section">
           <div className="mercado-player">
             <div className="mercado-player-name">
-              <p>vinicius</p>
+              <p>{player ? player.name : "cargando..."}</p>
             </div>
             <div className="mercado-player-stats">
               <div className="mercado-player-stats-item">
@@ -87,6 +103,7 @@ const JugadoresMercado = () => {
         <DetalleJugadoresMercado
           handleCloseDetails={handleCloseDetails}
           handleShowConfirmModal={handleShowConfirmModal}
+          player={player}
         />
       ) : (
         ""

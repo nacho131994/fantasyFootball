@@ -44,21 +44,43 @@
     text-align: left;
     background-color: rgb(41, 41, 41);
 }
+.player-info-section-photo-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Staatliches', sans-serif;
+    font-size:20px;
+    padding:1rem;
+    
+  
+  
+}
+.player-info-section-photo-container p{
+margin:0 ;
+
+}
+.player-info-section-photo-container img{
+margin:0 auto
+}
 .player-picture{
-width:10rem;
+width:13rem;
 height:13rem;
 border:2px solid greenyellow;
 border-radius:10px;
-margin:1rem
-
+margin:1rem;
+}
+.team-badge{
+    width:40px;
+    height:40px
 }
 .player-info{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     align-items: center;
-    padding:0px 2rem;
-    gap: 10px; 
+    padding:1rem 2rem;
+    gap: 3rem; 
     text-align: center;
 }
 .player-info p{
@@ -66,6 +88,8 @@ margin:1rem
   margin:0;
   background-color: rgb(55, 55, 55);
   border-radius: 10px;
+  font-size:15px;
+ 
 }
 .player-info-button-section{
     background-color: rgb(41, 41, 41);
@@ -130,11 +154,9 @@ margin:1rem
     .player-info-section-photo-container{
         text-align: center;
         width:100%;
+        display: flex;
     }
-    .player-info-section-photo-container img{
-        width:7rem;
-        height:9rem;
-    }
+
     .player-info{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -143,5 +165,9 @@ margin:1rem
         padding:0px 2rem;
         gap: 10px; 
         text-align: center;
+    }
+    .team-badge img{
+        width:20px;
+        height:20px
     }
 }
