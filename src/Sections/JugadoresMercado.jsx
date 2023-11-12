@@ -9,9 +9,14 @@ import ConfirmModal from "../Modals/ConfirmModal";
 const JugadoresMercado = () => {
   const [showDetails, setShowDetails] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
-  const [player, setPlayer] = useState(null);
 
-  const handleShowDetails = () => {
+  const [playersList, setPLayersList] = useState([]);
+  const [selectedPlayerName, setSelectedPlayerName] = useState("");
+  const [selectedPlayerTeam, setSelectedPlayerTeam] = useState("");
+
+  const handleShowDetails = (playerName, playerTeam) => {
+    setSelectedPlayerName(playerName);
+    setSelectedPlayerTeam(playerTeam);
     setShowDetails(true);
   };
   const handleCloseDetails = () => {
@@ -24,17 +29,14 @@ const JugadoresMercado = () => {
     setShowConfirmModal(false);
   };
 
-  const url = "http://home-nessie.duckdns.org:44086/v1/player";
-
+  const url =
+    "https://footb.onrender.com/v2/player?skip=0&limit=2000&sort_field=id&sort_order=desc";
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setPlayer(data.data[0]);
         console.log(data);
-      })
-      .catch((error) => {
-        console.error("Error al obtener los datos de la API:", error);
+        setPLayersList(data.data);
       });
   }, []);
 
@@ -44,6 +46,7 @@ const JugadoresMercado = () => {
         <p>DINERO DISPONIBLE:</p>
         <p className="current-money-digits">4342342€</p>
       </div>
+
       <div className="players-list-section">
         <div className="players-searcher">
           <div className="searchbar">
@@ -75,35 +78,44 @@ const JugadoresMercado = () => {
         </div>
       </div>
       <div className="mercado-players-container">
-        <div className="mercado-player-section">
-          <div className="mercado-player">
-            <div className="mercado-player-name">
-              <p>{player ? player.name : "cargando..."}</p>
+        {playersList.map((player, i) => (
+          <div className="mercado-player-section">
+            <div className="mercado-player">
+              <div className="mercado-player-name">
+                {/* <p>{player ? player.name : "cargando..."}</p> */}
+                <p key={i}>{player.name}</p>
+              </div>
+              <div className="mercado-player-stats">
+                <div className="mercado-player-stats-item">
+                  <i class="fa-solid fa-star"></i> <p>4</p>
+                </div>
+                <div className="mercado-player-stats-item">
+                  <i class="fa-solid fa-money-bill-trend-up"></i> <p>4</p>
+                </div>
+                <div className="mercado-player-stats-item">
+                  <i class="fa-solid fa-futbol"></i> <p>4</p>
+                </div>
+              </div>
             </div>
-            <div className="mercado-player-stats">
-              <div className="mercado-player-stats-item">
-                <i class="fa-solid fa-star"></i> <p>4</p>
-              </div>
-              <div className="mercado-player-stats-item">
-                <i class="fa-solid fa-money-bill-trend-up"></i> <p>4</p>
-              </div>
-              <div className="mercado-player-stats-item">
-                <i class="fa-solid fa-futbol"></i> <p>4</p>
-              </div>
+
+            <div className="mercado-players-buttons">
+              <button onClick={handleShowConfirmModal}>FICHAR</button>
+              <button
+                onClick={() => handleShowDetails(player.name, player.team_name)}
+              >
+                DATOS
+              </button>
             </div>
           </div>
-          <div className="mercado-players-buttons">
-            <button onClick={handleShowConfirmModal}>FICHAR</button>
-            <button onClick={handleShowDetails}>DATOS</button>
-          </div>
-        </div>
+        ))}
       </div>
 
       {showDetails ? (
         <DetalleJugadoresMercado
           handleCloseDetails={handleCloseDetails}
           handleShowConfirmModal={handleShowConfirmModal}
-          player={player}
+          selectedPlayerName={selectedPlayerName}
+          selectedPlayerTeam={selectedPlayerTeam}
         />
       ) : (
         ""
