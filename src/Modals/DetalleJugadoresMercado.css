@@ -14,6 +14,7 @@
 .mercado-body-players-details h1{
     margin-top:1rem;
     font-family: 'Staatliches', sans-serif;
+    font-size:30rem
    
 }
 .player-details-card{
@@ -31,34 +32,29 @@
 .player-details-card section{
     background-color: rgb(0, 0, 0);
     color:greenyellow;
-    height:3rem;
+    height:5rem;
     justify-content: center;
-    font-size:30px;
+    font-size:50px;
     font-family: 'Staatliches', sans-serif;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 .player-info-section{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     text-align: left;
     background-color: rgb(41, 41, 41);
 }
 .player-info-section-photo-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    font-family: 'Staatliches', sans-serif;
-    font-size:20px;
-    padding:1rem;
-    
-  
-  
+display: flex;
+justify-content: space-evenly;
+font-size:20px;
+font-family: 'Staatliches', sans-serif;
+align-items: center;
+
 }
 .player-info-section-photo-container p{
 margin:0 ;
-
 }
 .player-info-section-photo-container img{
 margin:0 auto
@@ -70,10 +66,21 @@ border:2px solid greenyellow;
 border-radius:10px;
 margin:1rem;
 }
-.team-badge{
-    width:40px;
-    height:40px
+.team-of-player{
+    display: flex;
+    flex-direction: column;
+    
 }
+
+.team-badge{
+    height:2rem;
+    width:2rem;
+    object-fit: contain;
+
+    
+   
+}
+
 .player-info{
     display: grid;
     grid-template-columns: repeat(2, 1fr);

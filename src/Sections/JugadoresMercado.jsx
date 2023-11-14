@@ -1,32 +1,51 @@
 import React, { useState, useEffect } from "react";
+
 //STYLES
 import "../Sections/JugadoresMercado.css";
 //MODALS
 import DetalleJugadoresMercado from "../Modals/DetalleJugadoresMercado.jsx";
-//COMPONENTS
 import ConfirmModal from "../Modals/ConfirmModal";
 
 const JugadoresMercado = () => {
   const [showDetails, setShowDetails] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [playersList, setPlayersList] = useState([]);
+  const [selectedPlayer, setSelectedPlayer] = useState({
+    name: "",
+    team: "",
+    position: "",
+  });
+  const [selectedPosition, setSelectedPosition] = useState([]);
+  const [searchByName, setSearchByName] = useState("");
 
-  const [playersList, setPLayersList] = useState([]);
-  const [selectedPlayerName, setSelectedPlayerName] = useState("");
-  const [selectedPlayerTeam, setSelectedPlayerTeam] = useState("");
+  const handleShowDetails = (player) => {
+    setSelectedPlayer({
+      name: player.name,
+      team: player.team_name,
+      position: player.position_name,
+    });
 
-  const handleShowDetails = (playerName, playerTeam) => {
-    setSelectedPlayerName(playerName);
-    setSelectedPlayerTeam(playerTeam);
     setShowDetails(true);
   };
+
   const handleCloseDetails = () => {
     setShowDetails(false);
   };
+
   const handleShowConfirmModal = () => {
     setShowConfirmModal(true);
   };
+
   const handleCloseConfirmModal = () => {
     setShowConfirmModal(false);
+  };
+
+  const handlePositionChange = (e) => {
+    setSelectedPosition(e.target.value);
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchByName(e.target.value);
   };
 
   const url =
@@ -35,10 +54,20 @@ const JugadoresMercado = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        setPLayersList(data.data);
+        setPlayersList(data.data);
       });
   }, []);
+
+  const filteredPlayers =
+    selectedPosition === "Cualquier posición"
+      ? playersList
+      : playersList.filter(
+          (player) => player.position_name === selectedPosition
+        );
+
+  const filteredPlayersBySearchName = filteredPlayers.filter((player) =>
+    player.name.toLowerCase().includes(searchByName.toLowerCase())
+  );
 
   return (
     <div className="mercado-body-players">
@@ -50,61 +79,70 @@ const JugadoresMercado = () => {
       <div className="players-list-section">
         <div className="players-searcher">
           <div className="searchbar">
-            <input type="text" placeholder="Busca un jugador" />
-            <button>
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
+            <input
+              type="text"
+              placeholder="Busca al jugador por su nombre"
+              value={searchByName}
+              onChange={handleSearchChange}
+            />
           </div>
-          <select placeholder="">
-            <option value="" disabled selected>
+          <select
+            placeholder=""
+            value={selectedPosition}
+            onChange={handlePositionChange}
+          >
+            <option value="" disabled>
               Buscar por posición
             </option>
-            <option value="opcion1">Todos los jugadores</option>
-            <option value="opcion2">Portero</option>
-            <option value="opcion3">Defensa</option>
-            <option value="opcion4">Centrocampista</option>
-            <option value="opcion5">Delantero</option>
+            <option value="Cualquier posición">Todos los jugadores</option>
+            <option value="Portero">Portero</option>
+            <option value="Defensa">Defensa</option>
+            <option value="Centrocampista">Centrocampista</option>
+            <option value="Delantero">Delantero</option>
           </select>
+
           <select placeholder="">
             <option value="" disabled selected>
               Buscar por...
             </option>
             <option value="opcion1">Todos los jugadores</option>
-            <option value="opcion2">Mayor precio </option>
-            <option value="opcion3">Menor precio </option>
-            <option value="opcion4">Mayor puntuacion </option>
-            <option value="opcion5">Menor puntuacion</option>
+            <option value="Mayor precio">Mayor precio </option>
+            <option value="Menor precio">Menor precio </option>
+            <option value="Mayor puntuacion">Mayor puntuacion </option>
+            <option value="Menor puntuacion">Menor puntuacion</option>
           </select>
         </div>
+        <div className="players-of-position-counter">
+          <p>
+            {filteredPlayersBySearchName.length} jugadores coinciden con la
+            búsqueda
+          </p>
+        </div>
       </div>
+
       <div className="mercado-players-container">
-        {playersList.map((player, i) => (
-          <div className="mercado-player-section">
+        {filteredPlayersBySearchName.map((player, i) => (
+          <div className="mercado-player-section" key={i}>
             <div className="mercado-player">
               <div className="mercado-player-name">
-                {/* <p>{player ? player.name : "cargando..."}</p> */}
-                <p key={i}>{player.name}</p>
+                <p>{player.name}</p>
               </div>
               <div className="mercado-player-stats">
                 <div className="mercado-player-stats-item">
-                  <i class="fa-solid fa-star"></i> <p>4</p>
+                  <i className="fa-solid fa-star"></i> <p>4</p>
                 </div>
                 <div className="mercado-player-stats-item">
-                  <i class="fa-solid fa-money-bill-trend-up"></i> <p>4</p>
+                  <i className="fa-solid fa-money-bill-trend-up"></i> <p>4</p>
                 </div>
                 <div className="mercado-player-stats-item">
-                  <i class="fa-solid fa-futbol"></i> <p>4</p>
+                  <i className="fa-solid fa-futbol"></i> <p>4</p>
                 </div>
               </div>
             </div>
 
             <div className="mercado-players-buttons">
               <button onClick={handleShowConfirmModal}>FICHAR</button>
-              <button
-                onClick={() => handleShowDetails(player.name, player.team_name)}
-              >
-                DATOS
-              </button>
+              <button onClick={() => handleShowDetails(player)}>DATOS</button>
             </div>
           </div>
         ))}
@@ -114,8 +152,7 @@ const JugadoresMercado = () => {
         <DetalleJugadoresMercado
           handleCloseDetails={handleCloseDetails}
           handleShowConfirmModal={handleShowConfirmModal}
-          selectedPlayerName={selectedPlayerName}
-          selectedPlayerTeam={selectedPlayerTeam}
+          selectedPlayer={selectedPlayer}
         />
       ) : (
         ""
