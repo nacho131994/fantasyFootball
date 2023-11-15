@@ -1,6 +1,6 @@
 .card-stat-container{
     border-radius:10px;
-    width:30rem;
+    width:32rem;
     height:25rem;
     display: flex;
     flex-direction: column;
@@ -46,12 +46,35 @@
  .card-stat-body{
     background-color: rgb(19, 19, 19);
     border-radius:10px;
-    border:2px solid greenyellow
+    border:2px solid greenyellow;
+    overflow-y: auto;
  }
+ .card-stat-body::-webkit-scrollbar {
+    width: 1rem;
+    margin:3rem
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: greenyellow; 
+    border-radius:10px;
+    height:1rem;
+    width:2rem;
+   
+   
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #000000; 
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+  }
 .card-stat-body ul{
   list-style: none;
   margin-top: 10px;
-  padding:0px 2rem
+  padding:0px 2rem;
+  
+
 }
 .card-stat-body ul li{
     display: flex;
@@ -63,10 +86,14 @@
     border-radius:10px;
     margin-top:5px;
     color:white;
+   
 }
 .card-stat-body ul li p{
     margin:0px;
     font-family: 'Rubik', sans-serif;
+}
+.card-stat-body ul li p:first-child{
+  width:50%
 }
 .card-stat-body button{
     border:none;
