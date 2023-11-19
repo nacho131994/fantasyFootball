@@ -7,11 +7,17 @@ const Login = ({ handleCloseLogin, handleShowLogedView, showLogedView }) => {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [isRegistered, setIsRegistered] = useState(false);
+  const [showRegistrationMessage, setShowRegistrationMessage] = useState("");
+  const [showRegistrationMessageClass, setShowRegistrationMessageClass] =
+    useState("");
 
+  //Mostrar formulario de registro
   const handleShowRegistration = () => {
     setShowRegistration(!showRegistration);
   };
 
+  //obtener el token de autentificación
   async function getUserToken() {
     const res = fetch("https://footb.onrender.com/v2/user/token", {
       method: "POST",
@@ -29,23 +35,42 @@ const Login = ({ handleCloseLogin, handleShowLogedView, showLogedView }) => {
     })
       .then((res) => res.json())
       .then((d) => {
+        console.log(d);
         localStorage.setItem("token", JSON.stringify(d));
-        // console.log(d);
       });
   }
 
+  //Registrar un nuevo usuario
   async function registerNewUser(name, user, pass) {
     const newUserUrl = `https://footb.onrender.com/v2/user/register?name=${name}&username=${user}&password=${pass}`;
     const response = await fetch(newUserUrl, {
       method: "POST",
     });
     console.log(newUserUrl);
+    setIsRegistered(true);
+
+    if (response.status === 406) {
+      setShowRegistrationMessage(
+        "usuario ya existente. Elige otro nombre de usuario"
+      );
+      setShowRegistrationMessageClass("registration-error"); // Nueva línea
+    } else if (response.status !== 406) {
+      setShowRegistrationMessage("Te has registrado con éxito");
+      setShowRegistrationMessageClass("registration-success"); // Nueva línea
+      setShowRegistration(false);
+    }
     return response.json();
   }
 
+  // //Loguearse
+  // const handleLogin=()=>{
+
+  // }
+  //Cerrar sesión
   const handleLogout = () => {
     localStorage.removeItem("token");
   };
+
   return (
     <div className="login-modal">
       <div className="login-container">
@@ -134,17 +159,28 @@ const Login = ({ handleCloseLogin, handleShowLogedView, showLogedView }) => {
               </div>
             </div>
             <div className="login-buttons registration-buttons">
-              <button
-                className="accept-login"
-                onClick={() => registerNewUser(name, username, password)}
-              >
-                Registrar
-              </button>
+              {name && username && password ? (
+                <button
+                  className="accept-login"
+                  onClick={() => {
+                    registerNewUser(name, username, password);
+                  }}
+                >
+                  Registrar
+                </button>
+              ) : null}
               <button className="close-login" onClick={handleCloseLogin}>
                 Cerrar
               </button>
             </div>
           </>
+        )}
+        {isRegistered && (
+          <div
+            className={`registration-message ${showRegistrationMessageClass}`}
+          >
+            {showRegistrationMessage}
+          </div>
         )}
       </div>
     </div>
