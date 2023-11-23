@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 //STYLES
 import "../Pages/Home.css";
 //COMPONENTS
@@ -14,6 +14,20 @@ import HomeNotLogged from "../Sections/HomeNotLogged";
 const Home = () => {
   const [showJoinALeagueModal, setShowJoinALeagueModal] = useState(false);
   const [showLogedView, setShowLogedView] = useState(false);
+  const [userName, setUserName] = useState([]);
+
+  useEffect(() => {
+    fetch("https://footb.onrender.com/v2/user/me", {
+      headers: {
+        accept: "application/json",
+        Authorization: "Bearer " + localStorage.getItem("token"),
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setUserName(data.username);
+      });
+  }, [showLogedView]);
 
   const handleShowJoinALeagueModal = () => {
     setShowJoinALeagueModal(true);

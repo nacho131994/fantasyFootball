@@ -1,5 +1,106 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
+// //STYLES
+// import "../Pages/Estadisticas.css";
+// //COMPONENTS
+// import Navbar from "../Components/Navbar";
+// import CardStat from "../Components/CardStat";
+// import Footer from "../Components/Footer";
 
+// const Estadisticas = () => {
+//   const [playersList, setPlayersList] = useState([]);
+//   const [selectedPosition, setSelectedPosition] = useState("");
+//   const url =
+//     "https://footb.onrender.com/v2/player?skip=0&limit=2000&sort_field=id&sort_order=desc";
+
+//   useEffect(() => {
+//     fetch(url)
+//       .then((res) => res.json())
+//       .then((data) => {
+//         setPlayersList(data.data);
+//       });
+//   }, []);
+
+//   const handlePositionChange = (e) => {
+//     setSelectedPosition(e.target.value);
+//   };
+
+//   const filteredPlayers = selectedPosition
+//     ? playersList.filter((player) => player.position_name === selectedPosition)
+//     : playersList;
+
+//   return (
+//     <>
+//       <Navbar />
+//       <div className="estadisticas-container">
+//         <div className="estadisticas-dropdown">
+//           <select
+//             placeholder=""
+//             value={selectedPosition}
+//             onChange={handlePositionChange}
+//           >
+//             <option disabled>Filtrar por...</option>
+//             <option value="">Todos los jugadores</option>
+//             <option value="Portero">Porteros</option>
+//             <option value="Defensa">Defensas</option>
+//             <option value="Centrocampista">Centrocampistas</option>
+//             <option value="Delantero">Delanteros</option>
+//           </select>
+//         </div>
+//         <div className="stats-card-section">
+//           <CardStat
+//             title={"PUNTOS"}
+//             filteredPlayers={filteredPlayers}
+//             param={"pts."}
+//           />
+//           <CardStat
+//             title={"PRECIO"}
+//             filteredPlayers={filteredPlayers}
+//             param={"pts."}
+//           />
+//           <CardStat
+//             title={"GOLES"}
+//             filteredPlayers={filteredPlayers}
+//             param={"pts."}
+//           />
+//           <CardStat
+//             title={"ASISTENCIAS"}
+//             filteredPlayers={filteredPlayers}
+//             param={"pts."}
+//           />
+//           <CardStat
+//             title={"PARADAS"}
+//             filteredPlayers={filteredPlayers}
+//             param={"pts."}
+//           />
+//           <CardStat
+//             title={"PARADA PENALTI"}
+//             filteredPlayers={filteredPlayers}
+//             param={"pts."}
+//           />
+//           <CardStat
+//             title={"ASISTENCIAS"}
+//             filteredPlayers={filteredPlayers}
+//             param={"pts."}
+//           />
+//           <CardStat
+//             title={"PARTIDOS JUGADOS"}
+//             filteredPlayers={filteredPlayers}
+//             param={"pts."}
+//           />
+//           <CardStat
+//             title={"TARETAS ROJAS"}
+//             filteredPlayers={filteredPlayers}
+//             param={"pts."}
+//           />
+//         </div>
+//       </div>
+//       <Footer />
+//     </>
+//   );
+// };
+
+// export default Estadisticas;
+import React, { useState, useEffect } from "react";
 //STYLES
 import "../Pages/Estadisticas.css";
 //COMPONENTS
@@ -9,8 +110,10 @@ import Footer from "../Components/Footer";
 
 const Estadisticas = () => {
   const [playersList, setPlayersList] = useState([]);
+  const [selectedPosition, setSelectedPosition] = useState("");
   const url =
     "https://footb.onrender.com/v2/player?skip=0&limit=2000&sort_field=id&sort_order=desc";
+
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -19,58 +122,79 @@ const Estadisticas = () => {
       });
   }, []);
 
+  const handlePositionChange = (e) => {
+    setSelectedPosition(e.target.value);
+  };
+
+  const filteredPlayers = selectedPosition
+    ? playersList.filter((player) => player.position_name === selectedPosition)
+    : playersList;
+
+  const counter = 1;
   return (
     <>
       <Navbar />
       <div className="estadisticas-container">
+        <div className="estadisticas-dropdown">
+          <select
+            placeholder=""
+            value={selectedPosition}
+            onChange={handlePositionChange}
+          >
+            <option disabled>Filtrar por...</option>
+            <option value="">Todos los jugadores</option>
+            <option value="Portero">Porteros</option>
+            <option value="Defensa">Defensas</option>
+            <option value="Centrocampista">Centrocampistas</option>
+            <option value="Delantero">Delanteros</option>
+          </select>
+        </div>
         <div className="stats-card-section">
-          <CardStat title={"PUNTOS"} playersList={playersList} param={"pts."} />
-          <CardStat title={"PRECIO"} playersList={playersList} param={"€"} />
           <CardStat
-            title={"GOLES ANOTADOS"}
-            playersList={playersList}
-            param={"goles"}
+            title={"PUNTOS"}
+            filteredPlayers={filteredPlayers}
+            param={"pts."}
+            counter={counter}
+          />
+          <CardStat
+            title={"PRECIO"}
+            filteredPlayers={filteredPlayers}
+            param={"pts."}
+          />
+          <CardStat
+            title={"GOLES"}
+            filteredPlayers={filteredPlayers}
+            param={"pts."}
           />
           <CardStat
             title={"ASISTENCIAS"}
-            playersList={playersList}
-            param={"asist."}
-          />
-          <CardStat
-            title={"% PASES"}
-            playersList={playersList}
-            param={"% pases"}
-          />
-          <CardStat
-            title={"RECUPERACIONES"}
-            playersList={playersList}
-            param={"recup."}
-          />
-          <CardStat
-            title={"GOLES ENCAJADOS"}
-            playersList={playersList}
-            param={"goles encaj."}
-          />
-
-          <CardStat
-            title={"PARTIDOS JUGADOS"}
-            playersList={playersList}
-            param={"Partidos"}
-          />
-          <CardStat
-            title={"TARJETAS AMARILLAS"}
-            playersList={playersList}
-            param={"Amarilla"}
-          />
-          <CardStat
-            title={"TARJETAS ROJAS"}
-            playersList={playersList}
-            param={"Roja"}
+            filteredPlayers={filteredPlayers}
+            param={"pts."}
           />
           <CardStat
             title={"PARADAS"}
-            playersList={playersList}
-            param={"Paradas"}
+            filteredPlayers={filteredPlayers}
+            param={"pts."}
+          />
+          <CardStat
+            title={"PARADA PENALTI"}
+            filteredPlayers={filteredPlayers}
+            param={"pts."}
+          />
+          <CardStat
+            title={"ASISTENCIAS"}
+            filteredPlayers={filteredPlayers}
+            param={"pts."}
+          />
+          <CardStat
+            title={"PARTIDOS JUGADOS"}
+            filteredPlayers={filteredPlayers}
+            param={"pts."}
+          />
+          <CardStat
+            title={"TARETAS ROJAS"}
+            filteredPlayers={filteredPlayers}
+            param={"pts."}
           />
         </div>
       </div>

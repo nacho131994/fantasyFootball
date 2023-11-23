@@ -17,6 +17,7 @@ const JugadoresMercado = () => {
   });
   const [selectedPosition, setSelectedPosition] = useState([]);
   const [searchByName, setSearchByName] = useState("");
+  const [playerPrice, setPlayerPrice] = useState("");
 
   const handleShowDetails = (player) => {
     setSelectedPlayer({
@@ -48,13 +49,23 @@ const JugadoresMercado = () => {
     setSearchByName(e.target.value);
   };
 
-  const url =
+  const listPlayersUrl =
     "https://footb.onrender.com/v2/player?skip=0&limit=2000&sort_field=id&sort_order=desc";
   useEffect(() => {
-    fetch(url)
+    fetch(listPlayersUrl)
       .then((res) => res.json())
       .then((data) => {
         setPlayersList(data.data);
+      });
+  }, []);
+
+  const pricePlayerUrl = "https://footb.onrender.com/v2/price/";
+  useEffect(() => {
+    fetch(pricePlayerUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        setPlayerPrice(data.price);
+        console.log(data.price);
       });
   }, []);
 
@@ -66,7 +77,7 @@ const JugadoresMercado = () => {
         );
 
   const filteredPlayersBySearchName = filteredPlayers.filter((player) =>
-    player.name.toLowerCase().includes(searchByName.toLowerCase())
+    player.name.toLowerCase().startsWith(searchByName.toLowerCase())
   );
 
   return (
@@ -103,7 +114,7 @@ const JugadoresMercado = () => {
 
           <select placeholder="">
             <option value="" disabled selected>
-              Buscar por...
+              Filtrar por...
             </option>
             <option value="opcion1">Todos los jugadores</option>
             <option value="Mayor precio">Mayor precio </option>
@@ -112,40 +123,54 @@ const JugadoresMercado = () => {
             <option value="Menor puntuacion">Menor puntuacion</option>
           </select>
         </div>
-        <div className="players-of-position-counter">
-          <p>
-            {filteredPlayersBySearchName.length} jugadores coinciden con la
-            búsqueda
-          </p>
-        </div>
-      </div>
+        {filteredPlayersBySearchName.length === 0 ? (
+          <p className="no-results-container">no hay resultados</p>
+        ) : (
+          <>
+            <p className="position-selected">
+              {selectedPosition}
 
-      <div className="mercado-players-container">
-        {filteredPlayersBySearchName.map((player, i) => (
-          <div className="mercado-player-section" key={i}>
-            <div className="mercado-player">
-              <div className="mercado-player-name">
-                <p>{player.name}</p>
-              </div>
-              <div className="mercado-player-stats">
-                <div className="mercado-player-stats-item">
-                  <i className="fa-solid fa-star"></i> <p>4</p>
-                </div>
-                <div className="mercado-player-stats-item">
-                  <i className="fa-solid fa-money-bill-trend-up"></i> <p>4</p>
-                </div>
-                <div className="mercado-player-stats-item">
-                  <i className="fa-solid fa-futbol"></i> <p>4</p>
-                </div>
-              </div>
-            </div>
+              <span className="position-selected-counter">
+                {filteredPlayersBySearchName.length} jugadores
+              </span>
+            </p>
+            <div className="mercado-players-container">
+              {filteredPlayersBySearchName.map((player, i) => (
+                <div className="mercado-player-section" key={i}>
+                  <div className="numeration-container">
+                    <div className="numeration">
+                      <p>{i + 1}</p>
+                    </div>
+                  </div>
 
-            <div className="mercado-players-buttons">
-              <button onClick={handleShowConfirmModal}>FICHAR</button>
-              <button onClick={() => handleShowDetails(player)}>DATOS</button>
+                  <div className="mercado-player">
+                    <div className="mercado-player-name">
+                      <p>{player.name}</p>
+                    </div>
+                    <div className="mercado-player-stats">
+                      <div className="mercado-player-stats-item">
+                        <i className="fa-solid fa-star"></i> <p>4</p>
+                      </div>
+                      <div className="mercado-player-stats-item">
+                        <i className="fa-solid fa-money-bill-trend-up"></i>{" "}
+                        <p>{playerPrice}</p>
+                      </div>
+                      <div className="mercado-player-stats-item">
+                        <i className="fa-solid fa-futbol"></i> <p>4</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mercado-players-buttons">
+                    <button onClick={handleShowConfirmModal}>FICHAR</button>
+                    <button onClick={() => handleShowDetails(player)}>
+                      DATOS
+                    </button>
+                  </div>
+                </div>
+              ))}
             </div>
-          </div>
-        ))}
+          </>
+        )}
       </div>
 
       {showDetails ? (
@@ -161,6 +186,7 @@ const JugadoresMercado = () => {
         <ConfirmModal
           handleCloseConfirmModal={handleCloseConfirmModal}
           action={"FICHAR"}
+          playerPrice={playerPrice}
         />
       ) : (
         ""

@@ -9,9 +9,6 @@ import Accordion from "../Components/Accordion";
 const TuPlantilla = () => {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
 
-  const handleShowConfirmModal = () => {
-    setShowConfirmModal(true);
-  };
   const handleCloseConfirmModal = () => {
     setShowConfirmModal(false);
   };

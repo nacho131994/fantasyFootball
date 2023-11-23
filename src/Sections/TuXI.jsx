@@ -25,7 +25,7 @@ const TuXI = () => {
       </div>
       <div className="tuxi-button-section">
         <div className="tuxi-time-remaining">
-          <i class="fa-solid fa-triangle-exclamation"></i>
+          <i className="fa-solid fa-triangle-exclamation"></i>
           <p>CONFIRMAR EN:</p>
           <p>2d 3h 54m</p>
         </div>

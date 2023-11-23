@@ -1,10 +1,10 @@
 .card-stat-container{
     border-radius:10px;
-    width:32rem;
+    width:29rem;
     height:25rem;
     display: flex;
     flex-direction: column;
-    gap:5px;
+    gap:3px;
 }
 .card-stat-title{
     background-color: rgb(71, 71, 71);
@@ -24,10 +24,10 @@
     box-shadow: 0px 0px 18px -5px greenyellow
 }
 .card-stat-title button{
-    width: 1.8rem; /* Ajusta el tamaño del botón según tus necesidades */
+    width: 1.8rem; 
     height: 1.8rem;
     border:none;
-    border-radius: 50%; /* Hace que el borde sea circular */
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,16 +72,17 @@
 .card-stat-body ul{
   list-style: none;
   margin-top: 10px;
-  padding:0px 2rem;
-  
-
+  padding:0px 1rem;
+}
+.numeration-stat{
+    margin-right:10px;
+   color:greenyellow
 }
 .card-stat-body ul li{
     display: flex;
     justify-content: space-between;
     padding:2px 5px;
     align-items: center;
-    text-align: center;
     background-color: rgb(57, 57, 57);
     border-radius:10px;
     margin-top:5px;
@@ -91,6 +92,7 @@
 .card-stat-body ul li p{
     margin:0px;
     font-family: 'Rubik', sans-serif;
+    font-size:12px
 }
 .card-stat-body ul li p:first-child{
   width:50%

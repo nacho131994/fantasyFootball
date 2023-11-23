@@ -2,7 +2,7 @@ import React from "react";
 //STYLES
 import "../Modals/ConfirmModal.css";
 
-const ConfirmModal = ({ handleCloseConfirmModal, action }) => {
+const ConfirmModal = ({ handleCloseConfirmModal, action, playerPrice }) => {
   return (
     <div className="confirm-modal">
       <div className="confirm-modal-container">
@@ -10,7 +10,7 @@ const ConfirmModal = ({ handleCloseConfirmModal, action }) => {
         <div className="confirm-modal-body">
           <p>
             <strong>PRECIO JUGADOR:</strong>
-            <p>4324322 €</p>
+            <p>{playerPrice}€</p>
           </p>
           <p>
             <strong>DINERO TRAS FICHAJE:</strong>

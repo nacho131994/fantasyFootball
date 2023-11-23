@@ -39,62 +39,7 @@ const Accordion = () => {
                   <strong>COURTOIS </strong>{" "}
                 </p>
                 <p>250pts</p>
-                <p>300000€</p>
-                <div className="player-button-section">
-                  <button>ALINEAR</button>
-                  <button onClick={handleShowConfirmModal}>VENDER</button>
-                </div>
-              </div>
-              <div className="player-by-position-info">
-                <p>
-                  <strong>COURTOIS </strong>{" "}
-                </p>
-                <p>250pts</p>
-                <p>300000€</p>
-                <div className="player-button-section">
-                  <button>ALINEAR</button>
-                  <button onClick={handleShowConfirmModal}>VENDER</button>
-                </div>
-              </div>
-              <div className="player-by-position-info">
-                <p>
-                  <strong>COURTOIS </strong>{" "}
-                </p>
-                <p>250pts</p>
-                <p>300000€</p>
-                <div className="player-button-section">
-                  <button>ALINEAR</button>
-                  <button onClick={handleShowConfirmModal}>VENDER</button>
-                </div>
-              </div>
-              <div className="player-by-position-info">
-                <p>
-                  <strong>COURTOIS </strong>{" "}
-                </p>
-                <p>250pts</p>
-                <p>300000€</p>
-                <div className="player-button-section">
-                  <button>ALINEAR</button>
-                  <button onClick={handleShowConfirmModal}>VENDER</button>
-                </div>
-              </div>
-              <div className="player-by-position-info">
-                <p>
-                  <strong>COURTOIS </strong>{" "}
-                </p>
-                <p>250pts</p>
-                <p>300000€</p>
-                <div className="player-button-section">
-                  <button>ALINEAR</button>
-                  <button onClick={handleShowConfirmModal}>VENDER</button>
-                </div>
-              </div>
-              <div className="player-by-position-info">
-                <p>
-                  <strong>COURTOIS </strong>{" "}
-                </p>
-                <p>250pts</p>
-                <p>300000€</p>
+                <p>30000€</p>
                 <div className="player-button-section">
                   <button>ALINEAR</button>
                   <button onClick={handleShowConfirmModal}>VENDER</button>
@@ -126,7 +71,7 @@ const Accordion = () => {
                   <strong>COURTOIS </strong>{" "}
                 </p>
                 <p>250pts</p>
-                <p>300000€</p>
+                <p>30000€</p>
                 <div className="player-button-section">
                   <button>ALINEAR</button>
                   <button onClick={handleShowConfirmModal}>VENDER</button>
@@ -158,7 +103,7 @@ const Accordion = () => {
                   <strong>COURTOIS </strong>{" "}
                 </p>
                 <p>250pts</p>
-                <p>300000€</p>
+                <p>30000€</p>
                 <div className="player-button-section">
                   <button>ALINEAR</button>
                   <button onClick={handleShowConfirmModal}>VENDER</button>
@@ -190,7 +135,7 @@ const Accordion = () => {
                   <strong>COURTOIS </strong>{" "}
                 </p>
                 <p>250pts</p>
-                <p>300000€</p>
+                <p>30000€</p>
                 <div className="player-button-section">
                   <button>ALINEAR</button>
                   <button onClick={handleShowConfirmModal}>VENDER</button>

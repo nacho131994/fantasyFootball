@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-//STYLES
 import "../Components/CardStat.css";
-//MODALS
 import ConfirmModal from "../Modals/ConfirmModal";
 
-const CardStat = ({ title, playersList, param }) => {
+const CardStat = ({ title, filteredPlayers, param, counter }) => {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
 
   const handleShowConfirmModal = () => {
     setShowConfirmModal(true);
   };
+
   const handleCloseConfirmModal = () => {
     setShowConfirmModal(false);
   };
+
   return (
     <div className="card-stat-container">
       <div className="card-stat-title">
@@ -21,9 +21,10 @@ const CardStat = ({ title, playersList, param }) => {
       </div>
       <div className="card-stat-body">
         <ul>
-          {playersList.map((player, i) => (
+          {filteredPlayers.map((player, i) => (
             <li key={i}>
               <p>
+                <strong className="numeration-stat">{i + 1}.</strong>
                 <strong>{player.name}</strong> (
                 {player.position_name.slice(0, 3).toUpperCase()})
               </p>
@@ -31,46 +32,6 @@ const CardStat = ({ title, playersList, param }) => {
               <button onClick={handleShowConfirmModal}>FICHAR</button>
             </li>
           ))}
-          {/* <li>
-            <p>nombre</p>
-            <p>puntos</p>
-           
-          </li>
-          <li>
-            <p>nombre</p>
-            <p>puntos</p>
-           
-          </li>
-          <li>
-            <p>nombre</p>
-            <p>puntos</p>
-            <button onClick={handleShowConfirmModal}>FICHAR</button>
-          </li>
-          <li>
-            <p>nombre</p>
-            <p>puntos</p>
-            <button onClick={handleShowConfirmModal}>FICHAR</button>
-          </li>
-          <li>
-            <p>nombre</p>
-            <p>puntos</p>
-            <button onClick={handleShowConfirmModal}>FICHAR</button>
-          </li>
-          <li>
-            <p>nombre</p>
-            <p>puntos</p>
-            <button onClick={handleShowConfirmModal}>FICHAR</button>
-          </li>
-          <li>
-            <p>nombre</p>
-            <p>puntos</p>
-            <button onClick={handleShowConfirmModal}>FICHAR</button>
-          </li>
-          <li>
-            <p>nombre</p>
-            <p>puntos</p>
-            <button onClick={handleShowConfirmModal}>FICHAR</button>
-          </li> */}
         </ul>
       </div>
       {showConfirmModal ? (
