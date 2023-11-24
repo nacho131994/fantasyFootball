@@ -7,7 +7,7 @@
 .section-container-home{
     background:url("../images/fondo-logged.png");
     width: 100%;
-    height:100%;
+height:100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: -200px;

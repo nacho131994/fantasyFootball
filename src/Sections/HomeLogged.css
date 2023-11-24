@@ -1,6 +1,9 @@
+.create-team-container{
+    height:100%
+}
 .create-team{
    width:600px;
-   height:fit-content;
+   
    margin:0 auto;
    display:flex;
    flex-direction: column;
@@ -67,7 +70,26 @@
     color:rgb(255, 255, 255);
  
 }
-
+.team-exists-container{
+    background-color: rgb(28, 28, 28);
+    width:fit-content;
+    height:fit-content;
+    padding:2rem;
+    margin: 3rem auto
+}
+.team-and-stadium{
+    display:flex;
+    gap:10px
+   
+}
+.team-and-stadium p:last-child{
+    font-family: 'Staatliches', sans-serif;
+    color:greenyellow
+}
+.team-and-stadium p{
+    font-family: 'Staatliches', sans-serif;
+    color:white
+}
 /*RESPONSIVE*/
 @media (max-width:480px){
     .create-team-contanier{
