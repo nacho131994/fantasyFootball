@@ -20,7 +20,7 @@ const Home = () => {
     fetch("https://footb.onrender.com/v2/user/me", {
       headers: {
         accept: "application/json",
-        Authorization: "Bearer " + localStorage.getItem("token"),
+        Authorization: "Bearer " + JSON.parse(localStorage.getItem("token")),
       },
     })
       .then((res) => res.json())
@@ -57,7 +57,7 @@ const Home = () => {
             />
           </div>
 
-          <h5>{showLogedView ? "NOMBRE DEL EQUIPO" : ""}</h5>
+          <h5>{showLogedView ? userName : ""}</h5>
         </div>
         {showLogedView ? (
           <div className="section-container-home">
