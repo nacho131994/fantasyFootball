@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from "react";
+import { getUserToken } from "../Utils/Utils";
+import { useAuth } from "../Context/AuthContext";
+
 //STYLES
 import "../Pages/Home.css";
 //COMPONENTS
-import Navbar from "../Components/Navbar";
-
 import NextGames from "../Components/NextGames";
 import LaLigaStandings from "../Components/LaLigaStandings";
-import Footer from "../Components/Footer";
 //SECTIONS
 import HomeLogged from "../Sections/HomeLogged";
 import HomeNotLogged from "../Sections/HomeNotLogged";
 
 const Home = () => {
-  const [showLogedView, setShowLogedView] = useState(false);
+  const [isLogged, setIsLogged] = useState(false);
+
+  useEffect(() => {
+    setIsLogged(getUserToken() ? true : false);
+
+    console.log(isLogged, "que estas logueado desde home");
+  });
 
   return (
     <>
-      <Navbar
-        setShowLogedView={setShowLogedView}
-        showLogedView={showLogedView}
-      />
       <div className="home-container">
         <div className="home-banner">
           <div className="welcome-banner">
@@ -35,7 +37,7 @@ const Home = () => {
             />
           </div>
         </div>
-        {showLogedView ? (
+        {isLogged ? (
           <div className="section-container-home">
             <HomeLogged />
           </div>
@@ -99,7 +101,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

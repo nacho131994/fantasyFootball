@@ -63,25 +63,27 @@
     margin:0 auto;
 }
 .login-button{
-    background-color: black;
-    color:greenyellow;
+    background-color: greenyellow;
+    color:rgb(0, 0, 0);
     border:1px solid greenyellow;
-    padding:5px;
+    padding:.5rem 1rem;
     border-radius: 10px;
     font-family: 'Rubik', sans-serif;
 }
 .login-button:hover{
-    color:rgb(0, 0, 0);
-    background-color:greenyellow;
-    padding:5px;
+    color:greenyellow;
+    background-color:black;
+    padding:.5rem 1rem;
     border-radius: 10px;
+    border:1px solid greenyellow
 }
 .userName{
-    background-color:greenyellow;
+    color:greenyellow;
     margin:0 2rem 0 0;
-    border-radius:10px;
+    font-size:20px;
     padding:.5rem 1rem;
     font-family: 'Staatliches', sans-serif;
+   
 
 }
 

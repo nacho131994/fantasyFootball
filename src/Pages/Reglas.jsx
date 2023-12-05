@@ -1,14 +1,10 @@
 import React from "react";
 //STYLES
 import "../Pages/Reglas.css";
-//COMPONENTS
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
 
 const Reglas = () => {
   return (
     <>
-      <Navbar />
       <div className="reglas-container">
         <div className="rule">
           <h3>¿QUÉ ES FOOTBALL FANTASY?</h3>
@@ -98,7 +94,6 @@ const Reglas = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

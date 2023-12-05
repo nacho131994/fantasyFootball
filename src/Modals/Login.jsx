@@ -2,7 +2,7 @@ import React, { useState } from "react";
 //STYLES
 import "../Modals/Login.css";
 
-const Login = ({ handleCloseLogin, handleShowLogedView, showLogedView }) => {
+const Login = ({ handleCloseLogin, isLogged }) => {
   const [showRegistration, setShowRegistration] = useState(false);
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
@@ -96,7 +96,6 @@ const Login = ({ handleCloseLogin, handleShowLogedView, showLogedView }) => {
         const data = await response.json();
         localStorage.setItem("token", JSON.stringify(data.access_token));
 
-        handleShowLogedView();
         handleCloseLogin();
       } else {
         const errorData = await response.json();
@@ -116,7 +115,7 @@ const Login = ({ handleCloseLogin, handleShowLogedView, showLogedView }) => {
   return (
     <div className="login-modal">
       <div className="login-container">
-        {showLogedView ? (
+        {isLogged ? (
           <>
             <div className="login-container-header">CIERRA SESION</div>
             <div className="login-buttons">
@@ -124,7 +123,6 @@ const Login = ({ handleCloseLogin, handleShowLogedView, showLogedView }) => {
                 className="accept-login"
                 onClick={() => {
                   handleLogout();
-                  handleShowLogedView();
                   handleCloseLogin();
                 }}
               >

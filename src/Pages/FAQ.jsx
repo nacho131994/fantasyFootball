@@ -1,14 +1,10 @@
 import React from "react";
 //STYLES
 import "../Pages/FAQ.css";
-//COMPONENTS
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
 
 const FAQ = () => {
   return (
     <>
-      <Navbar />
       <div className="faq-container">
         <div className="faq-title">
           <h1>FAQs</h1>
@@ -114,7 +110,6 @@ const FAQ = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

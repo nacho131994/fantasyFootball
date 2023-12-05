@@ -1,14 +1,10 @@
 import React from "react";
 //STYLES
 import "../Pages/Contacto.css";
-//COMPONENTS
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
 
 const Contacto = () => {
   return (
     <>
-      <Navbar />
       <div className="contacto-container">
         <div className="contacto-title">
           <h1>CONTACTO</h1>
@@ -34,7 +30,6 @@ const Contacto = () => {
           libero provident culpa!
         </div>
       </div>
-      <Footer />
     </>
   );
 };

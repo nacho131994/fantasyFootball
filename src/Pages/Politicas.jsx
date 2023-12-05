@@ -1,13 +1,9 @@
 import React from "react";
 //STYLES
 import "../Pages/Politicas.css";
-//COMPONENTS
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
 const Politicas = () => {
   return (
     <>
-      <Navbar />
       <div className="politicas-container">
         <div className="politicas-title">
           <h1>POLITICAS</h1>
@@ -32,7 +28,6 @@ const Politicas = () => {
           perspiciatis, animi fugit! Maxime, minus corporis!
         </div>
       </div>
-      <Footer />
     </>
   );
 };

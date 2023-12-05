@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ReactDOM from "react-dom";
+import { getUserToken } from "../Utils/Utils.js";
+
 //MODALS
 import Login from "../Modals/Login.jsx";
 //STYLES
@@ -8,38 +10,24 @@ import "../Components/Navbar.css";
 //IMAGES
 import Logo from "../images/footballfantay-logo.png";
 
-const Navbar = ({ showLogedView, setShowLogedView }) => {
+const Navbar = () => {
   const [showLogin, setShowLogin] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
   const [userName, setUserName] = useState([]);
-
-  const token = JSON.parse(localStorage.getItem("token"));
-
-  useEffect(() => {
-    if (token) {
-      getUserName();
-    } else {
-      setShowLogedView(false);
-      setUserName("");
-    }
-  }, [isLogged]);
 
   const getUserName = () => {
     fetch("https://footb.onrender.com/v2/user/me", {
       headers: {
         accept: "application/json",
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${getUserToken()}`,
       },
     })
       .then((res) => res.json())
       .then((data) => {
         setUserName(data.username);
-        setShowLogedView(true);
       })
       .catch((error) => {
-        setShowLogedView(false);
-        setUserName("");
-        localStorage.removeItem("token");
+        setUserName("Desconocido");
       });
   };
 
@@ -51,15 +39,10 @@ const Navbar = ({ showLogedView, setShowLogedView }) => {
     setShowLogin(false);
   };
 
-  const handleShowLogedView = () => {
-    setShowLogedView(!showLogedView);
-  };
-
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      setIsLogged(true);
-    } else setIsLogged(false);
+    setIsLogged(getUserToken() ? true : false);
+    getUserName();
+    console.log(isLogged, "que estas logueado desde navabr");
   });
 
   return (
@@ -147,11 +130,7 @@ const Navbar = ({ showLogedView, setShowLogedView }) => {
                 className="login-button"
                 onClick={handleShowLogin}
               >
-                {isLogged ? (
-                  <i class="fa-solid fa-user-xmark"></i>
-                ) : (
-                  "INICIAR SESIÓN"
-                )}
+                <i className="fa-solid fa-user-xmark"></i>
               </button>
             </form>
           </div>
@@ -219,7 +198,7 @@ const Navbar = ({ showLogedView, setShowLogedView }) => {
                 className="login-button"
                 onClick={handleShowLogin}
               >
-                {showLogedView ? "X" : "INICIAR SESIÓN"}
+                <i className="fa-solid fa-user"></i>
               </button>
             </form>
           </div>
@@ -228,11 +207,7 @@ const Navbar = ({ showLogedView, setShowLogedView }) => {
 
       {showLogin &&
         ReactDOM.createPortal(
-          <Login
-            handleCloseLogin={handleCloseLogin}
-            handleShowLogedView={handleShowLogedView}
-            showLogedView={showLogedView}
-          />,
+          <Login handleCloseLogin={handleCloseLogin} isLogged={isLogged} />,
           document.body
         )}
     </nav>

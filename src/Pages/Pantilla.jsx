@@ -1,19 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { getUserToken } from "../Utils/Utils";
 //STYLES
 import "../Pages/Plantilla.css";
 //COMPONENTS
-import Navbar from "../Components/Navbar";
 import TuPlantilla from "../Sections/TuPlantilla";
 import TuXI from "../Sections/TuXI";
-import Footer from "../Components/Footer";
 const Plantilla = () => {
+  const [userName, setUserName] = useState("");
+
+  const getUserName = () => {
+    fetch("https://footb.onrender.com/v2/team/", {
+      headers: {
+        accept: "application/json",
+        Authorization: `Bearer ${getUserToken()}`,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setUserName(data.stadium);
+      })
+      .catch((error) => {
+        setUserName("Desconocido");
+      });
+  };
+
+  useEffect(() => {
+    getUserName();
+    console.log(" estas logueado desde Plantilla");
+  });
   return (
     <>
-      <Navbar />
       <div className="plantilla-container">
         <div className="plantilla-header">
           <div className="team-name">
-            <h1>NOMBRE DE LA PLANTILLA</h1>
+            <h1 className="stadium-name">{userName}</h1>
           </div>
           <div className="team-data">
             <p>
@@ -35,7 +55,6 @@ const Plantilla = () => {
           <TuPlantilla />
           <TuXI />
         </div>
-        <Footer />
       </div>
     </>
   );

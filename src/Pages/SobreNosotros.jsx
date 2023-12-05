@@ -1,14 +1,10 @@
 import React from "react";
 //STYLES
 import "../Pages/SobreNosotros.css";
-//COMPONENTS
-import Navbar from "../Components/Navbar";
-import Footer from "../Components/Footer";
 
 const SobreNosotros = () => {
   return (
     <>
-      <Navbar />
       <div className="sobre-nosotros-container">
         <div className="sobre-nosotros-title">
           <h1>SOBRE NOSOTROS</h1>
@@ -33,9 +29,6 @@ const SobreNosotros = () => {
           illo iste, adipisci alias laborum nam velit in. Illum inventore atque
           libero provident culpa!
         </div>
-      </div>
-      <div className="footer">
-        <Footer />
       </div>
     </>
   );
