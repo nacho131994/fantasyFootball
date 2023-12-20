@@ -50,6 +50,7 @@ const HomeLogged = () => {
       checkIfUserHasTeam();
     }
   }
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     if (name === "teamName") {

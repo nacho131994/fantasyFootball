@@ -1,8 +1,9 @@
 .your-team-body{
     width: 35%;
     background-color: rgb(205, 255, 181); ; 
-    height:100vh;
-   padding-top:2rem
+  
+   padding-top:2rem;
+  
 }
 .your-team-body h1{
     display: flex;
@@ -13,7 +14,10 @@
     font-family: 'Staatliches', sans-serif;
     color:rgb(0, 0, 0)
 }
-
+.a{
+    height:400px;
+    overflow-y: scroll;
+}
 /*RESPONSIVE*/
 @media (max-width:480px){
     .your-team-body{

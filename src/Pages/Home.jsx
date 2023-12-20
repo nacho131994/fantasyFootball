@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { getUserToken } from "../Utils/Utils";
-import { useAuth } from "../Context/AuthContext";
 
 //STYLES
 import "../Pages/Home.css";
@@ -16,9 +15,7 @@ const Home = () => {
 
   useEffect(() => {
     setIsLogged(getUserToken() ? true : false);
-
-    console.log(isLogged, "que estas logueado desde home");
-  });
+  }, []);
 
   return (
     <>

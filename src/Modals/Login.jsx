@@ -38,7 +38,6 @@ const Login = ({ handleCloseLogin, isLogged }) => {
     })
       .then((res) => res.json())
       .then((d) => {
-        console.log(d);
         localStorage.setItem("token", JSON.stringify(d));
       });
   }
@@ -49,7 +48,7 @@ const Login = ({ handleCloseLogin, isLogged }) => {
     const response = await fetch(newUserUrl, {
       method: "POST",
     });
-    console.log(newUserUrl);
+
     setIsRegistered(true);
     setUsername("");
     setPassword("");

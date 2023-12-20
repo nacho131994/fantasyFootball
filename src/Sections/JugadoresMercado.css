@@ -1,7 +1,7 @@
 .mercado-body-players{
     background-color:rgb(255, 255, 255);
     width:100%;
-    height:100vh;
+    
     background-color: #1E3D05;
     background-color: #438050;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23518b5a' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%235f9664' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%236ca26d' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%237aad77' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%2388B881' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
@@ -130,7 +130,7 @@
     flex-direction: column;
     color:white;
     width:90%;
-    height:500px;
+    height:450px;
    margin:0 auto 3rem auto;
   padding:1rem 2rem;
    overflow-y: auto;
@@ -281,17 +281,22 @@ color:greenyellow
         font-size:30px;
         font-family: 'Staatliches', sans-serif;
         
+        
     }
 
     .mercado-players-container{
         width:100%;
-        padding:0
+        padding:0;
+        margin-bottom:500px;
+       
+        
     }
     .mercado-player-name{
         width:fit-content
     }
     .mercado-player-section{
-       width:100%
+       width:100%;
+     
     }
     .mercado-player{
   

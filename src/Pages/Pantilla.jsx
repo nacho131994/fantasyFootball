@@ -26,7 +26,6 @@ const Plantilla = () => {
 
   useEffect(() => {
     getUserName();
-    console.log(" estas logueado desde Plantilla");
   });
   return (
     <>

@@ -1,9 +1,9 @@
 .tuxi-body{
     width:65%;
     background-color: rgb(205, 255, 181); 
-    height:100vh;
     font-family: 'Rubik', sans-serif;
-    padding-top:2rem
+    padding-top:2rem;
+    
 }
 .tuxi-body h1{
     display: flex;
@@ -28,7 +28,7 @@
     border-radius:15px
 }
 .football-pitch-section img{
-    width: 40rem;height:25em;
+    width: 38rem;height:22rem;
     display: flex;
     justify-content: center;
     margin:1rem auto;
@@ -39,7 +39,7 @@
     justify-content: center;
     text-align: center;
     gap:5rem;
-    margin:0 auto;
+    margin:0rem auto 5rem auto;
     color:rgb(255, 255, 255);
 }
 .tuxi-time-remaining{

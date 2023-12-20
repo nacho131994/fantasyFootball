@@ -42,7 +42,6 @@ const Navbar = () => {
   useEffect(() => {
     setIsLogged(getUserToken() ? true : false);
     getUserName();
-    console.log(isLogged, "que estas logueado desde navabr");
   });
 
   return (

@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
-
-//STYLES
 import "../Sections/JugadoresMercado.css";
-//MODALS
 import DetalleJugadoresMercado from "../Modals/DetalleJugadoresMercado.jsx";
 import ConfirmModal from "../Modals/ConfirmModal";
 
@@ -18,6 +15,7 @@ const JugadoresMercado = () => {
   const [selectedPosition, setSelectedPosition] = useState([]);
   const [searchByName, setSearchByName] = useState("");
   const [playerPrice, setPlayerPrice] = useState("");
+  const [equipo, setEquipo] = useState([]);
 
   const handleShowDetails = (player) => {
     setSelectedPlayer({
@@ -25,7 +23,6 @@ const JugadoresMercado = () => {
       team: player.team_name,
       position: player.position_name,
     });
-
     setShowDetails(true);
   };
 
@@ -33,7 +30,35 @@ const JugadoresMercado = () => {
     setShowDetails(false);
   };
 
-  const handleShowConfirmModal = () => {
+  const addToTeam = (player) => {
+    if (!equipo.some((p) => p.id === player.id)) {
+      const addPlayerUrl = `https://footb.onrender.com/v2/team/add_player?player_id=${player.id}`;
+
+      fetch(addPlayerUrl, {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          Authorization: "Bearer " + JSON.parse(localStorage.getItem("token")),
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: "",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setEquipo([...equipo, player]);
+          console.log(`Jugador ${player.name} añadido al equipo.`);
+        })
+        .catch((error) => {
+          console.error("Error al agregar jugador al equipo:", error);
+        });
+    } else {
+      console.log(`El jugador ${player.name} ya está en el equipo.`);
+      return;
+    }
+  };
+
+  const handleShowConfirmModal = (player) => {
+    addToTeam(player);
     setShowConfirmModal(true);
   };
 
@@ -65,7 +90,6 @@ const JugadoresMercado = () => {
       .then((res) => res.json())
       .then((data) => {
         setPlayerPrice(data.price);
-        console.log(data.price);
       });
   }, []);
 
@@ -77,7 +101,7 @@ const JugadoresMercado = () => {
         );
 
   const filteredPlayersBySearchName = filteredPlayers.filter((player) =>
-    player.name.toLowerCase().startsWith(searchByName.toLowerCase())
+    player.name.toLowerCase().includes(searchByName.toLowerCase())
   );
 
   return (
@@ -86,7 +110,6 @@ const JugadoresMercado = () => {
         <p>DINERO DISPONIBLE:</p>
         <p className="current-money-digits">4342342€</p>
       </div>
-
       <div className="players-list-section">
         <div className="players-searcher">
           <div className="searchbar">
@@ -123,13 +146,13 @@ const JugadoresMercado = () => {
             <option value="Menor puntuacion">Menor puntuacion</option>
           </select>
         </div>
+
         {filteredPlayersBySearchName.length === 0 ? (
           <p className="no-results-container">no hay resultados</p>
         ) : (
           <>
             <p className="position-selected">
               {selectedPosition}
-
               <span className="position-selected-counter">
                 {filteredPlayersBySearchName.length} jugadores
               </span>
@@ -147,6 +170,7 @@ const JugadoresMercado = () => {
                     <div className="mercado-player-name">
                       <p>{player.name}</p>
                     </div>
+
                     <div className="mercado-player-stats">
                       <div className="mercado-player-stats-item">
                         <i className="fa-solid fa-star"></i> <p>4</p>
@@ -161,7 +185,9 @@ const JugadoresMercado = () => {
                     </div>
                   </div>
                   <div className="mercado-players-buttons">
-                    <button onClick={handleShowConfirmModal}>FICHAR</button>
+                    <button onClick={() => handleShowConfirmModal(player)}>
+                      FICHAR
+                    </button>
                     <button onClick={() => handleShowDetails(player)}>
                       DATOS
                     </button>
