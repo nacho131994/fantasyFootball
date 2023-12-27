@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "../Sections/JugadoresMercado.css";
 import DetalleJugadoresMercado from "../Modals/DetalleJugadoresMercado.jsx";
-import ConfirmModal from "../Modals/ConfirmModal";
 
 const JugadoresMercado = () => {
   const [showDetails, setShowDetails] = useState(false);
-  const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [playersList, setPlayersList] = useState([]);
   const [selectedPlayer, setSelectedPlayer] = useState({
     name: "",
@@ -79,15 +77,6 @@ const JugadoresMercado = () => {
         setPlayerPrice(data.price);
       });
   }, []);
-
-  const handleShowConfirmModal = (player) => {
-    addToTeam(player);
-    setShowConfirmModal(true);
-  };
-
-  const handleCloseConfirmModal = () => {
-    setShowConfirmModal(false);
-  };
 
   const handlePositionChange = (e) => {
     setSelectedPosition(e.target.value);
@@ -190,9 +179,7 @@ const JugadoresMercado = () => {
                     </div>
                   </div>
                   <div className="mercado-players-buttons">
-                    <button onClick={() => handleShowConfirmModal(player)}>
-                      FICHAR
-                    </button>
+                    <button onClick={() => addToTeam(player)}>FICHAR</button>
                     <button onClick={() => handleShowDetails(player)}>
                       DATOS
                     </button>
@@ -207,17 +194,7 @@ const JugadoresMercado = () => {
       {showDetails ? (
         <DetalleJugadoresMercado
           handleCloseDetails={handleCloseDetails}
-          handleShowConfirmModal={handleShowConfirmModal}
           selectedPlayer={selectedPlayer}
-        />
-      ) : (
-        ""
-      )}
-      {showConfirmModal ? (
-        <ConfirmModal
-          handleCloseConfirmModal={handleCloseConfirmModal}
-          action={"FICHAR"}
-          playerPrice={playerPrice}
         />
       ) : (
         ""

@@ -1,18 +1,7 @@
 import React, { useState } from "react";
 import "../Components/CardStat.css";
-import ConfirmModal from "../Modals/ConfirmModal";
 
-const CardStat = ({ title, filteredPlayers, param, counter }) => {
-  const [showConfirmModal, setShowConfirmModal] = useState(false);
-
-  const handleShowConfirmModal = () => {
-    setShowConfirmModal(true);
-  };
-
-  const handleCloseConfirmModal = () => {
-    setShowConfirmModal(false);
-  };
-
+const CardStat = ({ title, filteredPlayers, param }) => {
   return (
     <div className="card-stat-container">
       <div className="card-stat-title">
@@ -30,19 +19,11 @@ const CardStat = ({ title, filteredPlayers, param, counter }) => {
               </p>
               <p>{param}</p>
               <p>{player.id}</p>
-              <button onClick={handleShowConfirmModal}>FICHAR</button>
+              <button>FICHAR</button>
             </li>
           ))}
         </ul>
       </div>
-      {showConfirmModal ? (
-        <ConfirmModal
-          handleCloseConfirmModal={handleCloseConfirmModal}
-          action={"FICHAR"}
-        />
-      ) : (
-        ""
-      )}
     </div>
   );
 };

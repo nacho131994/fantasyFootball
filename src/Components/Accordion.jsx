@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 //STYLES
 import "../Components/Accordion.css";
-//MODALS
-import ConfirmModal from "../Modals/ConfirmModal";
 
 const Accordion = () => {
-  const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [yourTeam, setYourTeam] = useState([]);
 
   //-----------------------traer jugadores del equipo-----------------------
@@ -25,12 +22,6 @@ const Accordion = () => {
       });
   }, []);
 
-  const handleShowConfirmModal = () => {
-    setShowConfirmModal(true);
-  };
-  const handleCloseConfirmModal = () => {
-    setShowConfirmModal(false);
-  };
   //-----------------------vender jugadores del equipo-----------------------
   const handleSellPlayer = async (playerId) => {
     try {
@@ -252,14 +243,6 @@ const Accordion = () => {
             </div>
           </div>
         </div>
-        {showConfirmModal ? (
-          <ConfirmModal
-            handleCloseConfirmModal={handleCloseConfirmModal}
-            action={"VENDER"}
-          />
-        ) : (
-          ""
-        )}
       </div>
     </>
   );
