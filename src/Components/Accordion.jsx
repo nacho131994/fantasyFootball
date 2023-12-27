@@ -1,17 +1,56 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 //STYLES
 import "../Components/Accordion.css";
 //MODALS
 import ConfirmModal from "../Modals/ConfirmModal";
 
-const Accordion = ({ yourTeam }) => {
+const Accordion = () => {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [yourTeam, setYourTeam] = useState([]);
+
+  //-----------------------traer jugadores del equipo-----------------------
+  useEffect(() => {
+    fetch("https://footb.onrender.com/v2/team/players", {
+      headers: {
+        accept: "application/json",
+        Authorization: "Bearer " + JSON.parse(localStorage.getItem("token")),
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setYourTeam(data);
+      })
+      .catch((error) => {
+        console.error("Error al obtener jugadores del equipo:", error);
+      });
+  }, []);
 
   const handleShowConfirmModal = () => {
     setShowConfirmModal(true);
   };
   const handleCloseConfirmModal = () => {
     setShowConfirmModal(false);
+  };
+  //-----------------------vender jugadores del equipo-----------------------
+  const handleSellPlayer = async (playerId) => {
+    try {
+      await fetch(
+        `https://footb.onrender.com/v2/team/player?player_id=${playerId}`,
+        {
+          method: "DELETE",
+          headers: {
+            accept: "application/json",
+            Authorization:
+              "Bearer " + JSON.parse(localStorage.getItem("token")),
+          },
+        }
+      );
+      setYourTeam((prevYourTeam) =>
+        prevYourTeam.filter((player) => player.id !== playerId)
+      );
+    } catch (error) {
+      console.error("Error al vender jugador:", error);
+    }
   };
 
   return (
@@ -35,23 +74,33 @@ const Accordion = ({ yourTeam }) => {
             className="accordion-collapse collapse"
           >
             <div className="accordion-body">
-              {yourTeam.map((player, i) => {
-                if (player.position_name === "Portero") {
-                  return (
-                    <div className="player-by-position-info" key={i}>
-                      <p>
-                        <strong>{player.name}</strong>{" "}
-                      </p>
-                      <p>250pts</p>
-                      <p>30000€</p>
-                      <div className="player-button-section">
-                        <button>ALINEAR</button>
-                        <button onClick={handleShowConfirmModal}>VENDER</button>
+              {yourTeam.length === 0 ||
+              !yourTeam.some((player) => player.position_name === "Portero") ? (
+                <p className="no-players-in-team-message">
+                  No tienes porteros en tu equipo.
+                </p>
+              ) : (
+                yourTeam.map((player, i) => {
+                  if (player.position_name === "Portero") {
+                    return (
+                      <div className="player-by-position-info" key={i}>
+                        <p>
+                          <strong>{player.name}</strong>
+                        </p>
+                        <p>{player.id}</p>
+                        <p>250pts</p>
+                        <p>30000€</p>
+                        <div className="player-button-section">
+                          <button>ALINEAR</button>
+                          <button onClick={() => handleSellPlayer(player.id)}>
+                            VENDER
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  );
-                }
-              })}
+                    );
+                  }
+                })
+              )}
             </div>
           </div>
         </div>
@@ -73,23 +122,33 @@ const Accordion = ({ yourTeam }) => {
             className="accordion-collapse collapse"
           >
             <div className="accordion-body">
-              {yourTeam.map((player, i) => {
-                if (player.position_name === "Defensa") {
-                  return (
-                    <div className="player-by-position-info" key={i}>
-                      <p>
-                        <strong>{player.name}</strong>{" "}
-                      </p>
-                      <p>250pts</p>
-                      <p>30000€</p>
-                      <div className="player-button-section">
-                        <button>ALINEAR</button>
-                        <button onClick={handleShowConfirmModal}>VENDER</button>
+              {yourTeam.length === 0 ||
+              !yourTeam.some((player) => player.position_name === "Defensa") ? (
+                <p className="no-players-in-team-message">
+                  No tienes Defensas en tu equipo.
+                </p>
+              ) : (
+                yourTeam.map((player, i) => {
+                  if (player.position_name === "Defensa") {
+                    return (
+                      <div className="player-by-position-info" key={i}>
+                        <p>
+                          <strong>{player.name}</strong>
+                        </p>
+                        <p>{player.id}</p>
+                        <p>250pts</p>
+                        <p>30000€</p>
+                        <div className="player-button-section">
+                          <button>ALINEAR</button>
+                          <button onClick={() => handleSellPlayer(player.id)}>
+                            VENDER
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  );
-                }
-              })}
+                    );
+                  }
+                })
+              )}
             </div>
           </div>
         </div>
@@ -111,23 +170,35 @@ const Accordion = ({ yourTeam }) => {
             className="accordion-collapse collapse"
           >
             <div className="accordion-body">
-              {yourTeam.map((player, i) => {
-                if (player.position_name === "Centrocampista") {
-                  return (
-                    <div className="player-by-position-info" key={i}>
-                      <p>
-                        <strong>{player.name}</strong>{" "}
-                      </p>
-                      <p>250pts</p>
-                      <p>30000€</p>
-                      <div className="player-button-section">
-                        <button>ALINEAR</button>
-                        <button onClick={handleShowConfirmModal}>VENDER</button>
+              {yourTeam.length === 0 ||
+              !yourTeam.some(
+                (player) => player.position_name === "Centrocampista"
+              ) ? (
+                <p className="no-players-in-team-message">
+                  No tienes Centrocampistas en tu equipo.
+                </p>
+              ) : (
+                yourTeam.map((player, i) => {
+                  if (player.position_name === "Centrocampista") {
+                    return (
+                      <div className="player-by-position-info" key={i}>
+                        <p>
+                          <strong>{player.name}</strong>
+                        </p>
+                        <p>{player.id}</p>
+                        <p>250pts</p>
+                        <p>30000€</p>
+                        <div className="player-button-section">
+                          <button>ALINEAR</button>
+                          <button onClick={() => handleSellPlayer(player.id)}>
+                            VENDER
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  );
-                }
-              })}
+                    );
+                  }
+                })
+              )}
             </div>
           </div>
         </div>
@@ -149,23 +220,35 @@ const Accordion = ({ yourTeam }) => {
             className="accordion-collapse collapse"
           >
             <div className="accordion-body">
-              {yourTeam.map((player, i) => {
-                if (player.position_name === "Delantero") {
-                  return (
-                    <div className="player-by-position-info" key={i}>
-                      <p>
-                        <strong>{player.name}</strong>{" "}
-                      </p>
-                      <p>250pts</p>
-                      <p>30000€</p>
-                      <div className="player-button-section">
-                        <button>ALINEAR</button>
-                        <button onClick={handleShowConfirmModal}>VENDER</button>
+              {yourTeam.length === 0 ||
+              !yourTeam.some(
+                (player) => player.position_name === "Delantero"
+              ) ? (
+                <p className="no-players-in-team-message">
+                  No tienes Delanteros en tu equipo.
+                </p>
+              ) : (
+                yourTeam.map((player, i) => {
+                  if (player.position_name === "Delantero") {
+                    return (
+                      <div className="player-by-position-info" key={i}>
+                        <p>
+                          <strong>{player.name}</strong>
+                        </p>
+                        <p>{player.id}</p>
+                        <p>250pts</p>
+                        <p>30000€</p>
+                        <div className="player-button-section">
+                          <button>ALINEAR</button>
+                          <button onClick={() => handleSellPlayer(player.id)}>
+                            VENDER
+                          </button>
+                        </div>
                       </div>
-                    </div>
-                  );
-                }
-              })}
+                    );
+                  }
+                })
+              )}
             </div>
           </div>
         </div>
@@ -183,84 +266,3 @@ const Accordion = ({ yourTeam }) => {
 };
 
 export default Accordion;
-// Accordion.js
-// import React, { useState } from "react";
-// import "../Components/Accordion.css";
-// import ConfirmModal from "../Modals/ConfirmModal";
-
-// const Accordion = ({ yourTeam }) => {
-//   const [showConfirmModal, setShowConfirmModal] = useState(false);
-
-//   const handleShowConfirmModal = () => {
-//     setShowConfirmModal(true);
-//   };
-
-//   const handleCloseConfirmModal = () => {
-//     setShowConfirmModal(false);
-//   };
-
-//   // Agrupa jugadores por posición
-//   const groupedPlayers = yourTeam.reduce((acc, player) => {
-//     const position = player.position_name;
-//     if (!acc[position]) {
-//       acc[position] = [];
-//     }
-//     acc[position].push(player);
-//     return acc;
-//   }, {});
-
-//   return (
-//     <>
-//       <div className="accordion" id="accordionPanelsStayOpenExample">
-//         {/* Itera sobre las posiciones y pinta los jugadores asociados a esa posición */}
-//         {Object.entries(groupedPlayers).map(([position, players]) => (
-//           <div className="accordion-item" key={position}>
-//             <h2 className="accordion-header">
-//               <button
-//                 className="accordion-button"
-//                 type="button"
-//                 data-bs-toggle="collapse"
-//                 data-bs-target={`#panelsStayOpen-collapse${position}`}
-//                 aria-expanded="true"
-//                 aria-controls={`panelsStayOpen-collapse${position}`}
-//               >
-//                 {position.toUpperCase()}
-//               </button>
-//             </h2>
-//             <div
-//               id={`panelsStayOpen-collapse${position}`}
-//               className="accordion-collapse collapse"
-//             >
-//               <div className="accordion-body">
-//                 {players.map((player) => (
-//                   <div className="player-by-position-info" key={player.id}>
-//                     <p>
-//                       <strong>{player.name} </strong>
-//                     </p>
-//                     <p>{player.points}pts</p>
-//                     <p>{player.price}€</p>
-//                     <div className="player-button-section">
-//                       <button>ALINEAR</button>
-//                       <button onClick={handleShowConfirmModal}>VENDER</button>
-//                     </div>
-//                   </div>
-//                 ))}
-//               </div>
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-
-//       {showConfirmModal ? (
-//         <ConfirmModal
-//           handleCloseConfirmModal={handleCloseConfirmModal}
-//           action={"VENDER"}
-//         />
-//       ) : (
-//         ""
-//       )}
-//     </>
-//   );
-// };
-
-// export default Accordion;

@@ -17,6 +17,7 @@ const JugadoresMercado = () => {
   const [playerPrice, setPlayerPrice] = useState("");
   const [equipo, setEquipo] = useState([]);
 
+  //-----------------------Mostrar detalles del jugador seleccionado-----------------------
   const handleShowDetails = (player) => {
     setSelectedPlayer({
       name: player.name,
@@ -30,6 +31,7 @@ const JugadoresMercado = () => {
     setShowDetails(false);
   };
 
+  //-----------------------Añadir jugadores al equipo (fichar)-----------------------
   const addToTeam = (player) => {
     if (!equipo.some((p) => p.id === player.id)) {
       const addPlayerUrl = `https://footb.onrender.com/v2/team/add_player?player_id=${player.id}`;
@@ -57,6 +59,27 @@ const JugadoresMercado = () => {
     }
   };
 
+  //-----------------------Mostrar todos los jugadores de la DB-----------------------
+  const listPlayersUrl =
+    "https://footb.onrender.com/v2/player?skip=0&limit=2000&sort_field=id&sort_order=desc";
+  useEffect(() => {
+    fetch(listPlayersUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        setPlayersList(data.data);
+      });
+  }, []);
+
+  //-----------------------Mostrar el precio de cada jugador de la DB-----------------------
+  const pricePlayerUrl = "https://footb.onrender.com/v2/price/";
+  useEffect(() => {
+    fetch(pricePlayerUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        setPlayerPrice(data.price);
+      });
+  }, []);
+
   const handleShowConfirmModal = (player) => {
     addToTeam(player);
     setShowConfirmModal(true);
@@ -73,25 +96,6 @@ const JugadoresMercado = () => {
   const handleSearchChange = (e) => {
     setSearchByName(e.target.value);
   };
-
-  const listPlayersUrl =
-    "https://footb.onrender.com/v2/player?skip=0&limit=2000&sort_field=id&sort_order=desc";
-  useEffect(() => {
-    fetch(listPlayersUrl)
-      .then((res) => res.json())
-      .then((data) => {
-        setPlayersList(data.data);
-      });
-  }, []);
-
-  const pricePlayerUrl = "https://footb.onrender.com/v2/price/";
-  useEffect(() => {
-    fetch(pricePlayerUrl)
-      .then((res) => res.json())
-      .then((data) => {
-        setPlayerPrice(data.price);
-      });
-  }, []);
 
   const filteredPlayers =
     selectedPosition === "Cualquier posición"
@@ -169,6 +173,7 @@ const JugadoresMercado = () => {
                   <div className="mercado-player">
                     <div className="mercado-player-name">
                       <p>{player.name}</p>
+                      <p>{player.id}</p>
                     </div>
 
                     <div className="mercado-player-stats">

@@ -7,6 +7,7 @@ import CardStat from "../Components/CardStat";
 const Estadisticas = () => {
   const [playersList, setPlayersList] = useState([]);
   const [selectedPosition, setSelectedPosition] = useState("");
+
   const url =
     "https://footb.onrender.com/v2/player?skip=0&limit=2000&sort_field=id&sort_order=desc";
 

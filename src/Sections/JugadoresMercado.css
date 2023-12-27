@@ -118,9 +118,9 @@
     font-family: 'Staatliches', sans-serif;
     font-size:30px;
     width:fit-content;
-    height:fit-content;
+   
     padding:3rem 20rem;
-    margin:3rem auto auto auto;
+    margin:3rem auto 15rem auto;
     border-radius: 10px;
 }
 .mercado-players-container{

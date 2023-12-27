@@ -56,22 +56,33 @@ const Login = ({ handleCloseLogin, isLogged }) => {
 
     if (response.status === 406) {
       // REGISTRO FALLIDO
+      setShowRegistration(false);
       setShowRegistrationMessage(
         "Usuario ya existente. Elige otro nombre de usuario"
       );
       setShowRegistrationMessageClass("registration-error");
+      setTimeout(() => {
+        setShowRegistrationMessage("");
+        setShowRegistrationMessageClass("");
+      }, 3000);
     } else if (response.status !== 406) {
       // REGISTRO EXITOSO
       getUserToken();
       setShowRegistrationMessage("Te has registrado con éxito");
       setShowRegistrationMessageClass("registration-success");
       setShowRegistration(false);
+
       setTimeout(() => {
         setIsRegistered(false);
-      }, 4000);
+        setShowRegistrationMessage("");
+        setShowRegistrationMessageClass("");
+      }, 3000);
     }
+
     return response.json();
   }
+
+  //cerrar mensajes de registro
 
   // Iniciar Sesión : LOGIN
   async function handleLogin(loginUsername, loginPassword) {
@@ -99,13 +110,20 @@ const Login = ({ handleCloseLogin, isLogged }) => {
       } else {
         const errorData = await response.json();
         setLoginError("usuario y/o contraseña incorrectos");
+
+        setTimeout(() => {
+          setLoginError("");
+        }, 3000);
       }
     } catch (error) {
       console.error("Error al realizar la solicitud:", error);
       setLoginError("Error al iniciar sesión. Inténtalo de nuevo más tarde.");
+
+      setTimeout(() => {
+        setLoginError("");
+      }, 3000);
     }
   }
-
   // Cerrar sesión
   const handleLogout = () => {
     localStorage.removeItem("token");

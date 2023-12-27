@@ -29,6 +29,7 @@ const CardStat = ({ title, filteredPlayers, param, counter }) => {
                 {player.position_name.slice(0, 3).toUpperCase()})
               </p>
               <p>{param}</p>
+              <p>{player.id}</p>
               <button onClick={handleShowConfirmModal}>FICHAR</button>
             </li>
           ))}

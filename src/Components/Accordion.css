@@ -88,7 +88,9 @@
     margin-right:5px;
     align-items: center;
  }
-
+.no-players-in-team-message{
+   font-family: 'Staatliches', sans-serif;;
+}
  /*RESPONSIVE*/
 @media (max-width:480px){
     .accordion{

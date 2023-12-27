@@ -35,18 +35,25 @@ const Plantilla = () => {
             <h1 className="stadium-name">{userName}</h1>
           </div>
           <div className="team-data">
-            <p>
-              <i className="fa-solid fa-coins team-data-icons"></i> DINERO DEL
-              EQUIPO:
-            </p>
-            <p>
-              <i className="fa-solid fa-star team-data-icons"></i> PUNTOS DEL
-              EQUIPO:
-            </p>
-            <p>
-              <i className="fa-solid fa-money-bill-trend-up team-data-icons"></i>{" "}
-              VALOR DEL EQUIPO:
-            </p>
+            <div className="team-data-item">
+              <p>
+                <i className="fa-solid fa-coins team-data-icons"></i> DINERO:
+              </p>
+              <p>95479547</p>
+            </div>
+            <div className="team-data-item">
+              <p>
+                <i className="fa-solid fa-star team-data-icons"></i> PUNTOS:
+              </p>
+              <p>95479547</p>
+            </div>
+            <div className="team-data-item">
+              <p>
+                <i className="fa-solid fa-money-bill-trend-up team-data-icons"></i>{" "}
+                VALOR:
+              </p>
+              <p>95479547</p>
+            </div>
           </div>
         </div>
 
