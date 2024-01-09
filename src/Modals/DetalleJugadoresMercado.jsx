@@ -75,8 +75,16 @@ const DetalleJugadoresMercado = ({
 
   return (
     <div className="mercado-body-players-details">
-      <div className="player-details-card">
-        <section>{name}</section>
+      <div
+        className={
+          position === "Portero"
+            ? "player-details-card-portero"
+            : "player-details-card"
+        }
+      >
+        <section>
+          <p className={name.length > 17 ? "name-long" : "name"}> {name}</p>
+        </section>
         <div className="player-info-section">
           <div className="player-info-section-photo-container">
             <div className="team-of-player">
@@ -114,7 +122,6 @@ const DetalleJugadoresMercado = ({
           </div>
         </div>
         <div className="player-info-button-section">
-          <button onClick={handleShowConfirmModal}>FICHAR</button>
           <button onClick={handleCloseDetails}>CERRAR</button>
         </div>
       </div>

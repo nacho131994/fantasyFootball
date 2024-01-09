@@ -1,8 +1,43 @@
-import React from "react";
-//STYLES
+import React, { useState, useEffect } from "react";
+import moment from "moment";
+
+// STYLES
 import "../Sections/TuXI.css";
 
 const TuXI = () => {
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timerInterval = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timerInterval);
+  }, []);
+
+  function calculateTimeLeft() {
+    const now = moment();
+    let targetDate = moment().day(5).hours(0).minutes(0).seconds(0);
+
+    // Si la fecha de destino ya ha pasado, establecerla para el próximo viernes a las 00:00
+    if (now.isAfter(targetDate)) {
+      targetDate = moment()
+        .day(5)
+        .hours(0)
+        .minutes(0)
+        .seconds(0)
+        .add(7, "days");
+    }
+
+    const duration = moment.duration(targetDate.diff(now));
+    const days = Math.floor(duration.asDays());
+    const hours = duration.hours();
+    const minutes = duration.minutes();
+    const seconds = duration.seconds();
+
+    return { days, hours, minutes, seconds };
+  }
+
   return (
     <div className="tuxi-body">
       <div className="tuxi-body-options">
@@ -25,7 +60,7 @@ const TuXI = () => {
           <div className="tuxi-time-remaining">
             <i className="fa-solid fa-triangle-exclamation"></i>
             <p>CONFIRMAR EN:</p>
-            <p>2d 3h 54m</p>
+            <p>{`${timeLeft.days}d ${timeLeft.hours}h ${timeLeft.minutes}m`}</p>
           </div>
           <div className="tuxi-button-section-button">
             <button> GUARDAR</button>

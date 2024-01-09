@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import "../Sections/JugadoresMercado.css";
 import DetalleJugadoresMercado from "../Modals/DetalleJugadoresMercado.jsx";
 
@@ -46,7 +47,6 @@ const JugadoresMercado = () => {
         .then((res) => res.json())
         .then((data) => {
           setEquipo([...equipo, player]);
-          console.log(`Jugador ${player.name} añadido al equipo.`);
         })
         .catch((error) => {
           console.error("Error al agregar jugador al equipo:", error);
@@ -104,7 +104,11 @@ const JugadoresMercado = () => {
         <p className="current-money-digits">4342342€</p>
       </div>
       <div className="players-list-section">
-        <div className="players-searcher">
+        <div
+          className={
+            showDetails ? "players-searcher-details-opened" : "players-searcher"
+          }
+        >
           <div className="searchbar">
             <input
               type="text"
@@ -150,7 +154,14 @@ const JugadoresMercado = () => {
                 {filteredPlayersBySearchName.length} jugadores
               </span>
             </p>
-            <div className="mercado-players-container">
+
+            <div
+              className={
+                showDetails
+                  ? "mercado-players-container-details-opened"
+                  : "mercado-players-container"
+              }
+            >
               {filteredPlayersBySearchName.map((player, i) => (
                 <div className="mercado-player-section" key={i}>
                   <div className="numeration-container">
@@ -162,7 +173,6 @@ const JugadoresMercado = () => {
                   <div className="mercado-player">
                     <div className="mercado-player-name">
                       <p>{player.name}</p>
-                      <p>{player.id}</p>
                     </div>
 
                     <div className="mercado-player-stats">
@@ -179,10 +189,10 @@ const JugadoresMercado = () => {
                     </div>
                   </div>
                   <div className="mercado-players-buttons">
-                    <button onClick={() => addToTeam(player)}>FICHAR</button>
                     <button onClick={() => handleShowDetails(player)}>
                       DATOS
                     </button>
+                    <button onClick={() => addToTeam(player)}>FICHAR</button>
                   </div>
                 </div>
               ))}

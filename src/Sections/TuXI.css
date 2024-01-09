@@ -63,6 +63,10 @@ select option:first-child {
     gap:5px;
     align-items: center;
 }
+.tuxi-time-remaining p:last-child{
+
+ width:9rem
+}
 .fa-triangle-exclamation{
     color:red
 }

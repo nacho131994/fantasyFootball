@@ -1,13 +1,12 @@
+
 .mercado-body-players{
     background-color:rgb(255, 255, 255);
     width:100%;
-    
     background-color: #1E3D05;
     background-color: #438050;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg %3E%3Cpolygon fill='%23518b5a' points='1600 160 0 460 0 350 1600 50'/%3E%3Cpolygon fill='%235f9664' points='1600 260 0 560 0 450 1600 150'/%3E%3Cpolygon fill='%236ca26d' points='1600 360 0 660 0 550 1600 250'/%3E%3Cpolygon fill='%237aad77' points='1600 460 0 760 0 650 1600 350'/%3E%3Cpolygon fill='%2388B881' points='1600 800 0 800 0 750 1600 450'/%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: cover;
-   
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -55,6 +54,13 @@
     justify-content: center;
     gap:2rem;
     font-family: 'Rubik', sans-serif;
+}
+.players-searcher-details-opened{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap:2rem;;
+    padding-left:2rem
 }
 .searchbar{
     display:flex;
@@ -137,6 +143,38 @@
    border:10px solid black
 }
 .mercado-players-container::-webkit-scrollbar {
+    width: 1rem;
+    margin:3rem
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: greenyellow; 
+    border-radius:10px;
+    height:2rem;
+    width:2rem;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #000000; 
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px; 
+  }
+  .mercado-players-container-details-opened{
+   
+    background-color: rgb(1, 1, 1);
+    border-radius:10px;
+    display:flex;
+    flex-direction: column;
+    color:white;
+    width:70%;
+    height:450px;
+   margin:0 auto 3rem 5px;
+  padding:1rem 2rem;
+   overflow-y: auto;
+  
+   transition: 0.3s;
+   
+   
+  }
+  .mercado-players-container-details-opened::-webkit-scrollbar {
     width: 1rem;
     margin:3rem
   }
@@ -245,7 +283,14 @@ color:greenyellow
     background-color: rgb(207, 160, 255);;
     color:rgb(255, 255, 255);
 }
+.jugador-fichado-message{
+    background-color: rgb(85, 210, 85);
+    font-family: 'Staatliches', sans-serif;
+    padding: 0.5rem 0.5rem;
+    border-radius:10px;
+    border:2px solid green;
 
+}
 /*RESPONSIVE*/
 @media (max-width:480px){
     .mercado-body-players{

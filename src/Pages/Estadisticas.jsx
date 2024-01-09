@@ -67,16 +67,53 @@ const Estadisticas = () => {
             filteredPlayers={filteredPlayers}
             param={"pts."}
           />
-          <CardStat
-            title={"PARADAS"}
-            filteredPlayers={filteredPlayers}
-            param={"pts."}
-          />
-          <CardStat
-            title={"PARADA PENALTI"}
-            filteredPlayers={filteredPlayers}
-            param={"pts."}
-          />
+          <div className="card-stat-container">
+            <div className="card-stat-title">
+              <button>+</button>
+              PARADAS <button>-</button>
+            </div>
+            <div className="card-stat-body">
+              <ul>
+                {filteredPlayers
+                  .filter((player) => player.position_name === "Portero")
+                  .map((player, i) => (
+                    <li key={i}>
+                      <p>
+                        <strong className="numeration-stat">{i + 1}.</strong>
+                        <strong>{player.name}</strong> (
+                        {player.position_name.slice(0, 3).toUpperCase()})
+                      </p>
+                      <p>Paradas</p>
+                      <button>FICHAR</button>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          </div>
+          <div className="card-stat-container">
+            <div className="card-stat-title">
+              <button>+</button>
+              PARADAS PENALTI <button>-</button>
+            </div>
+            <div className="card-stat-body">
+              <ul>
+                {filteredPlayers
+                  .filter((player) => player.position_name === "Portero")
+                  .map((player, i) => (
+                    <li key={i}>
+                      <p>
+                        <strong className="numeration-stat">{i + 1}.</strong>
+                        <strong>{player.name}</strong> (
+                        {player.position_name.slice(0, 3).toUpperCase()})
+                      </p>
+                      <p>Par. Penalti</p>
+                      <button>FICHAR</button>
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          </div>
+
           <CardStat
             title={"ASISTENCIAS"}
             filteredPlayers={filteredPlayers}
