@@ -32,15 +32,59 @@ select option:first-child {
     box-shadow: 0px 0px 18px 4px greenyellow;
   height: 22rem;
   width: 35rem;
-  background-image: url('../images/pizarra.jpg');
+  background-image: url("../images/pizarra.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  margin: 2rem auto; 
-  display: flex; 
+  border: 1px solid black;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: row;
   align-items: center; 
   justify-content: center;
 }
 
+.pitch-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap:.5rem;
+    flex-direction: column;
+  }
+  .pitch-player {
+    width: fit-content;
+    padding:0 .5rem 0 .5rem;
+    height: fit-content;
+    border: 3px solid greenyellow;
+    border-radius:10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    color:black;
+    gap:1rem
+  }
+  .playernumber-long{
+    font-size:15px;
+    font-family: 'Staatliches', sans-serif;
+    font-weight: 400;
+    width:150px;
+    height:fit-content
+  }
+  .playernumber-short{
+    font-size:20px;
+    font-family: 'Staatliches', sans-serif;
+    font-weight: 400;
+  }
+  .pitch-player p{
+   margin:0;
+   
+  }
+  .fa-circle-xmark{
+    font-size: 15px;
+    color:red
+  }
 .tuxi-button-section{
     display: flex;
     justify-content: center;

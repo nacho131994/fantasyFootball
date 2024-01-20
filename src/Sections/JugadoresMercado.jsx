@@ -45,9 +45,7 @@ const JugadoresMercado = () => {
         body: "",
       })
         .then((res) => res.json())
-        .then((data) => {
-          setEquipo([...equipo, player]);
-        })
+        .then(setEquipo([...equipo, player]))
         .catch((error) => {
           console.error("Error al agregar jugador al equipo:", error);
         });
