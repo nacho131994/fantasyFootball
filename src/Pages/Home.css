@@ -75,9 +75,9 @@ height:100%;
 .matchdays-and-standings{
   display: flex;
   margin:2rem 0;
-  gap:5rem;
+  gap:2rem;
   height: 100%;
-  align-items: center;
+
 }
 .matchdays-section{
     display:flex;

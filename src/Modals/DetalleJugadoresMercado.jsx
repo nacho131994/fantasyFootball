@@ -1,7 +1,8 @@
 //STYLES
 import "../Modals/DetalleJugadoresMercado.css";
 //IMAGES
-import alaves from "../ESCUDOS/alaves.png";
+
+import alaves from "../ESCUDOS/DeportivoAlaves.png";
 import almeria from "../ESCUDOS/almería.png";
 import athletic from "../ESCUDOS/athletic.png";
 import atleti from "../ESCUDOS/atleti.png";
@@ -34,7 +35,7 @@ const DetalleJugadoresMercado = ({
       return `${madrid}`;
     } else if (team.includes("Barcelona")) {
       return `${barça}`;
-    } else if (team.includes("Alaves")) {
+    } else if (team.includes("Alavés")) {
       return `${alaves}`;
     } else if (team.includes("Almería")) {
       return `${almeria}`;
@@ -87,13 +88,11 @@ const DetalleJugadoresMercado = ({
         </section>
         <div className="player-info-section">
           <div className="player-info-section-photo-container">
+            <p className="player-position">{position}</p>
             <div className="team-of-player">
-              <p>{team}</p>
-
               <img src={teamBadge()} className="team-badge" />
+              <p>{team}</p>
             </div>
-
-            <p>{position}</p>
           </div>
           <div className="player-info">
             {position.includes("Portero") ? (

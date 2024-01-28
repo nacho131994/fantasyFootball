@@ -9,10 +9,6 @@ const NextGames = ({ result, matchWeek }) => {
         <div className="next-games-header">
           <div className="next-games-header-logos">
             <p> {matchWeek}</p>
-            <img
-              className="laliga-logo"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/LaLiga_2023_Horizontal_Logo.svg/1200px-LaLiga_2023_Horizontal_Logo.svg.png"
-            />
           </div>
         </div>
 
